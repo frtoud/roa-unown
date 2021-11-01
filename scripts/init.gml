@@ -42,7 +42,7 @@ short_hop_speed     = 6;		// 4    -  7.4
 djump_speed         = 10;		// 6    -  12       absa's is -1 because of her floaty djump
 djump_accel         = 0;		// -1.4 -  0        absa's is -1.4, all other chars are 0. only works if the   djump_accel_end_time   variable is also set. floaty djumps should be adjusted by feel based on your char's gravity
 djump_accel_end_time= 0;		//                  the amount of time that   djump_accel   is applied for
-max_djumps          = 1;		// 0    -  3        the 0 is elliana because she has hover instead
+max_djumps          = 3;		// 0    -  3        the 0 is elliana because she has hover instead
 walljump_hsp        = 7;		// 4    -  7
 walljump_vsp        = 8;		// 7    -  10
 land_time           = 4;		// 4    -  6
@@ -104,7 +104,6 @@ crouch_active_frames    = 1;
 crouch_recovery_frames  = 2;
 
 /*
-
 Muno's Words of Wisdom: Due to a Certified Dan Moment, you must duplicate the
 last frame of your crouch animation. So like, if your animation has 10 frames
 total, add an 11th that's the copy of the 10th. You do NOT include this 11th
@@ -113,7 +112,6 @@ were only 10 frames.
 
 The reason for this is that otherwise, the crouch just glitches out at the end
 of the standing-up animation. Dan Moment
-
 */
 
 // Hurtbox sprites
@@ -161,7 +159,16 @@ has_goku_beam = true;
 doing_goku_beam = false;
 beam_newest_hbox = noone;
 
+// Levitation
+uno_lev_height_min = 24;
+uno_lev_height_mid = 32;
+uno_lev_height_max = 40;
 
+uno_lev_offset = 8;
+uno_lev_bypass = false; //set to TRUE to avoid levitation for your attack
+
+uno_lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
+uno_lev_looking_dir = 1; //spr_dir is forced to 1, this is what controls unown's direction
 
 
 
