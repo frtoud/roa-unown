@@ -1,16 +1,11 @@
 /*
- * The stats below are taken from Zetterburn, replacing Sandbert's overpowered
- * movement stats. The ATTACKS are still in their overpowered form in this
- * template, so be sure to make the ones for your character weaker.
- * 
  * Base Cast Frame Data:
  * docs.google.com/spreadsheets/d/19UtK7xG2c-ehxdlhCFKMpM4_IHSG-EXFgXLJaunE79I
  */
 
 // STAT NAME		ZETTER VALUE   BASECAST RANGE   NOTES
-
 // Physical size
-char_height         = 52;       //                  not zetterburn's. this is just cosmetic anyway
+char_height         = 52;       // cosmetic
 knockback_adj       = 1;		// 0.9  -  1.2
 
 // Ground movement
@@ -61,32 +56,6 @@ wave_land_time      = 8;		// 6    -  12
 wave_land_adj       = 1.3;		// 1.2  -  1.5      idk what zetterburn's is
 air_dodge_speed     = 7.5;		// 7.5  -  8
 techroll_speed      = 10;		// 8    -  11
-
-
-
-// Character-specific assets init
-
-//Sprites
-spr_nspecial_proj = sprite_get("nspecial_proj");
-spr_example = sprite_get("example"); // sprites/example_stripX.png
-
-// SFX
-sfx_dbfz_kame_charge = sound_get("ARC_BTL_GKN_Kamehame_Chrg");
-sfx_dbfz_kame_fire = sound_get("ARC_BTL_GKN_Kamehame_Fire");
-sfx_dbfz_hit_weak = sound_get("ARC_BTL_CMN_Hit_Small-A");
-sfx_dbfz_hit_broken = sound_get("ARC_BTL_CMN_Hit_XLarge");
-sfx_dbfz_hit_jab3 = sound_get("ARC_BTL_GKN_Atk5A_3rd_Hit");
-
-// VFX
-vfx_ftilt_destroy = hit_fx_create(sprite_get("vfx_ftilt_destroy"), 12); // actually for nspecial, not ftilt
-vfx_nspecial_fire = hit_fx_create(sprite_get("vfx_nspecial_fire"), 16);
-
-// Variables
-has_goku_beam = true;
-doing_goku_beam = false;
-beam_newest_hbox = noone;
-
-
 
 // Animation Info
 
@@ -147,8 +116,6 @@ of the standing-up animation. Dan Moment
 
 */
 
-
-
 // Hurtbox sprites
 hurtbox_spr         = asset_get("ex_guy_hurt_box");
 crouchbox_spr       = asset_get("ex_guy_crouch_box");
@@ -171,8 +138,37 @@ air_dodge_sound     = asset_get("sfx_quick_dodge");
 bubble_x = 0;
 bubble_y = 8;
 
+//================================================================
+// Character-specific assets init
+
+//Sprites
+spr_nspecial_proj = sprite_get("nspecial_proj");
+spr_example = sprite_get("example"); // sprites/example_stripX.png
+
+// SFX
+sfx_dbfz_kame_charge = sound_get("ARC_BTL_GKN_Kamehame_Chrg");
+sfx_dbfz_kame_fire = sound_get("ARC_BTL_GKN_Kamehame_Fire");
+sfx_dbfz_hit_weak = sound_get("ARC_BTL_CMN_Hit_Small-A");
+sfx_dbfz_hit_broken = sound_get("ARC_BTL_CMN_Hit_XLarge");
+sfx_dbfz_hit_jab3 = sound_get("ARC_BTL_GKN_Atk5A_3rd_Hit");
+
+// VFX
+vfx_ftilt_destroy = hit_fx_create(sprite_get("vfx_ftilt_destroy"), 12); // actually for nspecial, not ftilt
+vfx_nspecial_fire = hit_fx_create(sprite_get("vfx_nspecial_fire"), 16);
+
+// Variables
+has_goku_beam = true;
+doing_goku_beam = false;
+beam_newest_hbox = noone;
 
 
+
+
+
+
+
+
+//================================================================
 // MunoPhone Touch code - don't touch
 // should be at BOTTOM of file, but above any #define lines
 
