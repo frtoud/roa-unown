@@ -26,6 +26,7 @@ sprite_change_offset("tech", 32, 62);
 
 sprite_change_offset("idle_A", 32, 42);
 sprite_change_offset("jump_A", 32, 42);
+sprite_change_offset("turn_A", 32, 42);
 sprite_change_offset("prat_A", 32, 42);
 sprite_change_offset("attack_A", 32, 42, true);
 

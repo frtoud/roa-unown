@@ -1,25 +1,38 @@
 
 //================================================================
 // Forms initialization
-uno_form_data = [];
 // expected structure:
 /*
 {
-    left_sprites: { idle, turn, jump, hurt, bighurt, praftall }
-    right_sprites: either noone (symmetrical) or a set like left_sprites
+    letter: string
+    hurtbox: sprite
+    atk: number
+    right_sprites: { idle, turn, jump, hurt, bighurt, praftall }
+    left_sprites: either noone (symmetrical) or a set like right_sprites
 }
 */
+uno_form_data[28] = noone;
+make_letter_data( 1, "A", true,  AT_JAB,       noone);
 
-
-// A
-unown_form_data[1] = 
+//================================================================
+#define make_letter_data(number, letter, symmetry, index, hurtbox)
 {
-    left_sprites: {
-        idle: sprite_get("idle_A"),
-        jump: sprite_get("jump_A"),
-        prat: sprite_get("prat_A")
-    },
-    right_sprites: noone, //symmetrical
-    atk: AT_JAB
+    unown_form_data[number] = 
+    {
+        letter: letter,
+        hurtbox: hurtbox,
+        right_sprites: {
+            idle: sprite_get("idle_"+letter),
+            turn: sprite_get("turn_"+letter),
+            jump: sprite_get("jump_"+letter),
+            prat: sprite_get("prat_"+letter)
+        },
+        left_sprites: (symmetry ? noone : {
+            idle: sprite_get("idle_"+letter+"_left"),
+            turn: sprite_get("turn_"+letter+"_left"),
+            jump: sprite_get("jump_"+letter+"_left"),
+            prat: sprite_get("prat_"+letter+"_left")
+        }),
+        atk: index
+    }
 }
-

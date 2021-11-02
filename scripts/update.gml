@@ -15,16 +15,38 @@ if (lev_is_grounded)
     djumps = 0;
     has_walljump = true;
     has_airdodge = true;
-    if (state == PS_PRATFALL)
+
+    switch (state)
     {
-        set_state(PS_IDLE_AIR);
+        case PS_PRATFALL: 
+            //todo: add timer for simulated pratland
+            set_state(PS_IDLE_AIR);
+        break;
+
+        case PS_IDLE_AIR:
+            //simulated walkturn
+            if (left_down - right_down == unown_looking_dir)
+            && !(unown_turning_timer > 0)
+            {
+                unown_looking_dir *= -1;
+                unown_turning_timer = unown_turning_time_per_frame * 2;
+            }
+        break;
     }
 }
 
-if (!fast_falling && down_hard_pressed)
+if (!fast_falling && down_hard_pressed && !lev_is_grounded)
 {
     vsp = fast_fall;
     fast_falling = true;
+}
+
+unown_turning_timer = max(0, unown_turning_timer - 1);
+
+if (state == PS_IDLE_AIR)
+&& (unown_turning_timer == unown_turning_time_per_frame)
+{
+    spr_dir = unown_looking_dir;
 }
 
 //=============================================================================
