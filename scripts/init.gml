@@ -32,14 +32,14 @@ prat_fall_accel     = 0.85;		// 0.25 -  1.5
 air_friction        = 0.04;		// 0.02 -  0.07
 max_fall            = 10;		// 6    -  11
 fast_fall           = 14;		// 11   -  16
-gravity_speed       = 0.5;		// 0.3  -  0.6
-hitstun_grav        = 0.5;		// 0.45 -  0.53
+gravity_speed       = 0.3;		// 0.3  -  0.6
+hitstun_grav        = 0.45;		// 0.45 -  0.53
 
 // Jumps
 jump_start_time     = 5;		// 5                this stat is automatically decreased by 1 after init.gml (dan moment), so its "real value" is 4. if you change this during a match, 4 is the value you should reset it to
 jump_speed          = 11;		// 7.6  -  12       okay, zetter's is actually 10.99 but... come on
 short_hop_speed     = 6;		// 4    -  7.4
-djump_speed         = 10;		// 6    -  12       absa's is -1 because of her floaty djump
+djump_speed         = 8;		// 6    -  12       absa's is -1 because of her floaty djump
 djump_accel         = 0;		// -1.4 -  0        absa's is -1.4, all other chars are 0. only works if the   djump_accel_end_time   variable is also set. floaty djumps should be adjusted by feel based on your char's gravity
 djump_accel_end_time= 0;		//                  the amount of time that   djump_accel   is applied for
 max_djumps          = 3;		// 0    -  3        the 0 is elliana because she has hover instead
@@ -138,26 +138,6 @@ bubble_y = 8;
 
 //================================================================
 // Character-specific assets init
-
-//Sprites
-spr_nspecial_proj = sprite_get("nspecial_proj");
-spr_example = sprite_get("example"); // sprites/example_stripX.png
-
-// SFX
-sfx_dbfz_kame_charge = sound_get("ARC_BTL_GKN_Kamehame_Chrg");
-sfx_dbfz_kame_fire = sound_get("ARC_BTL_GKN_Kamehame_Fire");
-sfx_dbfz_hit_weak = sound_get("ARC_BTL_CMN_Hit_Small-A");
-sfx_dbfz_hit_broken = sound_get("ARC_BTL_CMN_Hit_XLarge");
-sfx_dbfz_hit_jab3 = sound_get("ARC_BTL_GKN_Atk5A_3rd_Hit");
-
-// VFX
-vfx_ftilt_destroy = hit_fx_create(sprite_get("vfx_ftilt_destroy"), 12); // actually for nspecial, not ftilt
-vfx_nspecial_fire = hit_fx_create(sprite_get("vfx_nspecial_fire"), 16);
-
-// Variables
-has_goku_beam = true;
-doing_goku_beam = false;
-beam_newest_hbox = noone;
 
 //================================================================
 // Forms
