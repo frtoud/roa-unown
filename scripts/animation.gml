@@ -15,8 +15,6 @@ if (unown_looking_dir < 0)
     //else; symmetrical. keep spr_dir behavior
 }
 
-print(get_state_name( state ));
-
 switch (state)
 {
     case PS_ATTACK_AIR:
