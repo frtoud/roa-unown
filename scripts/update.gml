@@ -31,7 +31,6 @@ if (!fast_falling && down_hard_pressed)
 #define do_levitate(lev_min, lev_mid, lev_max)
 {
     lev_is_grounded = false;
-        lev_status = "none"
     
     //cases where levitate turns off
     if (state_cat == SC_HITSTUN)
@@ -47,8 +46,6 @@ if (!fast_falling && down_hard_pressed)
     var mid_test = ground_test(lev_mid, check_plats);
     var high_test= ground_test(lev_max, check_plats);
     
-    var lerp_factor = min(1, lev_grounded_timer / 30.0);
-    
     if (low_test || mid_test || high_test)
     {
         lev_is_grounded = true;
@@ -59,17 +56,14 @@ if (!fast_falling && down_hard_pressed)
     
     if (low_test)
     {
-        lev_status = "low"
         vsp = max(-3, min(vsp - 2, 3))
     }
     else if (mid_test)
     {
-        lev_status = "mid"
         vsp = min(max(2, vsp/2), vsp - hoverspeed);
     }
     else if (high_test)
     {
-        lev_status = "high"
         vsp = max(min(-2, vsp/2), vsp + hoverspeed);
     }
     
