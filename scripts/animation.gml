@@ -28,12 +28,15 @@ switch (state)
         sprite_index = cur_form_sprites.jump;
         image_index = min(2, floor(state_timer/8))
     } break;
+    case PS_LAND:
     case PS_PRATFALL:
     {
         //sprite_index = cur_form_sprites.prat;
         //image_index = ?
     } break;
     default: print("encountered state " + get_state_name( state ));
+    case PS_SPAWN:
+    case PS_IDLE:
     case PS_IDLE_AIR:
     {
         sprite_index = cur_form_sprites.jump;
