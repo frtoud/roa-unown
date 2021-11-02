@@ -28,7 +28,7 @@ if (uno_lev_is_grounded)
     
     //cases where levitate turns off
     if (state_cat == SC_HITSTUN) return;
-    if (vsp < -8) return;
+    if (vsp < -4) return;
     
     var check_plats = true;//down_
     

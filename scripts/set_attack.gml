@@ -1,4 +1,7 @@
 
+attack = unown_form_data[1].atk;
+
+
 
 
 

@@ -67,9 +67,9 @@ dash_anim_speed     = 0.2;
 pratfall_anim_speed = 0.25;
 
 // Jumps
-double_jump_time    = 20;		// 24   -  40
+double_jump_time    = 12;		// 24   -  40
 walljump_time       = 18;		// 18   -  32
-wall_frames         = 2;		// may or may not actually work... dan pls
+wall_frames         = 1;		// may or may not actually work... dan pls
 
 // Parry
 dodge_startup_frames    = 1;
@@ -159,6 +159,14 @@ has_goku_beam = true;
 doing_goku_beam = false;
 beam_newest_hbox = noone;
 
+//================================================================
+// Forms
+//initializes unown_form_data
+unown_current_form = 1; // A = 1, B = 2, Z = 26, ! = 27, ? = 28
+unown_looking_dir = 1; //spr_dir is forced to 1, this is what controls unown's direction
+user_event(0);
+
+//================================================================
 // Levitation
 uno_lev_height_min = 24;
 uno_lev_height_mid = 32;
@@ -168,7 +176,6 @@ uno_lev_offset = 8;
 uno_lev_bypass = false; //set to TRUE to avoid levitation for your attack
 
 uno_lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
-uno_lev_looking_dir = 1; //spr_dir is forced to 1, this is what controls unown's direction
 
 
 
