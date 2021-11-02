@@ -148,15 +148,14 @@ user_event(0);
 
 //================================================================
 // Levitation
-uno_lev_height_min = 24;
+uno_lev_height_min = 16;
 uno_lev_height_mid = 32;
-uno_lev_height_max = 40;
+uno_lev_height_max = 48;
+uno_lev_offset = 8; //depends on current form
 
-uno_lev_offset = 8;
-uno_lev_bypass = false; //set to TRUE to avoid levitation for your attack
+lev_bypass = false; //set to TRUE to avoid levitation for your attack
 
-uno_lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
-
+lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
 
 
 

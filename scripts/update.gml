@@ -9,7 +9,7 @@ do_levitate(uno_lev_height_min + uno_lev_offset,
             uno_lev_height_mid + uno_lev_offset,
             uno_lev_height_max + uno_lev_offset);
 
-if (uno_lev_is_grounded)
+if (lev_is_grounded)
 {
     //reset once-per-airtime stuff!
     djumps = 0;
@@ -21,36 +21,62 @@ if (uno_lev_is_grounded)
     }
 }
 
+if (!fast_falling && down_hard_pressed)
+{
+    vsp = fast_fall;
+    fast_falling = true;
+}
+
 //=============================================================================
 #define do_levitate(lev_min, lev_mid, lev_max)
 {
-    uno_lev_is_grounded = false;
+    lev_is_grounded = false;
+        lev_status = "none"
     
     //cases where levitate turns off
-    if (state_cat == SC_HITSTUN) return;
-    if (vsp < -4) return;
-    
-    var check_plats = true;//down_
-    
-    if ground_test(lev_min, check_plats)
+    if (state_cat == SC_HITSTUN)
+    || (vsp < -4)
     {
-        uno_lev_is_grounded = true;
-        vsp = max(-3, min(vsp - gravity_speed - 0.5, 3))
+        return;
     }
-    else if ground_test(lev_mid, check_plats)
+    //else
+    
+    var check_plats = !down_down;
+    
+    var low_test = ground_test(lev_min, check_plats);
+    var mid_test = ground_test(lev_mid, check_plats);
+    var high_test= ground_test(lev_max, check_plats);
+    
+    var lerp_factor = min(1, lev_grounded_timer / 30.0);
+    
+    if (low_test || mid_test || high_test)
     {
-        uno_lev_is_grounded = true;
-        vsp = max(vsp - gravity_speed)
-    }
-    else if ground_test(lev_max, check_plats)
-    {
-        uno_lev_is_grounded = true;
-        vsp = max(-4, vsp - gravity_speed * 0.5)
+        lev_is_grounded = true;
+        vsp -= gravity_speed; //cancel gravity
     }
     
+    var hoverspeed = 0.20;
     
+    if (low_test)
+    {
+        lev_status = "low"
+        vsp = max(-3, min(vsp - 2, 3))
+    }
+    else if (mid_test)
+    {
+        lev_status = "mid"
+        vsp = min(max(2, vsp/2), vsp - hoverspeed);
+    }
+    else if (high_test)
+    {
+        lev_status = "high"
+        vsp = max(min(-2, vsp/2), vsp + hoverspeed);
+    }
+    
+    return;
 }
 
+//=============================================================================
 #define ground_test(ydist, check_plat)
 
 var val = place_meeting(x, y+ydist, asset_get("par_block"));
@@ -58,6 +84,8 @@ if (check_plat && !val)
 {
     var left_check = 18;
     var right_check = 18;
+    //can't use place_meeting here
+    //plats could screw detection by overlapping with top half of collider
     var val = (noone != collision_rectangle(x+left_check, y+1, x-right_check, y+ydist, 
                                             asset_get("par_jumpthrough"), true, true)
             && noone == collision_line(x+left_check, y-2, x-right_check, y-2, 
