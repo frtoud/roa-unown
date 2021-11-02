@@ -13,6 +13,7 @@
 */
 uno_form_data[28] = noone;
 make_letter_data( 1, "A", true,  AT_JAB,       noone);
+make_letter_data( 4, "D", false, AT_FTILT,     noone);
 
 //================================================================
 #define make_letter_data(number, letter, symmetry, index, hurtbox)

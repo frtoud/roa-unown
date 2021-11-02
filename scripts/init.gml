@@ -143,7 +143,7 @@ bubble_y = 8;
 // Forms
 
 user_event(0); //initializes unown_form_data
-unown_current_form = 1; // A = 1, B = 2, Z = 26, ! = 27, ? = 28
+unown_current_form = 4; // A = 1, B = 2, Z = 26, ! = 27, ? = 28
 unown_looking_dir = 1; //spr_dir is often forced to 1, this is what controls unown's direction
 unown_turning_timer = 0; //counts down
 unown_turning_time_per_frame = 6;

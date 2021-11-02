@@ -1,5 +1,6 @@
 
 attack = unown_form_data[1].atk;
+unown_current_form = 1;
 
 
 

@@ -30,6 +30,17 @@ sprite_change_offset("turn_A", 32, 42);
 sprite_change_offset("prat_A", 32, 42);
 sprite_change_offset("attack_A", 32, 42, true);
 
+sprite_change_offset("idle_D", 32, 42);
+sprite_change_offset("jump_D", 32, 42);
+sprite_change_offset("turn_D", 32, 42);
+sprite_change_offset("prat_D", 32, 42);
+sprite_change_offset("attack_D", 32, 42, true);
+sprite_change_offset("idle_D_left", 32, 42);
+sprite_change_offset("jump_D_left", 32, 42);
+sprite_change_offset("turn_D_left", 32, 42);
+sprite_change_offset("prat_D_left", 32, 42);
+sprite_change_offset("attack_D", 32, 42, true);
+
 
 sprite_change_offset("taunt", 64, 94);
 sprite_change_offset("phone_open", 32, 64);
