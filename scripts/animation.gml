@@ -17,6 +17,11 @@ switch (state)
         spr_dir = 1; //forced direction: Unown attacks are never flipped
         unown_turning_timer = unown_turning_time_per_frame + 1;
     } break;
+    case PS_HITSTUN:
+    case PS_HITSTUN_LAND:
+    {
+        sprite_index = cur_form_sprites.hurt;
+    } break;
     case PS_WALL_JUMP:
     case PS_DOUBLE_JUMP:
     {
@@ -33,6 +38,7 @@ switch (state)
     default: print("encountered state " + get_state_name( state ));
     case PS_SPAWN:
     case PS_IDLE:
+    case PS_TUMBLE:
     case PS_IDLE_AIR:
     {
         if (unown_turning_timer > 0)
