@@ -14,6 +14,18 @@ if (is_special_pressed(DIR_ANY))
                                                 O, O, O, 
                                                 O, O, O]);
 }
+else if (is_attack_pressed(DIR_ANY))
+{
+    dir_pressed.up = is_attack_pressed(DIR_UP);
+    dir_pressed.down = is_attack_pressed(DIR_DOWN);
+    dir_pressed.left = is_attack_pressed(DIR_LEFT);
+    dir_pressed.right = is_attack_pressed(DIR_RIGHT);
+    
+    with (UNOWN_ATK) // ATTACK pattern
+        target_attack = check_dir(dir_pressed, [H, O, H, 
+                                                H, O, H, 
+                                                H, O, H]);
+}
 else if (is_strong_pressed(DIR_ANY))
 {
     dir_pressed.up = is_strong_pressed(DIR_UP);
@@ -34,18 +46,6 @@ else if (strong_down)
     dir_pressed.right = right_down;
     
     with (UNOWN_ATK) 
-        target_attack = check_dir(dir_pressed, [A, O, A, 
-                                                O, A, O, 
-                                                A, O, A]);
-}
-else if (is_attack_pressed(DIR_ANY))
-{
-    dir_pressed.up = is_attack_pressed(DIR_UP);
-    dir_pressed.down = is_attack_pressed(DIR_DOWN);
-    dir_pressed.left = is_attack_pressed(DIR_LEFT);
-    dir_pressed.right = is_attack_pressed(DIR_RIGHT);
-    
-    with (UNOWN_ATK) // ATTACK pattern
         target_attack = check_dir(dir_pressed, [A, A, A, 
                                                 A, A, A, 
                                                 A, A, A]);
@@ -55,7 +55,6 @@ else if (taunt_pressed)
     target_attack = (down_down) ? UNOWN_ATK.A : UNOWN_ATK.O;
 }
 clear_button_buffer(PC_TAUNT_PRESSED);
-
 
 attack = unown_form_data[target_attack].atk;
 hurtbox_spr = unown_form_data[target_attack].hurtbox;
