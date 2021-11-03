@@ -9,7 +9,7 @@ if (is_special_pressed(DIR_ANY))
     dir_pressed.left = is_special_pressed(DIR_LEFT);
     dir_pressed.right = is_special_pressed(DIR_RIGHT);
     
-    with (UNOWN_ATK) 
+    with (UNOWN_ATK) // SPECIALS pattern
         target_attack = check_dir(dir_pressed, [O, O, O, 
                                                 O, O, O, 
                                                 O, O, O]);
@@ -21,33 +21,31 @@ else if (is_attack_pressed(DIR_ANY))
     dir_pressed.left = is_attack_pressed(DIR_LEFT);
     dir_pressed.right = is_attack_pressed(DIR_RIGHT);
     
-    with (UNOWN_ATK) // ATTACK pattern
+    with (UNOWN_ATK) // ATTACKS pattern
         target_attack = check_dir(dir_pressed, [H, O, H, 
                                                 H, O, H, 
                                                 H, O, H]);
 }
-else if (is_strong_pressed(DIR_ANY))
+else if (is_strong_pressed(DIR_ANY)) || (strong_down)
 {
-    dir_pressed.up = is_strong_pressed(DIR_UP);
-    dir_pressed.down = is_strong_pressed(DIR_DOWN);
-    dir_pressed.left = is_strong_pressed(DIR_LEFT);
-    dir_pressed.right = is_strong_pressed(DIR_RIGHT);
+    if (is_strong_pressed(DIR_ANY))
+    {
+        dir_pressed.up = is_strong_pressed(DIR_UP);
+        dir_pressed.down = is_strong_pressed(DIR_DOWN);
+        dir_pressed.left = is_strong_pressed(DIR_LEFT);
+        dir_pressed.right = is_strong_pressed(DIR_RIGHT);
+    }
+    else if (strong_down)
+    {
+        dir_pressed.up = up_down;
+        dir_pressed.down = down_down;
+        dir_pressed.left = left_down;
+        dir_pressed.right = right_down;
+    }
     
-    with (UNOWN_ATK) 
-        target_attack = check_dir(dir_pressed, [A, O, A, 
-                                                O, A, O, 
-                                                A, O, A]);
-}
-else if (strong_down)
-{
-    dir_pressed.up = up_down;
-    dir_pressed.down = down_down;
-    dir_pressed.left = left_down;
-    dir_pressed.right = right_down;
-    
-    with (UNOWN_ATK) 
+    with (UNOWN_ATK) //STRONGS pattern (NSTRONG should not be unique)
         target_attack = check_dir(dir_pressed, [A, A, A, 
-                                                A, A, A, 
+                                                X, X, X, 
                                                 A, A, A]);
 }
 else if (taunt_pressed)
