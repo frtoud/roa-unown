@@ -54,6 +54,18 @@ if (state == PS_IDLE_AIR)
     spr_dir = unown_looking_dir;
 }
 
+
+if (prev_spr_dir != spr_dir)
+&& (unown_form_data[unown_current_form].left_hurtbox != noone)
+{
+    hurtbox_spr = (spr_dir > 0) ? unown_form_data[unown_current_form].hurtbox
+                                : unown_form_data[unown_current_form].left_hurtbox;
+    if !(state == PS_ATTACK_GROUND && state == PS_ATTACK_AIR)
+    { hurtboxID.sprite_index = hurtbox_spr; }
+}
+
+prev_spr_dir = spr_dir;
+
 //=============================================================================
 #define do_levitate(lev_min, lev_mid, lev_max)
 {

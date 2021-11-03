@@ -58,6 +58,7 @@ clear_button_buffer(PC_TAUNT_PRESSED);
 
 
 attack = unown_form_data[target_attack].atk;
+hurtbox_spr = unown_form_data[target_attack].hurtbox;
 unown_current_form = target_attack;
 
 
