@@ -12,11 +12,12 @@
 }
 */
 uno_form_data[28] = noone;
-make_letter_data( 1, "A", true,  AT_JAB,       noone);
-make_letter_data( 4, "D", false, AT_FTILT,     noone);
+make_letter_data( 1, "A", true,  noone);
+make_letter_data( 4, "D", false, noone);
+make_letter_data(15, "O", true,  noone);
 
 //================================================================
-#define make_letter_data(number, letter, symmetry, index, hurtbox)
+#define make_letter_data(number, letter, symmetry, hurtbox)
 {
     var anim_list = [
     "idle", 
@@ -31,7 +32,7 @@ make_letter_data( 4, "D", false, AT_FTILT,     noone);
         hurtbox: hurtbox,
         right_sprites: {},
         left_sprites: (symmetry ? noone : {}),
-        atk: index
+        atk: number
     }
 
     unown_form_data[number] = data;
