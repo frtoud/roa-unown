@@ -18,22 +18,36 @@ make_letter_data( 4, "D", false, AT_FTILT,     noone);
 //================================================================
 #define make_letter_data(number, letter, symmetry, index, hurtbox)
 {
-    unown_form_data[number] = 
+    var anim_list = [
+    "idle", 
+    "hurt",
+    "turn",
+    "jump",
+    "prat"];
+
+    var data  = 
     {
         letter: letter,
         hurtbox: hurtbox,
-        right_sprites: {
-            idle: sprite_get("idle_"+letter),
-            turn: sprite_get("turn_"+letter),
-            jump: sprite_get("jump_"+letter),
-            prat: sprite_get("prat_"+letter)
-        },
-        left_sprites: (symmetry ? noone : {
-            idle: sprite_get("idle_"+letter+"_left"),
-            turn: sprite_get("turn_"+letter+"_left"),
-            jump: sprite_get("jump_"+letter+"_left"),
-            prat: sprite_get("prat_"+letter+"_left")
-        }),
+        right_sprites: {},
+        left_sprites: (symmetry ? noone : {}),
         atk: index
     }
+
+    unown_form_data[number] = data;
+
+    //offset change code here because I am lazy
+    for (var i = 0; i < array_length(anim_list); i++)
+    {
+        var spr_name = anim_list[i] + "_" + letter;
+        variable_instance_set(data.right_sprites, anim_list[i], sprite_get(spr_name));
+        sprite_change_offset(spr_name, 32, 42);
+
+        if (data.left_sprites != noone)
+        {
+            variable_instance_set(data.left_sprites, anim_list[i], sprite_get(spr_name+"_left"));
+            sprite_change_offset(spr_name+"_left", 32, 42);
+        }
+    }
+
 }
