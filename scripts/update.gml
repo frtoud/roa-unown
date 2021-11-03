@@ -41,6 +41,11 @@ if (!fast_falling && down_hard_pressed && !lev_is_grounded)
     fast_falling = true;
 }
 
+if (state_cat == SC_AIR_NEUTRAL) && taunt_pressed
+{
+    set_attack(AT_TAUNT);
+}
+
 unown_turning_timer = max(0, unown_turning_timer - 1);
 
 if (state == PS_IDLE_AIR)

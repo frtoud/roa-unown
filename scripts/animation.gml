@@ -43,7 +43,8 @@ switch (state)
         else
         {
             sprite_index = cur_form_sprites.jump;
-            image_index = 2;
+            //sprite_index = cur_form_sprites.idle;
+            image_index = 2; //0;
         }
     } break;
 }

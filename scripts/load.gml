@@ -8,6 +8,7 @@ sprite_change_offset("tech", 32, 62);
 
 sprite_change_offset("attack_A", 32, 42, true);
 sprite_change_offset("attack_D", 32, 42, true);
+sprite_change_offset("attack_O", 32, 42, true);
 
 
 sprite_change_offset("taunt", 64, 94);
