@@ -11,6 +11,7 @@ sprite_change_offset("hurtbox_O", 64, 84);
 
 sprite_change_offset("attack_A", 32, 42, true);
 sprite_change_offset("attack_D", 32, 42, true);
+sprite_change_offset("attack_H", 32, 42, true);
 sprite_change_offset("attack_O", 32, 42, true);
 
 
