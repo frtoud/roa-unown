@@ -115,7 +115,8 @@ of the standing-up animation. Dan Moment
 */
 
 // Hurtbox sprites
-hurtbox_spr         = asset_get("ex_guy_hurt_box");
+hurtbox_spr         = sprite_get("hurtbox_A");
+mask_index          = sprite_get("smol_mask");
 crouchbox_spr       = asset_get("ex_guy_crouch_box");
 air_hurtbox_spr     = -1; // -1 = use hurtbox_spr
 hitstun_hurtbox_spr = -1; // -1 = use hurtbox_spr
@@ -141,13 +142,14 @@ bubble_y = 8;
 
 //================================================================
 // Forms
-
+unown_form_data = [];
 user_event(0); //initializes unown_form_data
 unown_current_form = 4; // A = 1, B = 2, Z = 26, ! = 27, ? = 28
 unown_looking_dir = 1; //spr_dir is often forced to 1, this is what controls unown's direction
 unown_turning_timer = 0; //counts down
 unown_turning_time_per_frame = 6;
 
+prev_spr_dir = spr_dir;
 
 //================================================================
 // Levitation
