@@ -18,8 +18,11 @@ UNOWN_ATK = { A:1, B:2, C:3, D:4, E:5, F:6, G:7, H:8, I:9, J:10,K:11,L:12,M:13,N
 
 unown_form_data[28] = noone;
 make_letter_data( 1, "A", true,  sprite_get("hurtbox_A"), noone);
-make_letter_data( 4, "D", false, sprite_get("hurtbox_D"), noone);
+make_letter_data( 2, "B", false, sprite_get("hurtbox_A"), noone);
+make_letter_data( 4, "D", false, sprite_get("hurtbox_D"), sprite_get("hurtbox_D_left"));
 make_letter_data( 8, "H", false, sprite_get("hurtbox_O"), noone);
+make_letter_data( 9, "I", true,  sprite_get("hurtbox_I"), noone);
+make_letter_data(11, "K", false, sprite_get("hurtbox_I"), noone);
 make_letter_data(15, "O", true,  sprite_get("hurtbox_O"), noone);
 make_letter_data(24, "X", true,  sprite_get("hurtbox_X"), noone);
 
