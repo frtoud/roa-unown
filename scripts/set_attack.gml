@@ -11,8 +11,8 @@ if (is_special_pressed(DIR_ANY))
     
     with (UNOWN_ATK) // SPECIALS pattern
         target_attack = check_dir(dir_pressed, [O, O, O, 
-                                                O, O, O, 
-                                                O, O, O]);
+                                                I, I, I, 
+                                                B, B, B]);
 }
 else if (is_attack_pressed(DIR_ANY))
 {
@@ -22,9 +22,9 @@ else if (is_attack_pressed(DIR_ANY))
     dir_pressed.right = is_attack_pressed(DIR_RIGHT);
     
     with (UNOWN_ATK) // ATTACKS pattern
-        target_attack = check_dir(dir_pressed, [H, O, H, 
-                                                H, O, H, 
-                                                H, O, H]);
+        target_attack = check_dir(dir_pressed, [H, O, D, 
+                                                H, O, D, 
+                                                H, O, D]);
 }
 else if (is_strong_pressed(DIR_ANY)) || (strong_down)
 {
@@ -44,7 +44,7 @@ else if (is_strong_pressed(DIR_ANY)) || (strong_down)
     }
     
     with (UNOWN_ATK) //STRONGS pattern (NSTRONG should not be unique)
-        target_attack = check_dir(dir_pressed, [A, A, A, 
+        target_attack = check_dir(dir_pressed, [K, K, K, 
                                                 X, X, X, 
                                                 A, A, A]);
 }
