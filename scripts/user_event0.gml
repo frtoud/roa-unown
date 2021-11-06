@@ -20,6 +20,7 @@ unown_form_data[28] = noone;
 make_letter_data( 1, "A", true,  sprite_get("hurtbox_A"), noone);
 make_letter_data( 2, "B", false, sprite_get("hurtbox_A"), noone);
 make_letter_data( 4, "D", false, sprite_get("hurtbox_D"), sprite_get("hurtbox_D_left"));
+make_letter_data( 5, "E", false, sprite_get("hurtbox_D"), sprite_get("hurtbox_D_left"));
 make_letter_data( 8, "H", false, sprite_get("hurtbox_O"), noone);
 make_letter_data( 9, "I", true,  sprite_get("hurtbox_I"), noone);
 make_letter_data(11, "K", false, sprite_get("hurtbox_I"), noone);

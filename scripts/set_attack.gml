@@ -44,9 +44,9 @@ else if (is_strong_pressed(DIR_ANY)) || (strong_down)
     }
     
     with (UNOWN_ATK) //STRONGS pattern (NSTRONG should not be unique)
-        target_attack = check_dir(dir_pressed, [K, K, K, 
-                                                X, X, X, 
-                                                A, A, A]);
+        target_attack = check_dir(dir_pressed, [K, K, E, 
+                                                X, X, E, 
+                                                A, A, E]);
 }
 else if (taunt_pressed)
 {
