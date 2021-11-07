@@ -138,7 +138,7 @@ bubble_x = 0;
 bubble_y = 8;
 
 //================================================================
-// Character-specific assets init
+// Balancing
 
 //================================================================
 // Forms
@@ -162,8 +162,10 @@ lev_bypass = false; //set to TRUE to avoid levitation for your attack
 
 lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
 
-
-
+//================================================================
+//attack flags
+unown_i_angle = 90; //straight up
+unown_i_prongs_spr = sprite_get("attack_I_prong");
 
 
 //================================================================
