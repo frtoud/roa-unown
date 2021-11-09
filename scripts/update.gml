@@ -5,6 +5,8 @@ user_event(14);
 
 //if phone_cheats[CHEAT_FLY] && !shield_down vsp = -1;
 
+//=============================================================
+//Levitate
 do_levitate(uno_lev_height_min + uno_lev_offset,
             uno_lev_height_mid + uno_lev_offset,
             uno_lev_height_max + uno_lev_offset);
@@ -41,20 +43,23 @@ if (!fast_falling && down_hard_pressed && !lev_is_grounded)
     fast_falling = true;
 }
 
+//=============================================================
+
 if (state_cat == SC_AIR_NEUTRAL) && taunt_pressed
 {
     set_attack(AT_TAUNT);
 }
 
+//=============================================================
+//turning animation
 unown_turning_timer = max(0, unown_turning_timer - 1);
-
 if (state == PS_IDLE_AIR)
 && (unown_turning_timer == unown_turning_time_per_frame)
 {
     spr_dir = unown_looking_dir;
 }
 
-
+// assymetrical hurtboxes
 if (prev_spr_dir != spr_dir)
 && (unown_form_data[unown_current_form].left_hurtbox != noone)
 {
@@ -63,7 +68,6 @@ if (prev_spr_dir != spr_dir)
     if !(state == PS_ATTACK_GROUND && state == PS_ATTACK_AIR)
     { hurtboxID.sprite_index = hurtbox_spr; }
 }
-
 prev_spr_dir = spr_dir;
 
 //=============================================================================
@@ -72,13 +76,14 @@ prev_spr_dir = spr_dir;
     lev_is_grounded = false;
     
     //cases where levitate turns off
-    if (state_cat == SC_HITSTUN)
-    || (vsp < -4)
+    if (state_cat == SC_HITSTUN) || (vsp < -4)
+    || (state == PS_ATTACK_AIR || state == PS_ATTACK_GROUND) && lev_bypass
     {
         return;
     }
     //else
-    
+    lev_bypass = false;
+
     var check_plats = !down_down;
     
     var low_test = ground_test(lev_min, check_plats);

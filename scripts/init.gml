@@ -159,7 +159,7 @@ prev_spr_dir = spr_dir;
 uno_lev_height_min = 16;
 uno_lev_height_mid = 32;
 uno_lev_height_max = 48;
-uno_lev_offset = 8; //depends on current form
+uno_lev_offset = 0; //depends on current form
 
 lev_bypass = false; //set to TRUE to avoid levitation for your attack
 
@@ -169,7 +169,6 @@ lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
 //attack flags
 unown_i_angle = 90; //straight up
 unown_i_prongs_spr = sprite_get("attack_I_prong");
-
 
 //================================================================
 // MunoPhone Touch code - don't touch

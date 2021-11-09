@@ -1,11 +1,27 @@
 
+//reset flag: turn to TRUE explicitly in the attack
+lev_bypass = false;
+
 // per-attack logic
 switch(attack)
 {
 	//===========================
 	case 2: //B
 	{
-		
+		if (window == 2)
+		{
+			
+			if (!free)
+			{
+				window = 4;
+				window_timer = 0;
+			}
+			else
+			{
+				if (special_down) window_timer = 0;
+				lev_bypass = true;
+			}
+		}
 	} break;
 	//===========================
 	case 9: //I
