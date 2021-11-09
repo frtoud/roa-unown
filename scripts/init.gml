@@ -116,7 +116,6 @@ of the standing-up animation. Dan Moment
 
 // Hurtbox sprites
 hurtbox_spr         = sprite_get("hurtbox_A");
-mask_index          = sprite_get("smol_mask");
 crouchbox_spr       = asset_get("ex_guy_crouch_box");
 air_hurtbox_spr     = -1; // -1 = use hurtbox_spr
 hitstun_hurtbox_spr = -1; // -1 = use hurtbox_spr
@@ -136,6 +135,10 @@ air_dodge_sound     = asset_get("sfx_quick_dodge");
 // Visual offsets for when you're in Ranno's bubble
 bubble_x = 0;
 bubble_y = 8;
+
+//================================================================
+// Animation
+unown_eye_center_offset = 32; //positive means higher
 
 //================================================================
 // Balancing

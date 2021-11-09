@@ -48,18 +48,21 @@ make_letter_data(24, "X", true,  sprite_get("hurtbox_X"), noone);
     }
 
     unown_form_data[index] = data;
+    
+    var OFFSET_X = 32;
+    var OFFSET_Y = 48;
 
     //offset change code here because I am lazy
     for (var i = 0; i < array_length(anim_list); i++)
     {
         var spr_name = anim_list[i] + "_" + letter_str;
         variable_instance_set(data.right_sprites, anim_list[i], sprite_get(spr_name));
-        sprite_change_offset(spr_name, 32, 42);
+        sprite_change_offset(spr_name, OFFSET_X, OFFSET_Y);
 
         if (data.left_sprites != noone)
         {
             variable_instance_set(data.left_sprites, anim_list[i], sprite_get(spr_name+"_left"));
-            sprite_change_offset(spr_name+"_left", 32, 42);
+            sprite_change_offset(spr_name+"_left", OFFSET_X, OFFSET_Y);
         }
     }
 
