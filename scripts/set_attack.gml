@@ -10,9 +10,9 @@ if (is_special_pressed(DIR_ANY))
     dir_pressed.right = is_special_pressed(DIR_RIGHT);
     
     with (UNOWN_ATK) // SPECIALS pattern
-        target_attack = check_dir(dir_pressed, [O, O, O, 
-                                                I, I, I, 
-                                                B, B, B]);
+        target_attack = check_dir(dir_pressed, [G, Y, T, 
+                                                N, I, F, 
+                                                R, B, L]);
 }
 else if (is_attack_pressed(DIR_ANY))
 {
@@ -22,9 +22,9 @@ else if (is_attack_pressed(DIR_ANY))
     dir_pressed.right = is_attack_pressed(DIR_RIGHT);
     
     with (UNOWN_ATK) // ATTACKS pattern
-        target_attack = check_dir(dir_pressed, [H, O, D, 
+        target_attack = check_dir(dir_pressed, [C, M, V, 
                                                 H, O, D, 
-                                                H, O, D]);
+                                                J, U, S]);
 }
 else if (is_strong_pressed(DIR_ANY)) || (strong_down)
 {
@@ -44,13 +44,13 @@ else if (is_strong_pressed(DIR_ANY)) || (strong_down)
     }
     
     with (UNOWN_ATK) //STRONGS pattern (NSTRONG should not be unique)
-        target_attack = check_dir(dir_pressed, [K, K, E, 
+        target_attack = check_dir(dir_pressed, [Z, W, K, 
                                                 X, X, E, 
-                                                A, A, E]);
+                                                P, A, Q]);
 }
 else if (taunt_pressed)
 {
-    target_attack = (down_down) ? UNOWN_ATK.A : UNOWN_ATK.O;
+    target_attack = UNOWN_ATK.EM;
 }
 clear_button_buffer(PC_TAUNT_PRESSED);
 
