@@ -73,8 +73,8 @@ wall_frames         = 1;		// may or may not actually work... dan pls
 
 // Parry
 dodge_startup_frames    = 1;
-dodge_active_frames     = 2;
-dodge_recovery_frames   = 3;
+dodge_active_frames     = 0;
+dodge_recovery_frames   = 2;
 
 // Tech
 tech_active_frames      = 3;
@@ -87,7 +87,7 @@ techroll_recovery_frames    = 2;
 
 // Airdodge
 air_dodge_startup_frames    = 1;
-air_dodge_active_frames     = 4;
+air_dodge_active_frames     = 0;
 air_dodge_recovery_frames   = 2;
 
 // Roll
@@ -139,6 +139,7 @@ bubble_y = 8;
 //================================================================
 // Animation
 unown_eye_center_offset = 32; //positive means higher
+empty_spr = asset_get("empty_sprite");
 
 //================================================================
 // Balancing

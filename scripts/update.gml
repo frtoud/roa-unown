@@ -78,6 +78,7 @@ prev_spr_dir = spr_dir;
     //cases where levitate turns off
     if (state_cat == SC_HITSTUN) || (vsp < -4)
     || (state == PS_ATTACK_AIR || state == PS_ATTACK_GROUND) && lev_bypass
+    || (state == PS_AIR_DODGE) //allows wavedash
     {
         return;
     }

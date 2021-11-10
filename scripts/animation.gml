@@ -23,6 +23,7 @@ switch (state)
         sprite_index = cur_form_sprites.hurt;
     } break;
     case PS_WALL_JUMP:
+    case PS_WALL_TECH:
     case PS_DOUBLE_JUMP:
     {
         unown_looking_dir = spr_dir;
@@ -30,10 +31,16 @@ switch (state)
         image_index = min(2, floor(state_timer/8))
     } break;
     case PS_LAND:
+    case PS_WAVELAND:
     case PS_PRATFALL:
     {
         sprite_index = cur_form_sprites.prat;
         //image_index = ?
+    } break;
+    case PS_AIR_DODGE:
+    {
+        //yes, dodges use windows. Dan pls.
+        sprite_index = (window == 1) ? empty_spr : cur_form_sprites.jump;
     } break;
     default: print("encountered state " + get_state_name( state ));
     case PS_SPAWN:
