@@ -53,7 +53,7 @@ switch(attack)
 		     	{
 				    var mult_dist = (i % 2 == 0 ? 1 : -1) * floor((i+1)/2);
 				    set_hitbox_value(attack, i, HG_HITBOX_X, mult_dist * unit_x);
-				    set_hitbox_value(attack, i, HG_HITBOX_Y, -20 + mult_dist * unit_y);
+				    set_hitbox_value(attack, i, HG_HITBOX_Y, -unown_eye_center_offset + mult_dist * unit_y);
 		     	}
 		    }
 			else if (!joy_pad_idle)
