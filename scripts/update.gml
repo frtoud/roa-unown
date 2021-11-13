@@ -65,7 +65,7 @@ if (prev_spr_dir != spr_dir)
 {
     hurtbox_spr = (spr_dir > 0) ? unown_form_data[unown_current_form].hurtbox
                                 : unown_form_data[unown_current_form].left_hurtbox;
-    if !(state == PS_ATTACK_GROUND && state == PS_ATTACK_AIR)
+    if !(state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR)
     { hurtboxID.sprite_index = hurtbox_spr; }
 }
 prev_spr_dir = spr_dir;
@@ -74,42 +74,62 @@ prev_spr_dir = spr_dir;
 #define do_levitate(lev_min, lev_mid, lev_max)
 {
     lev_is_grounded = false;
+    var lev_prev_state = lev_state;
     
     //cases where levitate turns off
     if (state_cat == SC_HITSTUN) || (vsp < -4)
     || (state == PS_ATTACK_AIR || state == PS_ATTACK_GROUND) && lev_bypass
     || (state == PS_AIR_DODGE) //allows wavedash
     {
+        lev_state = 0;
+        if (lev_prev_state != 0) { lev_state_timer = 0; }
+                            else { lev_state_timer++; }
         return;
     }
     //else
     lev_bypass = false;
-
-    var check_plats = !down_down;
+    
+    var check_plats = !((lev_prev_state == 0 && down_down) || down_hard_pressed);
     
     var low_test = ground_test(lev_min, check_plats);
     var mid_test = ground_test(lev_mid, check_plats);
     var high_test= ground_test(lev_max, check_plats);
     
-    if (low_test || mid_test || high_test)
+    //0 aerial, 1 high-lev, 2 mid-lev, 3 low-lev
+    lev_state = (low_test + mid_test + high_test);
+    if (lev_prev_state != lev_state) { lev_state_timer = 0; }
+                                else { lev_state_timer++; }
+    
+    if (lev_state > 0)
     {
         lev_is_grounded = true;
         vsp -= gravity_speed; //cancel gravity
-    }
-    
-    var hoverspeed = 0.20;
-    
-    if (low_test)
-    {
-        vsp = max(-3, min(vsp - 2, 3))
-    }
-    else if (mid_test)
-    {
-        vsp = min(max(2, vsp/2), vsp - hoverspeed);
-    }
-    else if (high_test)
-    {
-        vsp = max(min(-2, vsp/2), vsp + hoverspeed);
+        
+        switch (lev_state)
+        {
+            case 1: //high: from negative to positive VSP
+            {
+                var target_vsp = min(lev_target_vsp, -lev_target_vsp + lev_state_timer * lev_target_accel);
+                vsp += (vsp >= target_vsp) ? lev_target_accel : 0.6 * gravity_speed;
+                
+                //unstuck from VSP 0
+                if (lev_prev_state == 2) 
+                { vsp = lerp(vsp, -lev_target_vsp, 0.35); }
+            }break;
+            case 2: //mid: from positive to negative VSP
+            {
+                var target_vsp = max(-lev_target_vsp, lev_target_vsp - lev_state_timer * lev_target_accel);
+                vsp -= (vsp <= target_vsp) ? lev_target_accel : 2 * gravity_speed;
+                
+                //unstuck from VSP 0
+                if (lev_prev_state == 1) 
+                { vsp = lerp(vsp, lev_target_vsp, 0.35); }
+            }break;
+            case 3: //low: hard negative pushback
+            {
+                vsp = max(-3, min(vsp - max(gravity_speed, min(2, vsp)), 6));
+            }break;
+        }
     }
     
     return;
