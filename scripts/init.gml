@@ -25,13 +25,13 @@ moonwalk_accel      = 1.3;		// 1.2  -  1.4
 // Air movement
 leave_ground_max    = 6;		// 4    -  8
 max_jump_hsp        = 6;		// 4    -  8
-air_max_speed       = 4;  		// 3    -  7
+air_max_speed       = 5;  		// 3    -  7
 jump_change         = 3;		// 3
-air_accel           = 0.3;		// 0.2  -  0.4
+air_accel           = 0.35;		// 0.2  -  0.4
 prat_fall_accel     = 0.85;		// 0.25 -  1.5
 air_friction        = 0.04;		// 0.02 -  0.07
-max_fall            = 10;		// 6    -  11
-fast_fall           = 14;		// 11   -  16
+max_fall            = 6;		// 6    -  11
+fast_fall           = 12;		// 11   -  16
 gravity_speed       = 0.3;		// 0.3  -  0.6
 hitstun_grav        = 0.45;		// 0.45 -  0.53
 
@@ -157,14 +157,27 @@ prev_spr_dir = spr_dir;
 
 //================================================================
 // Levitation
+
+//Parameters
+lev_amplitude = 30; // total range of motion
+lev_cycle_time = 40; //half a full up/down cycle
+
 uno_lev_height_min = 16;
 uno_lev_height_mid = 32;
 uno_lev_height_max = 48;
 uno_lev_offset = 0; //depends on current form
 
-lev_bypass = false; //set to TRUE to avoid levitation for your attack
 
+//Flags
+lev_bypass = false; //set to TRUE to avoid levitation for your attack
 lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
+
+// technical flags or derived from above
+lev_state = 0; //0 aerial, 1 high-lev, 2 mid-lev, 3 low-lev
+lev_state_timer = 0;
+//physics precalculations
+lev_target_vsp = (2.0 * lev_amplitude) / lev_cycle_time; print(lev_target_vsp);
+lev_target_accel = (2.0 * lev_target_vsp) / lev_cycle_time;
 
 //================================================================
 //attack flags

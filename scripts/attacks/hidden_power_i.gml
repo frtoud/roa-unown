@@ -33,7 +33,7 @@ set_hitbox_value(atk, 0, HG_HITBOX_X, unit_distance);
 set_hitbox_value(atk, 1, HG_HITBOX_TYPE, 1);
 set_hitbox_value(atk, 1, HG_WINDOW, 3);
 set_hitbox_value(atk, 1, HG_LIFETIME, 6);
-set_hitbox_value(atk, 1, HG_HITBOX_Y, -20 - unit_distance);
+set_hitbox_value(atk, 1, HG_HITBOX_Y, -unown_eye_center_offset - unit_distance);
 set_hitbox_value(atk, 1, HG_WIDTH, 24);
 set_hitbox_value(atk, 1, HG_HEIGHT, 24);
 set_hitbox_value(atk, 1, HG_PRIORITY, 2);
@@ -56,5 +56,5 @@ for (var i = 2; i <= 6; i++) //rest is identical
     
     //initial positioning
     var mult_dist = (i % 2 == 0 ? 1 : -1) * floor((i+1)/2);
-    set_hitbox_value(atk, i, HG_HITBOX_Y, -20 + mult_dist * unit_distance);
+    set_hitbox_value(atk, i, HG_HITBOX_Y, -unown_eye_center_offset + mult_dist * unit_distance);
 }
