@@ -5,7 +5,7 @@
 
 // STAT NAME		ZETTER VALUE   BASECAST RANGE   NOTES
 // Physical size
-char_height         = 52;       // cosmetic
+char_height         = 64;       // cosmetic
 knockback_adj       = 1;		// 0.9  -  1.2
 
 // Ground movement

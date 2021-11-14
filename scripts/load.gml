@@ -12,6 +12,7 @@ sprite_change_offset("attack_I_prong", 7, 49);
 sprite_change_offset("attack_K", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_M", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_O", OFFSET_X, OFFSET_Y, true);
+sprite_change_offset("attack_W", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_X", OFFSET_X, OFFSET_Y, true);
 
 sprite_change_offset("hurtbox_A", OFFSET_X*2, OFFSET_Y*2);
