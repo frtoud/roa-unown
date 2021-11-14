@@ -176,7 +176,7 @@ lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
 lev_state = 0; //0 aerial, 1 high-lev, 2 mid-lev, 3 low-lev
 lev_state_timer = 0;
 //physics precalculations
-lev_target_vsp = (2.0 * lev_amplitude) / lev_cycle_time; print(lev_target_vsp);
+lev_target_vsp = (2.0 * lev_amplitude) / lev_cycle_time;
 lev_target_accel = (2.0 * lev_target_vsp) / lev_cycle_time;
 
 //================================================================
