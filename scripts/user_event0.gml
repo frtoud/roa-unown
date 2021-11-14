@@ -24,6 +24,7 @@ make_letter_data( 5, "E", false, sprite_get("hurtbox_D"), sprite_get("hurtbox_D_
 make_letter_data( 8, "H", false, sprite_get("hurtbox_O"), noone);
 make_letter_data( 9, "I", true,  sprite_get("hurtbox_I"), noone);
 make_letter_data(11, "K", false, sprite_get("hurtbox_I"), noone);
+make_letter_data(13, "M", true,  sprite_get("hurtbox_O"), noone);
 make_letter_data(15, "O", true,  sprite_get("hurtbox_O"), noone);
 make_letter_data(24, "X", true,  sprite_get("hurtbox_X"), noone);
 
