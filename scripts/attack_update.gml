@@ -1,5 +1,5 @@
 
-//reset flag: turn to TRUE explicitly in the attack
+//reset flag: set to TRUE explicitly in the attack
 lev_bypass = false;
 
 // per-attack logic
@@ -8,20 +8,24 @@ switch(attack)
 	//===========================
 	case 2: //B
 	{
-		if (window == 2)
+		lev_bypass = window < 6;
+		if (!free && window < 4)
 		{
-			
-			if (!free)
-			{
-				window = 4;
-				window_timer = 0;
-			}
-			else
-			{
-				if (special_down) window_timer = 0;
-				lev_bypass = true;
-			}
+			window = 4;
+			window_timer = 0;
+			attack_end();
 		}
+		else if (window == 3)
+		{
+			if (special_down) window_timer = 0;
+		}
+		
+		//hold special to continue attack from window 5
+		set_window_value(attack, 5, AG_WINDOW_GOTO, special_down ? 3 : 0);
+		//only active when falling
+		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
+		
+		
 	} break;
 	//===========================
 	case 9: //I
