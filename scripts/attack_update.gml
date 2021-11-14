@@ -8,6 +8,8 @@ switch(attack)
 	//===========================
 	case 2: //B
 	{
+        can_wall_jump = (window == 3 || window == 6)
+
 		lev_bypass = window < 6;
 		if (!free && window < 4)
 		{
@@ -18,14 +20,13 @@ switch(attack)
 		else if (window == 3)
 		{
 			if (special_down) window_timer = 0;
+            do_faster_falling();
 		}
 		
 		//hold special to continue attack from window 5
 		set_window_value(attack, 5, AG_WINDOW_GOTO, special_down ? 3 : 0);
 		//only active when falling
 		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
-		
-		
 	} break;
 	//===========================
 	case 9: //I
@@ -76,3 +77,10 @@ switch(attack)
 }
 
 
+#define do_faster_falling()
+{
+    if (vsp >= max_fall && vsp < fast_fall)
+    {
+        vsp += gravity_speed;
+    }
+}
