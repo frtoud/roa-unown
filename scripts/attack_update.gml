@@ -73,6 +73,28 @@ switch(attack)
 		}
 	} break;
 	//===========================
+    case 20: //T
+    {
+        if (window == 1 && window_timer <= 1)
+        {
+            unown_t_times_through = 0;
+        }
+
+        if (window == 3) && (special_down)
+        {
+            //VSP boost
+            vsp -= 0.2;
+
+            if (unown_t_times_max > unown_t_times_through)
+            && (window_timer == get_window_value( attack, window, AG_WINDOW_LENGTH ))
+            {
+                window_timer = 0;
+                unown_t_times_through++;
+                attack_end();
+            }
+        }
+    }break;
+	//===========================
 	default: break;
 }
 

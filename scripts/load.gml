@@ -12,6 +12,7 @@ sprite_change_offset("attack_I_prong", 7, 49);
 sprite_change_offset("attack_K", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_M", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_O", OFFSET_X, OFFSET_Y, true);
+sprite_change_offset("attack_T", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_W", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_X", OFFSET_X, OFFSET_Y, true);
 
@@ -20,6 +21,7 @@ sprite_change_offset("hurtbox_D", OFFSET_X*2, OFFSET_Y*2);
 sprite_change_offset("hurtbox_D_left", OFFSET_X*2, OFFSET_Y*2);
 sprite_change_offset("hurtbox_I", OFFSET_X*2, OFFSET_Y*2);
 sprite_change_offset("hurtbox_O", OFFSET_X*2, OFFSET_Y*2);
+sprite_change_offset("hurtbox_T", OFFSET_X*2, OFFSET_Y*2);
 sprite_change_offset("hurtbox_X", OFFSET_X*2, OFFSET_Y*2);
 
 
