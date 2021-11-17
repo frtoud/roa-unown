@@ -62,9 +62,8 @@ switch (state)
         }
         else
         {
-            sprite_index = cur_form_sprites.jump;
-            //sprite_index = cur_form_sprites.idle;
-            image_index = 2; //0;
+            sprite_index = cur_form_sprites.idle;
+            image_index = 0;
         }
     } break;
 }
