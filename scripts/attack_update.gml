@@ -29,6 +29,14 @@ switch(attack)
 		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
 	} break;
 	//===========================
+	case 6: //F
+	{
+        if (window == 1)
+		{
+			set_window_value(attack, 1, AG_WINDOW_GOTO, (left_down ? 6 : 0));
+		}
+	} break;
+	//===========================
 	case 9: //I
 	{
 		if (window == 1 && window_timer == 1)

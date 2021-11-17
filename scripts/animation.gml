@@ -16,6 +16,13 @@ switch (state)
     {
         spr_dir = 1; //forced direction: Unown attacks are never flipped
         unown_turning_timer = unown_turning_time_per_frame + 1;
+        
+        if (attack == UNOWN_ATK.F)  && !hitpause
+        && (window == 3 || window == 7) && (window_timer == 0)
+        {
+            spawn_hit_fx(x + (window == 3 ? 36 : -36), y - 30, 14);
+        }
+        
     } break;
     case PS_HITSTUN:
     case PS_HITSTUN_LAND:
