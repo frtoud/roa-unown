@@ -184,6 +184,9 @@ lev_target_accel = (2.0 * lev_target_vsp) / lev_cycle_time;
 unown_i_angle = 90; //straight up
 unown_i_prongs_spr = sprite_get("attack_I_prong");
 
+unown_j_victim = noone;
+unown_j_positions = []; //target positions for grab (see Hidden Power)
+
 unown_t_times_through = 0; //number of loops made
 unown_t_times_max = 3;
 

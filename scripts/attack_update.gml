@@ -81,6 +81,35 @@ switch(attack)
 		}
 	} break;
 	//===========================
+	case 10: //J
+	{
+		if (window == 1)
+		{
+			unown_j_victim = noone;
+		}
+        else if (window == 4)
+		{
+			vsp *= 0.1; hsp *= 0.1;
+			lev_bypass = true;
+			
+			if (instance_exists(unown_j_victim))
+			{
+				//keep in hitpause
+				unown_j_victim.hitstop++;
+				
+				//lerp towards target pos
+				var array_index = min(array_length(unown_j_positions) - 1, window_timer);
+				unown_j_victim.x = 
+				   lerp(unown_j_victim.x, x + unown_j_positions[array_index].x, 0.35);
+				unown_j_victim.y =
+				   lerp(unown_j_victim.y, y + unown_j_positions[array_index].y 
+				                            + (unown_j_victim.char_height/2), 0.35);
+			}
+			else { unown_j_victim = noone; }
+		}
+		
+	} break;
+	//===========================
     case 20: //T
     {
         if (window == 1 && window_timer <= 1)
