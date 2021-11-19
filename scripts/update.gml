@@ -45,9 +45,26 @@ if (!fast_falling && down_hard_pressed && !lev_is_grounded)
 
 //=============================================================
 
-if (state_cat == SC_AIR_NEUTRAL) && taunt_pressed
+if (state_cat == SC_AIR_NEUTRAL && taunt_pressed)
 {
     set_attack(AT_TAUNT);
+}
+if (state == PS_AIR_DODGE && air_dodge_dir == 0 && window == 1)
+{
+    has_airdodge = false;
+    clear_button_buffer(PC_SHIELD_PRESSED);
+    //AT_EXTRA_1 is the parry.
+    var pseudogrounded = ground_test(uno_lev_height_max + uno_lev_offset, true);
+    //set_attack.gml is not called. Dan pls.
+    set_attack( pseudogrounded ? AT_EXTRA_1 : unown_form_data[UNOWN_ATK.QM].atk);
+    hurtbox_spr = unown_form_data[UNOWN_ATK.QM].hurtbox;
+    unown_current_form = UNOWN_ATK.QM;
+    //separate invincibility. DAN PLS
+    hurtboxID.dodging = false;
+    //this is what controls the white overlay!? DAN STAHP
+    hurtboxID.sprite_index = get_attack_value(attack, AG_HURTBOX_SPRITE);
+
+    lev_bypass = false; //failsafe
 }
 
 //=============================================================

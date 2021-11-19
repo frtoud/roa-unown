@@ -24,6 +24,7 @@ var hurt_I = sprite_get("hurtbox_I");
 var hurt_O = sprite_get("hurtbox_O");
 var hurt_T = sprite_get("hurtbox_T");
 var hurt_X = sprite_get("hurtbox_X");
+var hurt_EM = sprite_get("hurtbox_EM");
 
 unown_form_data[28] = noone;
 make_letter_data( 1, "A", { hurtbox:hurt_A });
@@ -54,7 +55,7 @@ make_letter_data(24, "X", { hurtbox:hurt_X });
 //make_letter_data(26, "Z", { hurtbox:hurt_X, asymmetric: true });
 
 //make_letter_data(27,"EM", { hurtbox:hurt_EM, typable:false, attack_index:AT_TAUNT });
-//make_letter_data(28,"QM", { hurtbox:hurt_EM, asymmetric: true, typable:false });
+make_letter_data(28,"QM", { hurtbox:hurt_EM, asymmetric: true, typable:false });
 
 //================================================================
 #define make_letter_data(index, letter_str, input_data)

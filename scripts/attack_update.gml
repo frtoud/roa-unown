@@ -132,6 +132,12 @@ switch(attack)
         }
     }break;
 	//===========================
+    case AT_EXTRA_1: //Pseudoparry
+    {
+        if (window == 1) perfect_dodging = true;
+        has_hit_player = perfect_dodged;
+    }break;
+	//===========================
 	default: break;
 }
 
