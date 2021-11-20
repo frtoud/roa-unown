@@ -110,6 +110,43 @@ switch(attack)
 		
 	} break;
 	//===========================
+	case 12: //L
+	{
+        can_wall_jump = (window == 3 || window == 6)
+
+		lev_bypass = !(window == 5 || window == 7);
+		if (window < 4)
+		{
+            if (!free)
+            {
+                window = 4;
+                window_timer = 0;
+                attack_end();
+                destroy_hitboxes();
+                shake_camera(12, 7);
+            }
+            else if (has_hit || has_hit_player)
+            {
+                window = 6;
+                window_timer = 0;
+                attack_end();
+                destroy_hitboxes();
+                has_hit_player = false;
+                has_hit = false;
+            }
+            else if (window == 3)
+            {
+                if (special_down) window_timer = 0;
+                do_faster_falling();
+            }
+		}
+		
+		//hold special to continue attack from window 6
+		set_window_value(attack, 6, AG_WINDOW_GOTO, special_down ? 3 : 0);
+		//only active when falling
+		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
+	} break;
+	//===========================
     case 20: //T
     {
         if (window == 1 && window_timer <= 1)

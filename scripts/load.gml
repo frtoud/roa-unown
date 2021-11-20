@@ -12,6 +12,7 @@ sprite_change_offset("attack_I", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_I_prong", 7, 49);
 sprite_change_offset("attack_J", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_K", OFFSET_X, OFFSET_Y, true);
+sprite_change_offset("attack_L", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_M", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_O", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_T", OFFSET_X, OFFSET_Y, true);
