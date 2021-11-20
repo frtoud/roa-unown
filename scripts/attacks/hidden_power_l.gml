@@ -142,3 +142,4 @@ set_hitbox_value(atk, 5, HG_WINDOW_CREATION_FRAME, 2);
 set_hitbox_value(atk, 5, HG_LIFETIME, 3);
 set_hitbox_value(atk, 5, HG_HITBOX_X, -80);
 set_hitbox_value(atk, 5, HG_HITBOX_Y, -4);
+set_hitbox_value(atk, 5, HG_EXTENDED_PARRY_STUN, 1);

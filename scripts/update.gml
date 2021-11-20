@@ -11,6 +11,21 @@ do_levitate(uno_lev_height_min + uno_lev_offset,
             uno_lev_height_mid + uno_lev_offset,
             uno_lev_height_max + uno_lev_offset);
 
+// "Pratland" time calculation
+if (state == PS_PRATFALL && state_timer == 0 && (lev_pratland_timer <= 0))
+{
+    lev_pratland_timer = prat_land_time;
+    if (parry_was_attacking) lev_pratland_timer += parry_stun_extra_time;
+    if (extended_parry_lag)
+    {
+        //parry stun goes from 60 to 100 frames based on distance (150 to 600)
+        lev_pratland_timer = clamp( (4/45.0) * parry_distance + (160.0/3.0), 60, 100)
+        lev_pratland_timer += (parry_was_attacking ? 10 : 0)
+    }
+
+    lev_pratland_timer = floor(lev_pratland_timer);
+}
+
 if (lev_is_grounded)
 {
     //reset once-per-airtime stuff!
@@ -21,8 +36,14 @@ if (lev_is_grounded)
     switch (state)
     {
         case PS_PRATFALL: 
-            //todo: add timer for simulated pratland
-            set_state(PS_IDLE_AIR);
+            if (lev_pratland_timer > 0) lev_pratland_timer--;
+            else 
+            {
+                lev_pratland_timer = 0;
+                set_state(PS_IDLE_AIR);
+                //Dan why isnt this reset smh
+                parry_was_attacking = false;
+            }
         break;
 
         case PS_IDLE_AIR:
@@ -37,6 +58,7 @@ if (lev_is_grounded)
     }
 }
 
+//universal fastfall
 if (!fast_falling && down_hard_pressed && !lev_is_grounded)
 {
     vsp = fast_fall;
@@ -44,11 +66,14 @@ if (!fast_falling && down_hard_pressed && !lev_is_grounded)
 }
 
 //=============================================================
-
+//Taunt input
 if (state_cat == SC_AIR_NEUTRAL && taunt_pressed)
 {
     set_attack(AT_TAUNT);
 }
+
+//=============================================================
+//Parry input
 if (state == PS_AIR_DODGE && air_dodge_dir == 0 && window == 1)
 {
     has_airdodge = false;

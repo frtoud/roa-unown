@@ -46,7 +46,8 @@ max_djumps          = 3;		// 0    -  3        the 0 is elliana because she has h
 walljump_hsp        = 7;		// 4    -  7
 walljump_vsp        = 8;		// 7    -  10
 land_time           = 4;		// 4    -  6
-prat_land_time      = 10;		// 3    -  24       zetterburn's is 3, but that's ONLY because his uspecial is so slow. safer up b (or other move) = longer pratland time to compensate
+prat_land_time      = 20;		// 3    -  24       zetterburn's is 3, but that's ONLY because his uspecial is so slow. safer up b (or other move) = longer pratland time to compensate
+parry_stun_extra_time = 40 - prat_land_time; //since Unown doesnt have conventional pratland
 
 // Shield-button actions
 wave_friction       = 0.12;		// 0    -  0.15
@@ -115,7 +116,7 @@ of the standing-up animation. Dan Moment
 */
 
 // Hurtbox sprites
-hurtbox_spr         = sprite_get("hurtbox_A");
+hurtbox_spr         = sprite_get("hurtbox_D");
 crouchbox_spr       = asset_get("ex_guy_crouch_box");
 air_hurtbox_spr     = -1; // -1 = use hurtbox_spr
 hitstun_hurtbox_spr = -1; // -1 = use hurtbox_spr
@@ -174,6 +175,7 @@ uno_lev_offset = 0; //depends on current form
 //Flags
 lev_bypass = false; //set to TRUE to avoid levitation for your attack
 lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
+lev_pratland_timer = 0; //prevents exiting pratfall if above zero & "landed", ticks down when landed
 
 // technical flags or derived from above
 lev_state = 0; //0 aerial, 1 high-lev, 2 mid-lev, 3 low-lev
