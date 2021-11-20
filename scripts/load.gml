@@ -20,6 +20,7 @@ sprite_change_offset("attack_W", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_X", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_dodge", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_parry", OFFSET_X, OFFSET_Y, true);
+sprite_change_offset("attack_hidden_power", OFFSET_X, 64, true);
 
 sprite_change_offset("hurtbox_A", OFFSET_X*2, OFFSET_Y*2);
 sprite_change_offset("hurtbox_D", OFFSET_X*2, OFFSET_Y*2);

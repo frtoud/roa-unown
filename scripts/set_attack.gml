@@ -48,7 +48,7 @@ else if (is_strong_pressed(DIR_ANY)) || (strong_down)
                                                 X, X, E, 
                                                 P, A, Q]);
 }
-else if (taunt_pressed)
+else if (taunt_pressed) //signal for !
 {
     target_attack = UNOWN_ATK.EM;
 }
