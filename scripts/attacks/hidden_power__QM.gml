@@ -8,9 +8,9 @@ set_attack_value(atk, AG_NUM_WINDOWS, 2);
 //active straight away
 set_window_value(atk, 1, AG_WINDOW_LENGTH, 12);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 4);
-set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 0);
-set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_spin"));
-set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 5);
+set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
+set_window_value(atk, 1, AG_WINDOW_SFX, unown_airdodge_sfx);
+set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 1);
 set_window_value(atk, 1, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(atk, 1, AG_WINDOW_HSPEED_TYPE, 1);
 
@@ -31,9 +31,10 @@ set_attack_value(atk, AG_NUM_WINDOWS, 2);
 //active straight away
 set_window_value(atk, 1, AG_WINDOW_LENGTH, 8);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 2);
-set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 0);
-set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_spin"));
-set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 5);
+set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
+set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_parry_use"));
+set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 0);
+set_window_value(atk, 1, AG_WINDOW_VSPEED_TYPE, 1);
 
 set_window_value(atk, 2, AG_WINDOW_LENGTH, 16);
 set_window_value(atk, 2, AG_WINDOW_ANIM_FRAMES, 4);

@@ -169,9 +169,18 @@ switch(attack)
         }
     }break;
 	//===========================
+    case 28: //?
+    {
+    	lev_bypass = true;
+    }break;
+	//===========================
     case AT_EXTRA_1: //Pseudoparry
     {
-        if (window == 1) perfect_dodging = true;
+        if (window == 1) 
+        {
+            perfect_dodging = true;
+            lev_bypass = true;
+        }
         has_hit_player = perfect_dodged;
     }break;
 	//===========================

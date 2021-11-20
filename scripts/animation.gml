@@ -71,6 +71,11 @@ switch (state)
     {
         //yes, dodges use windows. Dan pls.
         sprite_index = (window == 1) ? empty_spr : cur_form_sprites.jump;
+        if (window == 1 && window_timer == 0 && air_dodge_dir != 0 && !hitpause)
+        {
+            sound_play(unown_airdodge_sfx);
+            spawn_hit_fx( x, y - unown_eye_center_offset, unown_airdodge_vfx );
+        }
     } break;
     default: print("encountered state " + get_state_name( state ));
     case PS_SPAWN:
