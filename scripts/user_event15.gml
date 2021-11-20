@@ -67,7 +67,7 @@ MunoPhone Touch.
 
 // Character's name, used in a couple of places in the phone.
 // (if you delete this line, it'd just use the config.ini name)
-muno_char_name = "Sandbert";
+muno_char_name = "Unown";
 
 // Whether or not the phone sprite should recolor w/ your alt costume.
 // (set to "true" if you make a custom phone sprite in your char's colors)
@@ -88,7 +88,7 @@ phone.dont_fast = false;
 // If you're porting the phone to an existing char and don't need any of these
 // features, you might as well turn on lightweight to save a tiny bit of
 // performance. (see _docs.gml for a full list of what this disables)
-phone.lightweight = false;
+phone.lightweight = true;
 
 // If you've created custom AG_ or HG_ indexes for your character already,
 // use these to change where the phone starts assigning custom AG_s and HG_s.
