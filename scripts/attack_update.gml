@@ -19,12 +19,12 @@ switch(attack)
 		}
 		else if (window == 3)
 		{
-			if (special_down) window_timer = 0;
+			if (special_down && !was_parried) window_timer = 0;
             do_faster_falling();
 		}
 		
 		//hold special to continue attack from window 5
-		set_window_value(attack, 5, AG_WINDOW_GOTO, special_down ? 3 : 0);
+		set_window_value(attack, 5, AG_WINDOW_GOTO, (special_down && !was_parried) ? 3 : 0);
 		//only active when falling
 		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
 	} break;
@@ -136,13 +136,13 @@ switch(attack)
             }
             else if (window == 3)
             {
-                if (special_down) window_timer = 0;
+                if (special_down && !was_parried) window_timer = 0;
                 do_faster_falling();
             }
 		}
 		
 		//hold special to continue attack from window 6
-		set_window_value(attack, 6, AG_WINDOW_GOTO, special_down ? 3 : 0);
+		set_window_value(attack, 6, AG_WINDOW_GOTO, (special_down && !was_parried) ? 3 : 0);
 		//only active when falling
 		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
 	} break;

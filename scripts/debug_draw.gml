@@ -1,4 +1,9 @@
+
+
 exit;
+draw_debug_text(x+12, y+12, string(lev_pratland_timer));
+draw_debug_text(x+12, y+22, get_state_name( state ));
+
 
 
 draw_debug_text(x+12, y+12, string(lev_state) + " t:" + string(lev_state_timer) + " vsp:" + string(vsp));
