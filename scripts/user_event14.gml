@@ -1635,7 +1635,7 @@ if get_attack_value(attack, AG_MUNO_ATTACK_COOLDOWN) != 0 switch (get_attack_val
 		break;
 }
 
-if (attack == AT_TAUNT && joy_pad_idle && phone_practice) || attack == AT_PHONE{
+if (attack == AT_TAUNT && down_down && phone_practice) || attack == AT_PHONE{
 	attack = AT_PHONE;
 	with phone setPhoneState(1);
 	sound_play(phone.has_opened_yet ? sfx_pho_open : sfx_pho_power_on, false, 0);
