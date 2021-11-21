@@ -168,6 +168,8 @@ prev_spr_dir = spr_dir;
 lev_amplitude = 30; // total range of motion
 lev_cycle_time = 40; //half a full up/down cycle
 
+lev_airdodge_cooldown_max = 50;
+
 uno_lev_height_min = 16;
 uno_lev_height_mid = 32;
 uno_lev_height_max = 48;
@@ -178,6 +180,7 @@ uno_lev_offset = 0; //depends on current form
 lev_bypass = false; //set to TRUE to avoid levitation for your attack
 lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
 lev_pratland_timer = 0; //prevents exiting pratfall if above zero & "landed", ticks down when landed
+lev_airdodge_cooldown = 0; //prevents parry from being spammed by not restoring airdodge immediately
 
 // technical flags or derived from above
 lev_state = 0; //0 aerial, 1 high-lev, 2 mid-lev, 3 low-lev

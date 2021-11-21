@@ -31,7 +31,7 @@ if (lev_is_grounded)
     //reset once-per-airtime stuff!
     djumps = 0;
     has_walljump = true;
-    has_airdodge = true;
+    if (lev_airdodge_cooldown == 0) has_airdodge = true;
 
     switch (state)
     {
@@ -82,6 +82,8 @@ if (state == PS_AIR_DODGE && air_dodge_dir == 0 && window == 1)
     var pseudogrounded = ground_test(uno_lev_height_max + uno_lev_offset, true);
     //set_attack.gml is not called. Dan pls.
     set_attack( pseudogrounded ? AT_EXTRA_1 : unown_form_data[UNOWN_ATK.QM].atk);
+    if (pseudogrounded) lev_airdodge_cooldown = lev_airdodge_cooldown_max;
+    
     hurtbox_spr = unown_form_data[UNOWN_ATK.QM].hurtbox;
     unown_current_form = UNOWN_ATK.QM;
     //separate invincibility. DAN PLS
@@ -91,6 +93,8 @@ if (state == PS_AIR_DODGE && air_dodge_dir == 0 && window == 1)
 
     lev_bypass = false; //failsafe
 }
+
+lev_airdodge_cooldown = clamp(lev_airdodge_cooldown - 1, 0, lev_airdodge_cooldown_max);
 
 //=============================================================
 //turning animation
