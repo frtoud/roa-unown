@@ -47,7 +47,7 @@ make_letter_data(15, "O", { hurtbox:hurt_O });
 //make_letter_data(18, "R", { hurtbox:hurt_A, asymmetric: true });
 //make_letter_data(19, "S", { hurtbox:hurt_O, asymmetric: true });
 make_letter_data(20, "T", { hurtbox:hurt_T });
-//make_letter_data(21, "U", { hurtbox:hurt_O });
+make_letter_data(21, "U", { hurtbox:hurt_O });
 //make_letter_data(22, "V", { hurtbox:hurt_T, asymmetric: true });
 make_letter_data(23, "W", { hurtbox:hurt_T });
 make_letter_data(24, "X", { hurtbox:hurt_X });

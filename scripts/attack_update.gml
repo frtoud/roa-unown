@@ -209,6 +209,19 @@ switch(attack)
         }
     }break;
 	//===========================
+    case 21: //U
+    {
+        if (window == 1 && window_timer <= 1)
+        {
+            unown_u_bounced = false;
+        }
+        else if (!unown_u_bounced && has_hit && !hitpause)
+        {
+        	unown_u_bounced = true;
+        	vsp = min(-5, vsp -3);
+        }
+    }break;
+	//===========================
     case 28: //?
     {
     	lev_bypass = true;

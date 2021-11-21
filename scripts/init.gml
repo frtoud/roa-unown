@@ -197,6 +197,8 @@ unown_j_positions = []; //target positions for grab (see Hidden Power)
 unown_t_times_through = 0; //number of loops made
 unown_t_times_max = 3;
 
+unown_u_bounced = false;
+
 //================================================================
 // MunoPhone Touch code - don't touch
 // should be at BOTTOM of file, but above any #define lines
