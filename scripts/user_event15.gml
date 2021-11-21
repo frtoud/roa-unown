@@ -31,7 +31,7 @@ Set parameters that are used by the CSS drawing code.
 num_alts = 6;
 
 // Whether or not to display a name for each alt.
-use_alt_names = true;
+use_alt_names = false;
 
 // Which color slot in your char's colors.gml to use for certain UI elements.
 // Type "noone" to make it always white.
