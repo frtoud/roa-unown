@@ -4,6 +4,7 @@ var OFFSET_Y = 48;
     
 sprite_change_offset("attack_A", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_B", OFFSET_X, OFFSET_Y, true);
+sprite_change_offset("attack_C", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_D", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_E", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_F", OFFSET_X, OFFSET_Y, true);

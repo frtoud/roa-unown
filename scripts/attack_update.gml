@@ -29,6 +29,23 @@ switch(attack)
 		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
 	} break;
 	//===========================
+	case 3: //C
+	{
+        if (window == 1)
+        {
+            can_move = false;
+            hsp *= 0.85;
+            vsp *= 0.85;
+            lev_bypass = true;
+        }
+        else if (window == 2 || window == 3)
+		{
+            can_move = false;
+            lev_bypass = true;
+            move_cooldown[attack] = 60;
+		}
+	} break;
+	//===========================
 	case 6: //F
 	{
         if (window == 1)

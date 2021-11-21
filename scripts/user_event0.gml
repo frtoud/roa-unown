@@ -29,7 +29,7 @@ var hurt_EM = sprite_get("hurtbox_EM");
 unown_form_data[28] = noone;
 make_letter_data( 1, "A", { hurtbox:hurt_A });
 make_letter_data( 2, "B", { hurtbox:hurt_A, asymmetric: true });
-//make_letter_data( 3, "C", { hurtbox:hurt_O, asymmetric: true });
+make_letter_data( 3, "C", { hurtbox:hurt_O, asymmetric: true });
 make_letter_data( 4, "D", { hurtbox:hurt_D, asymmetric: true, left_hurtbox:hurt_D_left });
 make_letter_data( 5, "E", { hurtbox:hurt_D, asymmetric: true, left_hurtbox:hurt_D_left });
 make_letter_data( 6, "F", { hurtbox:hurt_F, asymmetric: true, left_hurtbox:hurt_F_left });

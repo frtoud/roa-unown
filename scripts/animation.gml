@@ -46,6 +46,12 @@ switch (state)
                 }
             }
         }
+        else if (attack == UNOWN_ATK.C) && !hitpause
+             && (window == 2 && window_timer == 0)
+        {
+            spawn_hit_fx( x+24, y-4, 125 );
+            sound_play(asset_get("sfx_ori_energyhit_heavy"));
+        }
     } break;
     case PS_HITSTUN:
     case PS_HITSTUN_LAND:
