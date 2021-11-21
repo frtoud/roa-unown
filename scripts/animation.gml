@@ -17,11 +17,26 @@ switch (state)
         spr_dir = 1; //forced direction: Unown attacks are never flipped
         unown_turning_timer = unown_turning_time_per_frame + 1;
         
-        if (attack == UNOWN_ATK.F)  && !hitpause
+//=============================================================================
+        if (attack == UNOWN_ATK.C) && !hitpause
+             && (window == 2 && window_timer == 0)
+        {
+            spawn_hit_fx( x+24, y-4, 125 );
+            sound_play(asset_get("sfx_ori_energyhit_heavy"));
+        }
+//=============================================================================
+        else if (attack == UNOWN_ATK.D) && (window == 2)
+        {
+            len = get_window_value(attack, window, AG_WINDOW_LENGTH);
+            image_index = (window_timer > len * 0.35 && window_timer < len * 0.65) ? 1 : 2;
+        }
+//=============================================================================
+        else if (attack == UNOWN_ATK.F)  && !hitpause
         && (window == 3 || window == 7) && (window_timer == 0)
         {
             spawn_hit_fx(x + (window == 3 ? 36 : -36), y - 30, 14);
         }
+//=============================================================================
         else if (attack == UNOWN_ATK.L) && (window == 4)
         {
             //shake_camera(12, 2);
@@ -46,12 +61,7 @@ switch (state)
                 }
             }
         }
-        else if (attack == UNOWN_ATK.C) && !hitpause
-             && (window == 2 && window_timer == 0)
-        {
-            spawn_hit_fx( x+24, y-4, 125 );
-            sound_play(asset_get("sfx_ori_energyhit_heavy"));
-        }
+//=============================================================================
     } break;
     case PS_HITSTUN:
     case PS_HITSTUN_LAND:

@@ -46,6 +46,21 @@ switch(attack)
 		}
 	} break;
 	//===========================
+	case 4: //D
+	{
+        if (window == 1)
+        {
+            vsp *= 0.85;
+        }
+        else if (window == 2)
+        {
+            vsp *= 0.45;
+            can_move = false;
+            if (hsp < unown_d_speed) hsp += unown_d_accel;
+            lev_bypass = true;
+        }
+	} break;
+	//===========================
 	case 6: //F
 	{
         if (window == 1)
