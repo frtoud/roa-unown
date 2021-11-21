@@ -69,6 +69,14 @@ switch(attack)
 		}
 	} break;
 	//===========================
+	case 8: //H
+	{
+        if (window == 2 && window_timer == 1 && attack_down && !hitpause)
+		{
+			hsp -= 4;
+		}
+	} break;
+	//===========================
 	case 9: //I
 	{
 		if (window == 1 && window_timer == 1)

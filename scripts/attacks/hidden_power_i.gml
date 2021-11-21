@@ -24,7 +24,7 @@ set_window_value(atk, 4, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(atk, 4, AG_WINDOW_ANIM_FRAME_START, 4);
 set_window_value(atk, 4, AG_WINDOW_HAS_WHIFFLAG, 1);
 
-set_num_hitboxes(atk, 6);
+set_num_hitboxes(atk, 8);
 
 //for positioning
 var unit_distance = 24;
@@ -47,7 +47,7 @@ set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 1, HG_VISUAL_EFFECT, 20);
 set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_absa_harderhit"));
 
-for (var i = 2; i <= 6; i++) //rest is identical
+for (var i = 2; i <= 8; i++) //rest is identical
 {
     set_hitbox_value(atk, i, HG_HITBOX_TYPE, 1);
     set_hitbox_value(atk, i, HG_PARENT_HITBOX, 1);
