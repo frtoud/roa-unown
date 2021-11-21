@@ -64,6 +64,7 @@ set_hitbox_value(atk, 2, HG_PROJECTILE_MASK, -1);
 set_hitbox_value(atk, 2, HG_PROJECTILE_HSPEED, 1);
 set_hitbox_value(atk, 2, HG_PROJECTILE_AIR_FRICTION, 0.1);
 set_hitbox_value(atk, 2, HG_PROJECTILE_GROUND_FRICTION, 0.1);
+set_hitbox_value(atk, 2, HG_PROJECTILE_DESTROY_EFFECT, 67);
 
 set_hitbox_value(atk, 3, HG_HITBOX_TYPE, 2);
 set_hitbox_value(atk, 3, HG_PARENT_HITBOX, 2);
