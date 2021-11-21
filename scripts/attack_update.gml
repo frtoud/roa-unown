@@ -187,6 +187,27 @@ switch(attack)
 		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
 	} break;
 	//===========================
+    case 17: //Q
+    {
+        if ((window == 3) || (window == 2 && has_hit_player))
+        && (strong_down)
+        {
+        	window = 4;
+        	window_timer = 0;
+        	hsp *= 0.75;
+        	vsp *= 0.75;
+        	//hitpause case
+        	old_hsp *= 0.75;
+        	old_vsp *= 0.75;
+        	destroy_hitboxes();
+        }
+        else if (window == 4)
+        {
+        	lev_bypass = true;
+        	vsp *= 0.75;
+        }
+    }break;
+	//===========================
     case 20: //T
     {
         if (window == 1 && window_timer <= 1)

@@ -20,7 +20,7 @@ sprite_change_offset("attack_M", OFFSET_X, OFFSET_Y, true);
 //sprite_change_offset("attack_N", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_O", OFFSET_X, OFFSET_Y, true);
 //sprite_change_offset("attack_P", OFFSET_X, OFFSET_Y, true);
-//sprite_change_offset("attack_Q", OFFSET_X, OFFSET_Y, true);
+sprite_change_offset("attack_Q", OFFSET_X, OFFSET_Y, true);
 //sprite_change_offset("attack_R", OFFSET_X, OFFSET_Y, true);
 //sprite_change_offset("attack_S", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_T", OFFSET_X, OFFSET_Y, true);
