@@ -135,6 +135,10 @@ if (unown_attack_is_fresh)
     if (state_cat == SC_HITSTUN) || (vsp < -4)
     || (state == PS_ATTACK_AIR || state == PS_ATTACK_GROUND) && lev_bypass
     || (state == PS_AIR_DODGE) //allows wavedash
+
+    || (state == PS_TECH_GROUND && window < 1) //allows teching
+    || (state == PS_TECH_BACKWARD && window < 2)
+    || (state == PS_TECH_FORWARD && window < 2)
     {
         lev_state = 0;
         if (lev_prev_state != 0) { lev_state_timer = 0; }

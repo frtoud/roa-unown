@@ -81,6 +81,14 @@ switch (state)
         sprite_index = cur_form_sprites.jump;
         image_index = min(2, floor(state_timer/8))
     } break;
+    case PS_TECH_GROUND:
+    case PS_TECH_FORWARD:
+    case PS_TECH_BACKWARD:
+    {
+        unown_looking_dir = spr_dir;
+        sprite_index = cur_form_sprites.jump;
+        image_index = 0;
+    } break;
     case PS_LAND:
     case PS_WAVELAND:
     case PS_PRATFALL:

@@ -56,7 +56,7 @@ roll_backward_max   = 9;		// 9    -  11       always the same as forward
 wave_land_time      = 8;		// 6    -  12
 wave_land_adj       = 1.3;		// 1.2  -  1.5      idk what zetterburn's is
 air_dodge_speed     = 7.5;		// 7.5  -  8
-techroll_speed      = 10;		// 8    -  11
+techroll_speed      = 6;		// 8    -  11
 
 // Animation Info
 
