@@ -224,6 +224,13 @@ with phone{
 		Shovel Knight's FSpecial and USpecial have no hitbox (meaning no gems are created), and he doesn't drop bags of gems on death.");
 }
 
+initTip("Under Construction", true);
+
+initWords("Um, Hi! you found the Munophone! It's pretty barebones at the moment, but if you want to parse through frame data, go ahead.");
+initWords("Come back later when it's fleshed out and customized!");
+
+
+/*
 initTip("Phone Controls", true);
 initWords(muno_char_name + ",");
 initWords("Thank you for your purchase of a MunoPhone Touch! Here are a couple of handy tips to get you started with your new smart device:");
@@ -235,6 +242,7 @@ initHeader("Taunting");
 initSection("In Practice Mode, for most characters, your taunt is replaced with opening the phone.");
 initSection("If you want to perform the normal taunt, you can hold any direction on the Control Stick and then press taunt!");
 initWords_ext("- Muno", fa_right, c_white, 0, 0);
+*/
 
 initPatch("About MunoPhone", "");
 initWords("MunoPhone Touch is the second version of a general-use utility released for RoA character devs to add to their mods.");
@@ -583,7 +591,7 @@ if (fps_real) < 60 && !phone_online && phone.utils_cur[phone.UTIL_FPS_WARN]{
 
 if phone_online && get_gameplay_time() < 300 draw_debug_text(10, 48, "ONLINE: Press the F1 key to enable Fast Graphics.");
 
-if !phone.has_opened_yet && phone_practice{
+if false && !phone.has_opened_yet && phone_practice{
 	var x_pos = 20;
 	var y_pos = view_get_hview() - 32 + (phone.state == 1) * phone.state_timer * 10;
 	textDraw(x_pos, y_pos, "fName", c_white, 100, 100, fa_left, 1, true, 1, "Taunt!", true);
