@@ -167,6 +167,11 @@ so that things like page breaks can work properly.
 
 #define CORE_tips
 
+initTip("Unown Alphabet");
+initImage_ext(sprite_get("unown_chart"), 0, fa_left, 1, 1, false, c_white, 1, false, noone, noone, noone, noone);
+
+
+/*
 initTip("NSpecial: Kamehameha");
 initWords("This Sandbert's NSpecial is completely different from the normal version of the character: it's Goku's Kamehameha!");
 initWords("The longer it's charged, the more distance it travels. The more distance it has left to travel by the time it reaches the enemy, the more damage and knockback it deals.");
@@ -206,7 +211,7 @@ initWords("Within a year, Sandbert became renowned not just in Air Nation but ac
 initWords_ext("Chapter 4", fa_center, c_gray, 0, false);
 initWords("Sandbert is a defender of the colossal Aetherian Forest. Deliberate and loyal, he is one of the infamous Wall Runners who patrol the Rock Wall. From their position atop the Wall, Sandbert and his fellow Runners defend both sides of the rock face and the forest below.");
 initWords("While normally slow because of their massive bodies, Wall Runners can curl up into balls and traverse the Wall at high speeds. Unlike other Wall Runners, Sandbert has the legendary ability to control the earth with his will. When in peril, Sandbert can summon the earth to aid him, and he repairs the Wall when it is under siege.");
-
+*/
 
 
 /*
@@ -459,46 +464,34 @@ Customise the Frame Data guide.
 
 // Reorder this list to change the order that moves appear in the guide!
 phone.move_ordering = [
-	AT_JAB,
-	AT_FTILT,
-	AT_DTILT,
-	AT_UTILT,
-	AT_DATTACK,
-	AT_FSTRONG,
-	AT_USTRONG,
-	AT_DSTRONG,
-	AT_FSTRONG_2,
-	AT_USTRONG_2,
-	AT_DSTRONG_2,
-	AT_NAIR,
-	AT_FAIR,
-	AT_BAIR,
-	AT_UAIR,
-	AT_DAIR,
-	AT_NSPECIAL,
-	AT_NSPECIAL_AIR,
-	AT_NSPECIAL_2,
-	AT_FSPECIAL,
-	AT_FSPECIAL_AIR,
-	AT_FSPECIAL_2,
-	AT_USPECIAL,
-	AT_USPECIAL_GROUND,
-	AT_USPECIAL_2,
-	AT_DSPECIAL,
-	AT_DSPECIAL_AIR,
-	AT_DSPECIAL_2,
-	AT_NTHROW,
-	AT_FTHROW,
-	AT_UTHROW,
-	AT_DTHROW,
-	AT_EXTRA_1,
-	AT_EXTRA_2,
-	AT_EXTRA_3,
-	AT_TAUNT,
-	AT_TAUNT_2,
-	AT_PHONE,
+	1,
 	2,
 	3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
 	39,
 	42,
 	43,

@@ -81,6 +81,14 @@ switch (state)
         sprite_index = cur_form_sprites.jump;
         image_index = min(2, floor(state_timer/8))
     } break;
+    case PS_TECH_GROUND:
+    case PS_TECH_FORWARD:
+    case PS_TECH_BACKWARD:
+    {
+        unown_looking_dir = spr_dir;
+        sprite_index = cur_form_sprites.jump;
+        image_index = 0;
+    } break;
     case PS_LAND:
     case PS_WAVELAND:
     case PS_PRATFALL:
@@ -98,11 +106,15 @@ switch (state)
             spawn_hit_fx( x, y - unown_eye_center_offset, unown_airdodge_vfx );
         }
     } break;
-    default: print("encountered state " + get_state_name( state ));
+    default: 
+        print("encountered state " + get_state_name( state ));
+        sprite_index = cur_form_sprites.idle;
+        image_index = 0;
+        break; //implicit !? I shouldnt need the above lines to set sprite index ideally
     case PS_SPAWN:
     case PS_IDLE:
-    case PS_TUMBLE:
     case PS_IDLE_AIR:
+    case PS_TUMBLE:
     {
         if (unown_turning_timer > 0)
         {

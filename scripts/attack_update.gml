@@ -261,6 +261,9 @@ switch(attack)
 	default: break;
 }
 
+//prevent attacks from being able to land on platforms when the inputs are there to go through
+fall_through = (down_down) && (!lev_bypass);
+
 
 #define do_faster_falling()
 {
