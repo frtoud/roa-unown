@@ -221,7 +221,13 @@ unown_attack_is_fresh = false; //wether an attack is recent or not (if true, wil
 unown_best_word_pos = 0;
 unown_best_word_length = 0;
 
-unown_dictionary = {}; //filled in later
+unown_dictionary = {}; //misnomer: actually a trie
+with (oPlayer) if (self != other) && ("unown_dictionary" in self)
+{ 
+    with (other) print("taken from " + string(other.id));
+    other.unown_dictionary = unown_dictionary;
+    break;
+}
 
 //================================================================
 // MunoPhone Touch code - don't touch

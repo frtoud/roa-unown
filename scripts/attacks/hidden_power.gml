@@ -21,9 +21,7 @@ set_window_value(atk, 3, AG_WINDOW_ANIM_FRAME_START, 4);
 set_num_hitboxes(atk, 0);
 
 //todo: move these active windows definition to their respective files
-set_window_value(UNOWN_ATK.A, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 set_window_value(UNOWN_ATK.B, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-set_window_value(UNOWN_ATK.C, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 set_window_value(UNOWN_ATK.D, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 set_window_value(UNOWN_ATK.E, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 set_window_value(UNOWN_ATK.F, 3, AG_UNOWN_WINDOW_ACTIVE, true);
