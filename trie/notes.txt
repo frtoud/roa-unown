@@ -1,0 +1,1 @@
+maximum size that still fits in an attack script seems to be between 53Kb and 60Kb
