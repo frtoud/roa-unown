@@ -34,7 +34,7 @@ def _output_subfiles(letter, letter_trie, file):
 
     max_size = (50 * 1028) #Bytes
 
-    for subletter in "aeiou":
+    for subletter in "oaeiu":
         with open("output/result_"+letter+subletter+".json", "w") as subfile:
             json.dump(trie[letter][subletter], subfile)
         
@@ -50,8 +50,13 @@ def _output_subfiles(letter, letter_trie, file):
     
 
 if __name__ == "__main__":
-    text = Path("words_popular.txt").read_text(errors="ignore")
-    words = text.split("\n")
+
+    words = []
+
+    for source in ["words_popular", "pokemon_names"]:
+        text = Path(source+".txt").read_text(errors="ignore")
+        words += text.split("\n")
+       
     trie = make_trie(words)
 
     import json
