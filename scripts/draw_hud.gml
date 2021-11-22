@@ -2,6 +2,8 @@
 if "phone" not in self exit;
 
 
+draw_debug_text(temp_x, temp_y-12, string_upper(unown_text_buffer));
+
 
 // MunoPhone Touch code - don't touch
 // should be at BOTTOM of file, but above any #define lines

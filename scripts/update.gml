@@ -83,6 +83,7 @@ if (state == PS_AIR_DODGE && air_dodge_dir == 0 && window == 1)
     //set_attack.gml is not called. Dan pls.
     set_attack( pseudogrounded ? AT_EXTRA_1 : unown_form_data[UNOWN_ATK.QM].atk);
     if (pseudogrounded) lev_airdodge_cooldown = lev_airdodge_cooldown_max;
+    unown_attack_is_fresh = true;
     
     hurtbox_spr = unown_form_data[UNOWN_ATK.QM].hurtbox;
     unown_current_form = UNOWN_ATK.QM;
@@ -115,6 +116,14 @@ if (prev_spr_dir != spr_dir)
     { hurtboxID.sprite_index = hurtbox_spr; }
 }
 prev_spr_dir = spr_dir;
+
+//=============================================================================
+//Word typing
+if (unown_attack_is_fresh)
+{
+    user_event(1);
+}
+
 
 //=============================================================================
 #define do_levitate(lev_min, lev_mid, lev_max)
@@ -191,10 +200,10 @@ if (check_plat && !val)
     var right_check = 18;
     //can't use place_meeting here
     //plats could screw detection by overlapping with top half of collider
-    var val = (noone != collision_rectangle(x+left_check, y+1, x-right_check, y+ydist, 
-                                            asset_get("par_jumpthrough"), true, true)
-            && noone == collision_line(x+left_check, y-2, x-right_check, y-2, 
-                                       asset_get("par_jumpthrough"), true, true));
+    val = (noone != collision_rectangle(x+left_check, y+1, x-right_check, y+ydist, 
+                                        asset_get("par_jumpthrough"), true, true)
+        && noone == collision_line(x+left_check, y-2, x-right_check, y-2, 
+                                   asset_get("par_jumpthrough"), true, true));
 }
 
 return val;

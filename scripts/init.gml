@@ -138,6 +138,16 @@ bubble_x = 0;
 bubble_y = 8;
 
 //================================================================
+// Custom grid indexes (use 70-79 range, not to disturb Rivals or Munophone)
+
+AG_UNOWN_WINDOW_ACTIVE = 70; //set to TRUE to note an active window, first active window encountered will add the current letter to the buffer
+
+//window length bonuses
+
+//damage bonuses
+//kb bonuses
+
+//================================================================
 // Animation
 unown_eye_center_offset = 32; //positive means higher
 empty_spr = asset_get("empty_sprite");
@@ -201,6 +211,17 @@ unown_t_times_through = 0; //number of loops made
 unown_t_times_max = 3;
 
 unown_u_bounced = false;
+
+//================================================================
+// Pokémon Teaches Typing
+unown_text_buffer = "";
+unown_text_maxlength = 16; //max number of characters on the buffer
+unown_attack_is_fresh = false; //wether an attack is recent or not (if true, will add a letter when it reaches an active window)
+
+unown_best_word_pos = 0;
+unown_best_word_length = 0;
+
+unown_dictionary = {}; //filled in later
 
 //================================================================
 // MunoPhone Touch code - don't touch
