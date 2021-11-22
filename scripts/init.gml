@@ -123,7 +123,7 @@ hitstun_hurtbox_spr = -1; // -1 = use hurtbox_spr
 
 // Victory
 set_victory_bg(sprite_get("victory_background")); // victory_background.png
-set_victory_theme(sound_get("victory_theme")); // victory_theme.ogg
+set_victory_theme(sound_get("victory")); // victory.ogg
 
 // Movement SFX
 land_sound          = asset_get("sfx_land_light");
