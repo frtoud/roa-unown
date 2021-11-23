@@ -52,7 +52,7 @@ make_letter_data(22, "V", { hurtbox:hurt_T, asymmetric: true });
 make_letter_data(23, "W", { hurtbox:hurt_T });
 make_letter_data(24, "X", { hurtbox:hurt_X });
 //make_letter_data(25, "Y", { hurtbox:hurt_A });
-//make_letter_data(26, "Z", { hurtbox:hurt_X, asymmetric: true });
+make_letter_data(26, "Z", { hurtbox:hurt_X, asymmetric: true });
 
 make_letter_data(27,"EM", { hurtbox:hurt_EM, typable:false, attack_index:AT_TAUNT });
 make_letter_data(28,"QM", { hurtbox:hurt_EM, typable:false, asymmetric: true });
