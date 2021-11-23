@@ -204,7 +204,7 @@ switch(attack)
         else if (window == 4)
         {
         	lev_bypass = true;
-        	vsp *= 0.75;
+        	vsp *= 0.55;
         }
     }break;
 	//===========================

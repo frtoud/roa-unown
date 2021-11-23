@@ -22,7 +22,7 @@ set_window_value(atk, 3, AG_WINDOW_ANIM_FRAME_START, 4);
 set_window_value(atk, 3, AG_WINDOW_GOTO, 7); //ends move early
 
 //Hit 2 pre
-set_window_value(atk, 4, AG_WINDOW_LENGTH, 8);
+set_window_value(atk, 4, AG_WINDOW_LENGTH, 12);
 set_window_value(atk, 4, AG_WINDOW_ANIM_FRAMES, 1);
 set_window_value(atk, 4, AG_WINDOW_ANIM_FRAME_START, 5);
 set_window_value(atk, 4, AG_WINDOW_HAS_SFX, 1);
@@ -30,6 +30,7 @@ set_window_value(atk, 4, AG_WINDOW_SFX, asset_get("sfx_swipe_weak1"));
 set_window_value(atk, 4, AG_WINDOW_SFX_FRAME, get_window_value(atk, 4, AG_WINDOW_LENGTH) - 1);
 //Hit 2 active
 set_window_value(atk, 5, AG_WINDOW_LENGTH, 6);
+set_window_value(atk, 5, AG_WINDOW_VSPEED, -5);
 set_window_value(atk, 5, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(atk, 5, AG_WINDOW_ANIM_FRAME_START, 6);
 //Hit 2 endlag
