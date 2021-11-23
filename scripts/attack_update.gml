@@ -243,6 +243,20 @@ switch(attack)
         }
     }break;
 	//===========================
+    case 22: //V
+    {
+        if (window == 2 && has_hit)
+        {
+        	window = 4;
+        	window_timer = 0;
+        	destroy_hitboxes();
+        }
+        else if (window == 4 && !hitpause)
+        {
+        	vsp = max(fast_fall, vsp);
+        }
+    }break;
+	//===========================
     case 28: //?
     {
     	lev_bypass = true;

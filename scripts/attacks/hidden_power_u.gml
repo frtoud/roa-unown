@@ -56,4 +56,4 @@ set_hitbox_value(atk, 2, HG_BASE_KNOCKBACK, 9);
 set_hitbox_value(atk, 2, HG_KNOCKBACK_SCALING, 0);
 set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 4);
 set_hitbox_value(atk, 2, HG_HITPAUSE_SCALING, .35);
-set_hitbox_value(atk, 2, HG_HIT_SFX, sound_get("sonic_bumper"));
+set_hitbox_value(atk, 2, HG_HIT_SFX, sound_get("ssbb_bumper"));
