@@ -143,3 +143,12 @@ set_hitbox_value(atk, 5, HG_LIFETIME, 3);
 set_hitbox_value(atk, 5, HG_HITBOX_X, -80);
 set_hitbox_value(atk, 5, HG_HITBOX_Y, -4);
 set_hitbox_value(atk, 5, HG_EXTENDED_PARRY_STUN, 1);
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.L, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("l" not in unown_dictionary) unown_dictionary.l = make_trie_L();
+//================================================================
+//contains words starting with L
+#define make_trie_L()
+    return {};

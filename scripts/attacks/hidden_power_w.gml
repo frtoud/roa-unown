@@ -55,3 +55,12 @@ set_hitbox_value(atk, 2, HG_KNOCKBACK_SCALING, .85);
 set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 4);
 set_hitbox_value(atk, 2, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 2, HG_HIT_SFX, asset_get("sfx_blow_heavy2"));
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.W, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("w" not in unown_dictionary) unown_dictionary.w = make_trie_W();
+//================================================================
+//contains words starting with W
+#define make_trie_W()
+    return {};

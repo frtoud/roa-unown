@@ -36,3 +36,12 @@ set_hitbox_value(atk, 1, HG_KNOCKBACK_SCALING, .15);
 set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.M, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("m" not in unown_dictionary) unown_dictionary.m = make_trie_M();
+//================================================================
+//contains words starting with M
+#define make_trie_M()
+    return {};

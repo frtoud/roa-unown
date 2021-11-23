@@ -57,3 +57,12 @@ set_hitbox_value(atk, 2, HG_KNOCKBACK_SCALING, 0);
 set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 4);
 set_hitbox_value(atk, 2, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 2, HG_HIT_SFX, sound_get("ssbb_bumper"));
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.U, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("u" not in unown_dictionary) unown_dictionary.u = make_trie_U();
+//================================================================
+//contains words starting with U
+#define make_trie_U()
+    return {};

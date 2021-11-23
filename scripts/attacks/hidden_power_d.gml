@@ -87,3 +87,12 @@ set_hitbox_value(atk, 5, HG_WINDOW_CREATION_FRAME, 15);
 set_hitbox_value(atk, 5, HG_LIFETIME, 6);
 set_hitbox_value(atk, 5, HG_HITBOX_X, -12);
 set_hitbox_value(atk, 5, HG_HITBOX_Y, -28);
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.D, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("d" not in unown_dictionary) unown_dictionary.d = make_trie_D();
+//================================================================
+//contains words starting with D
+#define make_trie_D()
+    return {};

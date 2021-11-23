@@ -58,3 +58,12 @@ for (var i = 2; i <= 8; i++) //rest is identical
     var mult_dist = (i % 2 == 0 ? 1 : -1) * floor((i+1)/2);
     set_hitbox_value(atk, i, HG_HITBOX_Y, -unown_eye_center_offset + mult_dist * unit_distance);
 }
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.I, 3, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("i" not in unown_dictionary) unown_dictionary.i = make_trie_I();
+//================================================================
+//contains words starting with I
+#define make_trie_I()
+    return {};

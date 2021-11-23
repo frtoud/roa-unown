@@ -111,3 +111,13 @@ for (var i = 1; i <= 2; i++)
     set_hitbox_value(atk, i+2, HG_PROJECTILE_AIR_FRICTION, 0);
     set_hitbox_value(atk, i+2, HG_PROJECTILE_GROUND_FRICTION, 0);
 }
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.F, 3, AG_UNOWN_WINDOW_ACTIVE, true);
+set_window_value(UNOWN_ATK.F, 7, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("f" not in unown_dictionary) unown_dictionary.f = make_trie_F();
+//================================================================
+//contains words starting with F
+#define make_trie_F()
+    return {};

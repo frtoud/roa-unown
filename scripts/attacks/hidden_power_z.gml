@@ -78,8 +78,8 @@ set_hitbox_value(atk, 3, HG_HIT_SFX, asset_get("sfx_leafy_hit1"));
 //================================================================
 //WORD DATA
 set_window_value(UNOWN_ATK.Z, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-if ("z" not in unown_dictionary) unown_dictionary.z = make_trie();
+if ("z" not in unown_dictionary) unown_dictionary.z = make_trie_Z();
 //================================================================
 //contains words starting with Z
-#define make_trie()
+#define make_trie_Z()
     return {};

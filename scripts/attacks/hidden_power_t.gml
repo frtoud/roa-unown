@@ -119,3 +119,12 @@ set_hitbox_value(atk, 6, HG_BASE_HITPAUSE, 4);
 set_hitbox_value(atk, 6, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 6, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
 set_hitbox_value(atk, 6, HG_HITBOX_GROUP, 3);
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.T, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("t" not in unown_dictionary) unown_dictionary.t = make_trie_T();
+//================================================================
+//contains words starting with T
+#define make_trie_T()
+    return {};

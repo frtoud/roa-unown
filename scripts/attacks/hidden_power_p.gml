@@ -60,8 +60,8 @@ set_hitbox_value(atk, 2, HG_HIT_SFX, asset_get("sfx_poison_hit_strong"));
 //================================================================
 //WORD DATA
 set_window_value(UNOWN_ATK.P, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-if ("p" not in unown_dictionary) unown_dictionary.p = make_trie();
+if ("p" not in unown_dictionary) unown_dictionary.p = make_trie_P();
 //================================================================
 //contains words starting with P
-#define make_trie()
+#define make_trie_P()
     return {};

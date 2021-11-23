@@ -106,3 +106,12 @@ set_hitbox_value(atk, 4, HG_BASE_HITPAUSE, 6);
 set_hitbox_value(atk, 4, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 4, HG_HIT_SFX, asset_get("sfx_infinidagger"));
 set_hitbox_value(atk, 4, HG_HITBOX_GROUP, 2);
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.Q, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("q" not in unown_dictionary) unown_dictionary.q = make_trie_Q();
+//================================================================
+//contains words starting with Q
+#define make_trie_Q()
+    return {};

@@ -45,8 +45,8 @@ set_hitbox_value(atk, 1, HG_HIT_SFX, sound_get("sonic_bumper"));
 //================================================================
 //WORD DATA
 set_window_value(UNOWN_ATK.V, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-if ("v" not in unown_dictionary) unown_dictionary.v = make_trie();
+if ("v" not in unown_dictionary) unown_dictionary.v = make_trie_V();
 //================================================================
 //contains words starting with V
-#define make_trie()
+#define make_trie_V()
     return {};

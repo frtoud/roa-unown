@@ -74,3 +74,12 @@ set_hitbox_value(atk, 4, HG_BASE_HITPAUSE, 4);
 set_hitbox_value(atk, 4, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 4, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
 set_hitbox_value(atk, 4, HG_HITBOX_GROUP, -1);
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.O, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("o" not in unown_dictionary) unown_dictionary.o = make_trie_O();
+//================================================================
+//contains words starting with O
+#define make_trie_O()
+    return {};

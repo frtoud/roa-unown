@@ -87,3 +87,12 @@ set_hitbox_value(atk, 2, HG_KNOCKBACK_SCALING, .40);
 set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 1);
 set_hitbox_value(atk, 2, HG_VISUAL_EFFECT, 1);
 set_hitbox_value(atk, 2, HG_HITBOX_GROUP, 1);
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.J, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+if ("j" not in unown_dictionary) unown_dictionary.j = make_trie_J();
+//================================================================
+//contains words starting with H
+#define make_trie_J()
+    return {};

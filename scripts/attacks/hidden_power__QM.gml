@@ -42,3 +42,9 @@ set_window_value(atk, 2, AG_WINDOW_ANIM_FRAME_START, 2);
 set_window_value(atk, 2, AG_WINDOW_HAS_WHIFFLAG, 1);
 
 set_num_hitboxes(atk, 0);
+
+//================================================================
+//WORD DATA
+set_window_value(UNOWN_ATK.QM, 1, AG_UNOWN_WINDOW_ACTIVE, true);
+set_window_value(AT_EXTRA_1, 1, AG_UNOWN_WINDOW_ACTIVE, true);
+//no words to fill in
