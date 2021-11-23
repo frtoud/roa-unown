@@ -366,6 +366,7 @@ aerosol
 aerospace
 aesthetic
 aesthetics
+aether
 afar
 affair
 affairs
@@ -1161,8 +1162,6 @@ assessing
 assessment
 asset
 assets
-asshole
-assholes
 assign
 assigned
 assigning
@@ -2077,8 +2076,6 @@ bistro
 bit
 bitch
 bitches
-bitching
-bitchy
 bite
 bites
 biting
@@ -2364,10 +2361,6 @@ bonus
 bonuses
 bony
 boo
-boob
-boobies
-boobs
-booby
 booger
 boogey
 boogeyman
@@ -2812,8 +2805,6 @@ bullies
 bullion
 bullpen
 bulls
-bullshit
-bullshitting
 bully
 bum
 bumble
@@ -3646,7 +3637,6 @@ chickened
 chickening
 chickenpox
 chickens
-chickenshit
 chicks
 chico
 chief
@@ -5383,14 +5373,11 @@ culturally
 culture
 cultured
 cultures
-cum
 cumin
 cummerbund
 cumulative
 cuneiform
 cunning
-cunt
-cunts
 cup
 cupboard
 cupboards
@@ -8127,11 +8114,6 @@ faded
 fades
 fading
 fads
-fag
-faggot
-faggots
-faggy
-fags
 fail
 failed
 failing
@@ -9190,13 +9172,6 @@ fry
 fryer
 frying
 fuchsia
-fuck
-fucked
-fucker
-fuckers
-fucking
-fucks
-fuckup
 fudge
 fudged
 fudging
@@ -10892,7 +10867,6 @@ horsemen
 horsepower
 horseradish
 horses
-horseshit
 horsey
 horsing
 horticulture
@@ -14403,9 +14377,6 @@ motels
 moth
 mothballs
 mother
-motherfucker
-motherfuckers
-motherfucking
 motherhood
 mothering
 motherless
@@ -14851,8 +14822,6 @@ nicotine
 niece
 nieces
 nifty
-nigger
-niggers
 nigh
 night
 nightcap
@@ -20003,11 +19972,6 @@ shirking
 shirt
 shirtless
 shirts
-shit
-shithead
-shits
-shitting
-shitty
 shiv
 shiva
 shiver
@@ -20553,9 +20517,6 @@ slur
 slurp
 slurping
 slush
-slut
-sluts
-slutty
 sly
 smack
 smacked
@@ -25177,7 +25138,9 @@ wussies
 wussy
 wuthering
 wynn
+xenon
 xerox
+xylophone
 ya
 yacht
 yachts
