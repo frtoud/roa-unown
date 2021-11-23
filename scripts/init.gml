@@ -175,14 +175,14 @@ prev_spr_dir = spr_dir;
 // Levitation
 
 //Parameters
-lev_amplitude = 30; // total range of motion
+lev_amplitude = 24; // total range of motion
 lev_cycle_time = 40; //half a full up/down cycle
 
 lev_airdodge_cooldown_max = 50;
 
-uno_lev_height_min = 16;
-uno_lev_height_mid = 32;
-uno_lev_height_max = 48;
+uno_lev_height_min = 12;
+uno_lev_height_mid = 24;
+uno_lev_height_max = 32;
 uno_lev_offset = 0; //depends on current form
 
 
