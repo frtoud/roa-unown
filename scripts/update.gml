@@ -32,7 +32,7 @@ if (lev_is_grounded)
     djumps = 0;
     has_walljump = true;
     if (lev_parry_cooldown == 0) has_airdodge = true;
-
+    
     switch (state)
     {
         case PS_PRATFALL: 
@@ -59,7 +59,8 @@ if (lev_is_grounded)
 }
 
 //universal fastfall
-if (!fast_falling && down_hard_pressed && !lev_is_grounded)
+if (!fast_falling && down_hard_pressed && !lev_is_grounded && free)
+&& (state_cat != SC_HITSTUN) && !(state == PS_ATTACK_AIR && !lev_can_fastfall)
 {
     vsp = fast_fall;
     fast_falling = true;

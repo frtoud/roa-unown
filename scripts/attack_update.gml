@@ -1,6 +1,7 @@
 
 //reset flag: set to TRUE explicitly in the attack
 lev_bypass = false;
+lev_can_fastfall = true;
 
 // per-attack logic
 switch(attack)
@@ -8,7 +9,8 @@ switch(attack)
 	//===========================
 	case 2: //B
 	{
-        can_wall_jump = (window == 3 || window == 6)
+        can_wall_jump = (window == 3 || window == 6);
+		lev_can_fastfall =  !(window == 4 || window == 5);
 
 		lev_bypass = window < 6;
 		if (!free && window < 4)
@@ -43,6 +45,7 @@ switch(attack)
             can_move = false;
             lev_bypass = true;
             move_cooldown[attack] = 60;
+		    lev_can_fastfall = false;
 		}
 	} break;
 	//===========================
@@ -58,6 +61,7 @@ switch(attack)
             can_move = false;
             if (hsp < unown_d_speed) hsp += unown_d_accel;
             lev_bypass = true;
+		    lev_can_fastfall = false;
         }
 	} break;
 	//===========================
@@ -79,6 +83,8 @@ switch(attack)
 	//===========================
 	case 9: //I
 	{
+		lev_can_fastfall = !(window == 2 || window == 3);
+		
 		if (window == 1 && window_timer == 1)
 		{
 			unown_i_angle = 90;
@@ -131,6 +137,7 @@ switch(attack)
 		{
 			vsp *= 0.1; hsp *= 0.1;
 			lev_bypass = true;
+			lev_can_fastfall = false;
 			
 			if (instance_exists(unown_j_victim))
 			{
@@ -152,9 +159,10 @@ switch(attack)
 	//===========================
 	case 12: //L
 	{
-        can_wall_jump = (window == 3 || window == 6)
+        can_wall_jump = (window == 3 || window == 7);
 
 		lev_bypass = !(window == 5 || window == 7);
+		lev_can_fastfall = !(window == 6);
 		if (window < 4)
 		{
             if (!free)
@@ -204,6 +212,7 @@ switch(attack)
         else if (window == 4)
         {
         	lev_bypass = true;
+			lev_can_fastfall = false;
         	vsp *= 0.55;
         }
     }break;
@@ -218,7 +227,8 @@ switch(attack)
         if (window == 3) && (special_down)
         {
             //VSP boost
-            vsp -= 0.2;
+            vsp -= (vsp > 0 ? (up_down ? 0.7 : 0.5) : 0.2);
+			lev_can_fastfall = false;
 
             if (unown_t_times_max > unown_t_times_through)
             && (window_timer == get_window_value( attack, window, AG_WINDOW_LENGTH ))
@@ -232,6 +242,7 @@ switch(attack)
 	//===========================
     case 21: //U
     {
+		lev_can_fastfall = !unown_u_bounced;
         if (window == 1 && window_timer <= 1)
         {
             unown_u_bounced = false;
@@ -259,11 +270,13 @@ switch(attack)
 	//===========================
     case 28: //?
     {
+    	lev_can_fastfall = false;
     	lev_bypass = true;
     }break;
 	//===========================
     case AT_EXTRA_1: //Pseudoparry
     {
+    	lev_can_fastfall = false;
         if (window == 1) 
         {
             perfect_dodging = true;
@@ -280,6 +293,7 @@ fall_through = (down_down) && (!lev_bypass);
 
 
 #define do_faster_falling()
+//make gravity pull harder than max_fall speeds during this move
 {
     if (vsp >= max_fall && vsp < fast_fall)
     {
