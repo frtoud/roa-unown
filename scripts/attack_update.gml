@@ -42,6 +42,7 @@ switch(attack)
         }
         else if (window == 2 || window == 3)
 		{
+			unown_c_used = true;
             can_move = false;
             lev_bypass = true;
             move_cooldown[attack] = 60;

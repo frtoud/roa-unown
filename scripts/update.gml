@@ -102,6 +102,12 @@ if (lev_parry_cooldown > 0)
     if (lev_parry_cooldown == 0) has_airdodge = true;
 }
 
+//once per airtime moves
+if (lev_is_grounded || !free)
+{
+    unown_c_used = false;
+}
+
 //=============================================================
 //turning animation
 unown_turning_timer = max(0, unown_turning_timer - 1);

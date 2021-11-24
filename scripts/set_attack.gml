@@ -1,5 +1,6 @@
+/// set_attack.gml(dummy_atk) to prevent GMEdit from panicking
 
-var target_attack = UNOWN_ATK.A;
+var target_form = UNOWN_ATK.A;
 
 var dir_pressed = {up:false, down:false, left:false, right:false};
 //===============================================================
@@ -29,7 +30,7 @@ if (is_special_pressed(DIR_ANY))
     dir_pressed.left = is_special_pressed(DIR_LEFT);
     dir_pressed.right = is_special_pressed(DIR_RIGHT);
     
-    target_attack = check_dir(dir_pressed, UNOWN_SPECIALS);
+    target_form = check_dir(dir_pressed, UNOWN_SPECIALS);
 }
 else if (is_attack_pressed(DIR_ANY))
 {
@@ -38,7 +39,7 @@ else if (is_attack_pressed(DIR_ANY))
     dir_pressed.left = is_attack_pressed(DIR_LEFT);
     dir_pressed.right = is_attack_pressed(DIR_RIGHT);
     
-    target_attack = check_dir(dir_pressed, UNOWN_STANDARDS);
+    target_form = check_dir(dir_pressed, UNOWN_STANDARDS);
 }
 else if (is_strong_pressed(DIR_ANY)) || (strong_down)
 {
@@ -57,29 +58,44 @@ else if (is_strong_pressed(DIR_ANY)) || (strong_down)
         dir_pressed.right = right_down;
     }
     
-    target_attack = check_dir(dir_pressed, UNOWN_STRONGS);
+    target_form = check_dir(dir_pressed, UNOWN_STRONGS);
 }
 else if (taunt_pressed) //signal for !
 {
-    target_attack = UNOWN_ATK.EM;
+    target_form = UNOWN_ATK.EM;
 }
 clear_button_buffer(PC_TAUNT_PRESSED);
 
 //===============================================================
 //setup the attack proper 
+attack = unown_form_data[target_form].atk;
 
-attack = unown_form_data[target_attack].atk;
-hurtbox_spr = unown_form_data[target_attack].hurtbox;
-unown_current_form = target_attack;
-unown_attack_is_fresh = true;
-
-lev_bypass = false; //failsafe
-
+var skip_form_change = false;
+if (attack == UNOWN_ATK.C && unown_c_used)
+{
+    move_cooldown[attack] = 3;
+    skip_form_change = true;
+}
 
 // MunoPhone Touch code - don't touch
 // should be at BOTTOM of file, but above any #define lines
 muno_event_type = 2;
 user_event(14);
+
+if (attack == AT_PHONE)
+{
+    target_form = UNOWN_ATK.B;
+}
+
+if (!skip_form_change)
+{
+    hurtbox_spr = unown_form_data[target_form].hurtbox;
+    unown_current_form = target_form;
+    unown_attack_is_fresh = true;
+}
+
+lev_bypass = false; //failsafe
+
 
 //=========================================================
 #define check_dir(dir_pressed, result_array)
