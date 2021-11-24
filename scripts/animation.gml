@@ -103,7 +103,8 @@ switch (state)
         if (window == 1 && window_timer == 0 && air_dodge_dir != 0 && !hitpause)
         {
             sound_play(unown_airdodge_sfx);
-            spawn_hit_fx( x, y - unown_eye_center_offset, unown_airdodge_vfx );
+            var hfx = spawn_hit_fx( x, y - unown_eye_center_offset, unown_airdodge_vfx );
+            hfx.image_index = 2;
         }
     } break;
     default: 
