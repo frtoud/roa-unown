@@ -32,15 +32,6 @@ if (is_special_pressed(DIR_ANY))
     
     target_form = check_dir(dir_pressed, UNOWN_SPECIALS);
 }
-else if (is_attack_pressed(DIR_ANY))
-{
-    dir_pressed.up = is_attack_pressed(DIR_UP);
-    dir_pressed.down = is_attack_pressed(DIR_DOWN);
-    dir_pressed.left = is_attack_pressed(DIR_LEFT);
-    dir_pressed.right = is_attack_pressed(DIR_RIGHT);
-    
-    target_form = check_dir(dir_pressed, UNOWN_STANDARDS);
-}
 else if (is_strong_pressed(DIR_ANY)) || (strong_down)
 {
     if (is_strong_pressed(DIR_ANY))
@@ -59,6 +50,15 @@ else if (is_strong_pressed(DIR_ANY)) || (strong_down)
     }
     
     target_form = check_dir(dir_pressed, UNOWN_STRONGS);
+}
+else if (is_attack_pressed(DIR_ANY))
+{
+    dir_pressed.up = is_attack_pressed(DIR_UP);
+    dir_pressed.down = is_attack_pressed(DIR_DOWN);
+    dir_pressed.left = is_attack_pressed(DIR_LEFT);
+    dir_pressed.right = is_attack_pressed(DIR_RIGHT);
+    
+    target_form = check_dir(dir_pressed, UNOWN_STANDARDS);
 }
 else if (taunt_pressed) //signal for !
 {
