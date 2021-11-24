@@ -217,6 +217,26 @@ switch(attack)
         }
     }break;
 	//===========================
+    case 18: //R
+    {
+        lev_bypass = (window < 4);
+        
+        if (!free && window < 3)
+        {
+        	destroy_hitboxes();
+        	window = 4;
+        	window_timer = 0;
+        }
+        else if (window == 2) && (special_down || state_timer < 20)
+        {
+        	if (window_timer == get_window_value( attack, window, AG_WINDOW_LENGTH ))
+            {
+                window_timer = 0;
+                attack_end();
+            }
+        }
+    }break;
+	//===========================
     case 20: //T
     {
         if (window == 1 && window_timer <= 1)
