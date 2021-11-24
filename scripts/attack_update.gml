@@ -247,7 +247,7 @@ switch(attack)
         if (window == 3) && (special_down)
         {
             //VSP boost
-            vsp -= (vsp > 0 ? (up_down ? 0.7 : 0.5) : 0.2);
+            vsp -= (up_down && vsp > -4) ? 0.8 : ((vsp > 0) ? 0.5 : 0.2);
 			lev_can_fastfall = false;
 
             if (unown_t_times_max > unown_t_times_through)
