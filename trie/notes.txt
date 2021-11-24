@@ -1,3 +1,8 @@
 maximum size that still fits in an attack script seems to be between 53Kb and 60Kb
 
 BETA URL: 2661638499
+
+
+TODO:
+- keyboard mode
+- allow diagonal moves to start a few frames into their cardinal counterparts (ie. allow B to go into L or R for a couple of frames)

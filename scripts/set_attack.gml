@@ -2,6 +2,26 @@
 var target_attack = UNOWN_ATK.A;
 
 var dir_pressed = {up:false, down:false, left:false, right:false};
+//===============================================================
+var UNOWN_STRONGS = noone;
+var UNOWN_SPECIALS = noone;
+var UNOWN_STANDARDS = noone;
+with (UNOWN_ATK) //shortcut
+{
+    UNOWN_STANDARDS = [C, M, V, 
+                       H, O, D, 
+                       J, U, S];
+
+    UNOWN_STRONGS   = [Z, W, K, 
+                       X, X, E, 
+                       P, A, Q];
+                      
+    UNOWN_SPECIALS  = [G, Y, T, 
+                       N, I, F, 
+                       R, B, L];
+}
+//===============================================================
+//Input parsing
 if (is_special_pressed(DIR_ANY))
 {
     dir_pressed.up = is_special_pressed(DIR_UP);
@@ -9,10 +29,7 @@ if (is_special_pressed(DIR_ANY))
     dir_pressed.left = is_special_pressed(DIR_LEFT);
     dir_pressed.right = is_special_pressed(DIR_RIGHT);
     
-    with (UNOWN_ATK) // SPECIALS pattern
-        target_attack = check_dir(dir_pressed, [G, Y, T, 
-                                                N, I, F, 
-                                                R, B, L]);
+    target_attack = check_dir(dir_pressed, UNOWN_SPECIALS);
 }
 else if (is_attack_pressed(DIR_ANY))
 {
@@ -21,10 +38,7 @@ else if (is_attack_pressed(DIR_ANY))
     dir_pressed.left = is_attack_pressed(DIR_LEFT);
     dir_pressed.right = is_attack_pressed(DIR_RIGHT);
     
-    with (UNOWN_ATK) // ATTACKS pattern
-        target_attack = check_dir(dir_pressed, [C, M, V, 
-                                                H, O, D, 
-                                                J, U, S]);
+    target_attack = check_dir(dir_pressed, UNOWN_STANDARDS);
 }
 else if (is_strong_pressed(DIR_ANY)) || (strong_down)
 {
@@ -43,16 +57,16 @@ else if (is_strong_pressed(DIR_ANY)) || (strong_down)
         dir_pressed.right = right_down;
     }
     
-    with (UNOWN_ATK) //STRONGS pattern (NSTRONG should not be unique)
-        target_attack = check_dir(dir_pressed, [Z, W, K, 
-                                                X, X, E, 
-                                                P, A, Q]);
+    target_attack = check_dir(dir_pressed, UNOWN_STRONGS);
 }
 else if (taunt_pressed) //signal for !
 {
     target_attack = UNOWN_ATK.EM;
 }
 clear_button_buffer(PC_TAUNT_PRESSED);
+
+//===============================================================
+//setup the attack proper 
 
 attack = unown_form_data[target_attack].atk;
 hurtbox_spr = unown_form_data[target_attack].hurtbox;
