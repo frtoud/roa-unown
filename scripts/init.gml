@@ -155,6 +155,8 @@ empty_spr = asset_get("empty_sprite");
 unown_airdodge_sfx = asset_get("sfx_quick_dodge");
 unown_airdodge_vfx = 66;
 
+unown_fastfall_vfx = hit_fx_create( asset_get("fx_fastfall_bg"), 12 );
+
 //================================================================
 // Balancing
 unown_d_speed = 8;
@@ -188,10 +190,8 @@ uno_lev_height_mid = 24;
 uno_lev_height_max = 32;
 uno_lev_offset = 0; //depends on current form
 
-
 //Flags
 lev_bypass = false; //set to TRUE to avoid levitation for your attack
-lev_can_fastfall = true; //set to FALSE to avoid fastfalling for your attack
 lev_is_grounded = true; //TRUE if close enough to ground to be considered landed
 lev_pratland_timer = 0; //prevents exiting pratfall if above zero & "landed", ticks down when landed
 lev_parry_cooldown = 0; //prevents parry from being spammed by not restoring airdodge immediately

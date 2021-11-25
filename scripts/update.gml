@@ -32,6 +32,10 @@ if (lev_is_grounded)
     djumps = 0;
     has_walljump = true;
     if (lev_parry_cooldown == 0) has_airdodge = true;
+
+    //pratland sends straight to PS_IDLE_AIR when it ends 
+    //(cases where you fastfall from prat)
+    if (prev_state == PS_PRATLAND) set_state(PS_PRATFALL);
     
     switch (state)
     {
@@ -58,10 +62,20 @@ if (lev_is_grounded)
     }
 }
 
-//universal fastfall
-if (!fast_falling && down_hard_pressed && !lev_is_grounded && free)
-&& (state_cat != SC_HITSTUN) && !(state == PS_ATTACK_AIR && !lev_can_fastfall)
+if (state_cat == SC_HITSTUN) || (state == PS_PRATFALL)
 {
+    can_fast_fall = false;
+}
+else if !(fast_falling || state == PS_ATTACK_AIR)
+{
+    can_fast_fall = true;
+}
+
+//rising fastfall check
+if (!fast_falling && down_hard_pressed && !lev_is_grounded && free) 
+ && can_fast_fall & (vsp < 0)
+{
+    spawn_hit_fx( x, y, unown_fastfall_vfx);
     vsp = fast_fall;
     fast_falling = true;
 }
