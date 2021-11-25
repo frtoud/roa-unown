@@ -289,6 +289,37 @@ switch(attack)
         }
     }break;
 	//===========================
+    case 25: //Y
+    {
+        hsp *= 0.75; 
+        if (window == 1)
+        {
+        	vsp *= 0.75;
+        }
+        else if (window == 2)
+        {
+        	can_move = false;
+        	if (window_timer == 1 && !hitpause)
+        	{
+        		unown_y_waterhitbox = create_hitbox(attack, 2, x, y);
+        		unown_y_water.tip_x = x - 1;
+        		unown_y_water.tip_y = y + get_hitbox_value(attack, 0, HG_HITBOX_Y);
+        		unown_y_water.timer = unown_y_water_active_time + unown_y_water_dying_time;
+        	}
+
+            unown_y_water.start_x = x - 1;
+        	unown_y_water.start_y = y + 24;
+        	
+        	if instance_exists(unown_y_waterhitbox)
+        	{
+        		var distance = 12 + unown_y_water.tip_y - unown_y_water.start_y;
+        		unown_y_waterhitbox.hitbox_timer = 0;
+        		unown_y_waterhitbox.y_pos = distance/2 + 24;
+        		unown_y_waterhitbox.image_yscale = distance/200.0;
+        	}
+        }
+    }break;
+	//===========================
     case 28: //?
     {
     	lev_can_fastfall = false;

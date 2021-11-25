@@ -130,6 +130,23 @@ switch (state)
     } break;
 }
 
+//unown Y's water spout
+if (unown_y_water.timer > 0) && (state != PS_ATTACK_AIR || !hitpause)
+{
+    unown_y_water.timer--;
+
+    if !(state == PS_ATTACK_AIR) && (unown_y_water.timer > unown_y_water_dying_time)
+    { unown_y_water.timer = unown_y_water_dying_time; }
+    
+    var animframe = (unown_y_water.timer < unown_y_water_dying_time) 
+                  ?  (unown_y_water_dying_time - unown_y_water.timer) 
+                     * (unown_y_water_dying_frames * 1.0 / unown_y_water_dying_time) + unown_y_water_active_frames
+                  :  (unown_y_water_active_time - (unown_y_water.timer - unown_y_water_dying_time))
+                     * (unown_y_water_active_frames * 1.0 / unown_y_water_active_time)
+    
+    unown_y_water.index = floor(animframe);
+}
+
 
 //=============================================================================
 #define ground_raytest(x, y)
