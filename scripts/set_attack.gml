@@ -36,9 +36,6 @@ if (is_special_pressed(DIR_ANY))
 else if (up_strong_pressed || down_strong_pressed
     || left_strong_pressed || right_strong_pressed) || (strong_down)
 {
-    print("strong_pressed" + string(is_strong_pressed(DIR_ANY)))
-    print("attack_pressed" + string(is_attack_pressed(DIR_ANY)))
-
     if (is_strong_pressed(DIR_ANY))
     {
         dir_pressed.up = is_strong_pressed(DIR_UP);
