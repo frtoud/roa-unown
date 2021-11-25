@@ -81,6 +81,8 @@ switch (state)
     } break;
     case PS_WALL_JUMP:
     case PS_WALL_TECH:
+    case PS_JUMPSQUAT:
+    case PS_FIRST_JUMP:
     case PS_DOUBLE_JUMP:
     {
         unown_looking_dir = spr_dir;
@@ -98,9 +100,9 @@ switch (state)
     case PS_LAND:
     case PS_WAVELAND:
     case PS_PRATFALL:
+    case PS_PRATLAND:
     {
         sprite_index = cur_form_sprites.prat;
-        //image_index = ?
     } break;
     case PS_AIR_DODGE:
     {
