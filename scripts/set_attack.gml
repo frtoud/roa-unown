@@ -72,11 +72,9 @@ clear_button_buffer(PC_TAUNT_PRESSED);
 //setup the attack proper 
 attack = unown_form_data[target_form].atk;
 
-var skip_form_change = false;
 if (attack == UNOWN_ATK.C && unown_c_used)
 {
     move_cooldown[attack] = 3;
-    skip_form_change = true;
 }
 
 // MunoPhone Touch code - don't touch
@@ -89,7 +87,7 @@ if (attack == AT_PHONE)
     target_form = UNOWN_ATK.B;
 }
 
-if (!skip_form_change)
+if !(move_cooldown[attack] > 0)
 {
     hurtbox_spr = unown_form_data[target_form].hurtbox;
     unown_current_form = target_form;

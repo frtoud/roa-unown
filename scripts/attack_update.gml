@@ -196,6 +196,27 @@ switch(attack)
 		set_hitbox_value(attack, 2, HG_WINDOW, (vsp > 1) ? 3 : 0);
 	} break;
 	//===========================
+    case 14: //N
+    {
+        lev_bypass = (window == 2 || window == 4);
+        super_armor = (window == 2);
+        
+        if !(window == 3 || window == 5)
+        {
+        	can_move = false;
+        	can_fast_fall = false;
+	        //Dampen momentum
+	        hsp *= 0.85;
+	        vsp *= 0.85;
+        }
+        
+        if (window == 2)
+        {
+			user_event(2); //Counter logic is in there
+			move_cooldown[UNOWN_ATK.N] = unown_n_cooldown;
+        }
+    }break;
+	//===========================
     case 17: //Q
     {
         if ((window == 3) || (window == 2 && has_hit_player))
@@ -344,6 +365,7 @@ switch(attack)
 fall_through = (down_down) && (!lev_bypass);
 
 
+//=====================================================================
 #define do_faster_falling()
 //make gravity pull harder than max_fall speeds during this move
 {

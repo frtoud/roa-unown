@@ -160,6 +160,9 @@ unown_airdodge_vfx = 66;
 unown_d_speed = 8;
 unown_d_accel = 0.5;
 
+unown_n_cooldown = 40;
+unown_n_invincibility = 50;
+
 //================================================================
 // Forms
 unown_form_data = [];

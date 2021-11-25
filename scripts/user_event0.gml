@@ -40,7 +40,7 @@ make_letter_data(10, "J", { hurtbox:hurt_A, asymmetric: true });
 make_letter_data(11, "K", { hurtbox:hurt_I, asymmetric: true });
 make_letter_data(12, "L", { hurtbox:hurt_A, asymmetric: true });
 make_letter_data(13, "M", { hurtbox:hurt_O });
-//make_letter_data(14, "N", { hurtbox:hurt_N, asymmetric: true });
+make_letter_data(14, "N", { hurtbox:hurt_X, asymmetric: true });
 make_letter_data(15, "O", { hurtbox:hurt_O });
 make_letter_data(16, "P", { hurtbox:hurt_A, asymmetric: true });
 make_letter_data(17, "Q", { hurtbox:hurt_F, asymmetric: true, left_hurtbox:hurt_F_left });
