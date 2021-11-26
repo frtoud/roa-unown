@@ -98,6 +98,7 @@ set_hitbox_value(atk, 3, HG_HITBOX_GROUP, 2);
 //================================================================
 //WORD DATA
 set_window_value(UNOWN_ATK.B, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+set_window_value(UNOWN_ATK.B, 5, AG_UNOWN_WINDOW_ACTIVE, true);
 if ("b" not in unown_dictionary) unown_dictionary.b = make_trie();
 //================================================================
 //contains words starting with A
