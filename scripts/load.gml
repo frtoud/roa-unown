@@ -49,7 +49,6 @@ sprite_change_offset("hurtbox_X", OFFSET_X*2, OFFSET_Y*2);
 sprite_change_offset("hurtbox_EM", OFFSET_X*2, OFFSET_Y*2);
 
 
-sprite_change_offset("taunt", 64, 94);
-sprite_change_offset("phone_open", 32, 64);
+sprite_change_offset("phone_open_2", 32, 48);
 
-sprite_change_offset("plat", 64, 94);
+sprite_change_offset("plat", 0, 0);

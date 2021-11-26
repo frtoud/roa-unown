@@ -84,7 +84,7 @@ user_event(14);
 
 if (attack == AT_PHONE)
 {
-    target_form = UNOWN_ATK.B;
+    target_form = UNOWN_ATK.I;
 }
 
 if !(move_cooldown[attack] > 0)
