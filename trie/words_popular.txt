@@ -2236,8 +2236,6 @@ blower
 blowfish
 blowhard
 blowing
-blowjob
-blowjobs
 blown
 blowout
 blows
@@ -2319,7 +2317,6 @@ boils
 bold
 bolder
 boldly
-bollocks
 bologna
 bolster
 bolt
@@ -10469,6 +10466,7 @@ held
 helicopter
 helicopters
 helipad
+helium
 helix
 hell
 hellbent
@@ -24806,8 +24804,6 @@ whoops
 whoosh
 whopper
 whopping
-whore
-whores
 whose
 why
 whys

@@ -45,4 +45,4 @@ if ("x" not in unown_dictionary) unown_dictionary.x = make_trie_X();
 //================================================================
 //contains words starting with X
 #define make_trie_X()
-    return {};
+    return {e:{n:{o:{n:{_:1}}},r:{o:{x:{_:1}},n:{e:{a:{s:{_:1}}}}}},y:{l:{o:{p:{h:{o:{n:{e:{_:1}}}}}}}},a:{t:{u:{_:1}}},u:{r:{k:{i:{t:{r:{e:{e:{_:1}}}}}}}}};
