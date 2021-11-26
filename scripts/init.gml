@@ -187,7 +187,7 @@ lev_parry_cooldown_max = 50;
 
 uno_lev_height_min = 12;
 uno_lev_height_mid = 24;
-uno_lev_height_max = 32;
+uno_lev_height_max = 36;
 uno_lev_offset = 0; //depends on current form
 
 //Flags
