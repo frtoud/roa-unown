@@ -14,9 +14,14 @@ if (my_hitboxID.attack == UNOWN_ATK.J && my_hitboxID.hbox_num == 1)
     }
 }
 
-if (my_hitboxID.attack == UNOWN_ATK.Y && my_hitboxID.hbox_num == 2)
+else if (my_hitboxID.attack == UNOWN_ATK.Y && my_hitboxID.hbox_num == 2)
 {
     var hfx = spawn_hit_fx(lerp(my_hitboxID.x, hit_player_obj.x, 0.5),
                            lerp(my_hitboxID.y, hit_player_obj.y, 0.5),
                                 my_hitboxID.hit_effect);
+}
+
+else if (my_hitboxID.attack == UNOWN_ATK.G && my_hitboxID.hbox_num == 2)
+{
+    should_make_shockwave = false;
 }

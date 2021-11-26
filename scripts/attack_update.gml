@@ -74,6 +74,27 @@ switch(attack)
 		}
 	} break;
 	//===========================
+	case 7: //G
+	{
+		if (window <= 2)
+		{
+			if (vsp > 0) vsp *= 0.6;
+		}
+        if (window == 3)
+        {
+        	if (y < -40)
+        	{
+        		vsp = 0;
+        	   var sd_hitbox = create_hitbox(attack, 2, x, y - 32);
+        	   sd_hitbox.can_hit_self = true;
+        	}
+        	else if (special_down)
+        	{
+        		window_timer = 0;
+        	}
+        }
+	} break;
+	//===========================
 	case 8: //H
 	{
         if (window == 2 && window_timer == 1 && attack_down && !hitpause)

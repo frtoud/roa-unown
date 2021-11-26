@@ -33,7 +33,7 @@ make_letter_data( 3, "C", { hurtbox:hurt_O, asymmetric: true });
 make_letter_data( 4, "D", { hurtbox:hurt_D, asymmetric: true, left_hurtbox:hurt_D_left });
 make_letter_data( 5, "E", { hurtbox:hurt_D, asymmetric: true, left_hurtbox:hurt_D_left });
 make_letter_data( 6, "F", { hurtbox:hurt_F, asymmetric: true, left_hurtbox:hurt_F_left });
-//make_letter_data( 7, "G", { hurtbox:hurt_A, asymmetric: true });
+make_letter_data( 7, "G", { hurtbox:hurt_A, asymmetric: true });
 make_letter_data( 8, "H", { hurtbox:hurt_O, asymmetric: true });
 make_letter_data( 9, "I", { hurtbox:hurt_I });
 make_letter_data(10, "J", { hurtbox:hurt_A, asymmetric: true });

@@ -9,7 +9,7 @@ sprite_change_offset("attack_D", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_D_pulse", 20, 34);
 sprite_change_offset("attack_E", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_F", OFFSET_X, OFFSET_Y, true);
-//sprite_change_offset("attack_G", OFFSET_X, OFFSET_Y, true);
+sprite_change_offset("attack_G", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_H", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_I", OFFSET_X, OFFSET_Y, true);
 sprite_change_offset("attack_I_prong", 7, 49);
