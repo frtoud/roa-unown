@@ -78,7 +78,7 @@ switch(attack)
 	{
         if (window == 2 && window_timer == 1 && attack_down && !hitpause)
 		{
-			hsp -= 4;
+			hsp = max(hsp - 4, -7);
 		}
 	} break;
 	//===========================
