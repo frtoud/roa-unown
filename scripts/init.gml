@@ -231,6 +231,7 @@ unown_t_times_max = 3;
 unown_u_bounced = false;
 
 //position of water spout (timer counts down)
+unown_y_waterhitbox = noone;
 unown_y_water = { tip_x:0, tip_y:0, start_x:0, start_y:0, index:0, timer:0 }; 
 unown_y_waterstart_spr = sprite_get("attack_Y_waterstart");
 unown_y_waterbeam_spr = sprite_get("attack_Y_waterbeam");
