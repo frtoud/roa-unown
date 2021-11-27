@@ -41,6 +41,7 @@ var hurt_T = sprite_get("hurtbox_T");
 var hurt_X = sprite_get("hurtbox_X");
 var hurt_EM = sprite_get("hurtbox_EM");
 
+//Animation data (mostly)
 unown_form_data[28] = noone;
 make_letter_data( 1, "A", { hurtbox:hurt_A });
 make_letter_data( 2, "B", { hurtbox:hurt_A, asymmetric: true });
@@ -71,6 +72,36 @@ make_letter_data(26, "Z", { hurtbox:hurt_X, asymmetric: true });
 
 make_letter_data(27,"EM", { hurtbox:hurt_EM, typable:false, attack_index:AT_TAUNT });
 make_letter_data(28,"QM", { hurtbox:hurt_EM, typable:false, asymmetric: true });
+
+//Stats (defaults to MEDIUM)
+set_letter_data(UNOWN_ATK.A, { });
+set_letter_data(UNOWN_ATK.B, { speed:SPEED_SLOW,   weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.C, { speed:SPEED_SLOW });
+set_letter_data(UNOWN_ATK.D, { });
+set_letter_data(UNOWN_ATK.E, { });
+set_letter_data(UNOWN_ATK.F, { });
+set_letter_data(UNOWN_ATK.G, { speed:SPEED_SLOW,   weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.H, { speed:SPEED_SLOW });
+set_letter_data(UNOWN_ATK.I, { speed:SPEED_FASTER, weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.J, { speed:SPEED_FAST,   weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.K, { speed:SPEED_FAST,   weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.L, { speed:SPEED_SLOW,   weight:WEIGHT_HIGH });
+set_letter_data(UNOWN_ATK.M, { speed:SPEED_SLOW,   weight:WEIGHT_HIGH });
+set_letter_data(UNOWN_ATK.N, { speed:SPEED_SLOW,   weight:WEIGHT_HIGH });
+set_letter_data(UNOWN_ATK.O, { speed:SPEED_SLOW,   weight:WEIGHT_HIGH });
+set_letter_data(UNOWN_ATK.P, { speed:SPEED_FAST });
+set_letter_data(UNOWN_ATK.Q, { speed:SPEED_FASTER, weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.R, { speed:SPEED_FASTER, weight:WEIGHT_HIGH });
+set_letter_data(UNOWN_ATK.S, {                     weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.T, { speed:SPEED_FASTER, weight:WEIGHT_LOW });
+set_letter_data(UNOWN_ATK.U, {                     weight:WEIGHT_HIGH });
+set_letter_data(UNOWN_ATK.V, { speed:SPEED_FAST });
+set_letter_data(UNOWN_ATK.W, { });
+set_letter_data(UNOWN_ATK.X, { speed:SPEED_FAST });
+set_letter_data(UNOWN_ATK.Y, { });
+set_letter_data(UNOWN_ATK.Z, { speed:SPEED_FAST });
+set_letter_data(UNOWN_ATK.EM,{ speed:SPEED_FAST });
+set_letter_data(UNOWN_ATK.QM,{ speed:SPEED_FAST });
 
 //================================================================
 #define make_letter_data(index, letter_str, input_data)
@@ -124,5 +155,15 @@ make_letter_data(28,"QM", { hurtbox:hurt_EM, typable:false, asymmetric: true });
             sprite_change_offset(spr_name+"_left", OFFSET_X, OFFSET_Y);
         }
     }
+}
 
+#define set_letter_data(index, input_data)
+{
+    var keys = variable_instance_get_names(input_data);
+    var target = unown_form_data[index];
+    for (var k = 0; k < array_length(keys); k++)
+    {
+        variable_instance_set(target, keys[k],
+                                variable_instance_get(input_data, keys[k]));
+    }
 }
