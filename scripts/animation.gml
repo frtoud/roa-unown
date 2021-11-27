@@ -76,6 +76,12 @@ switch (state)
             image_index = 5;
         }
 //=============================================================================
+        else if (attack == UNOWN_ATK.P) && !hitpause
+        && (window == 2 && window_timer == 0)
+        {
+            spawn_hit_fx( x-12, y+12, 116 );
+        }
+//=============================================================================
         else if (attack == AT_EXTRA_1) //parry
         {
             init_shader();
