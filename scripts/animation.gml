@@ -9,6 +9,8 @@ if (spr_dir < 0) && (cur_form_data.left_sprites != noone)
     cur_form_sprites = cur_form_data.left_sprites;
 }
 
+draw_y = 0; //animated below so reset here
+
 switch (state)
 {
     case PS_ATTACK_AIR:
@@ -116,7 +118,7 @@ switch (state)
         }
     } break;
     default: 
-        print("encountered state " + get_state_name( state ));
+        //print("encountered state " + get_state_name( state ));
         sprite_index = cur_form_sprites.idle;
         image_index = 0;
         break; //implicit !? I shouldnt need the above lines to set sprite index ideally
@@ -135,6 +137,12 @@ switch (state)
             sprite_index = cur_form_sprites.idle;
             image_index = 0;
         }
+    } break;
+    case PS_RESPAWN:
+    {
+        sprite_index = cur_form_sprites.idle;
+        image_index = 0;
+        draw_y = 8 - floor(sin(0.02*state_timer*(2*pi)) * 8)
     } break;
 }
 
