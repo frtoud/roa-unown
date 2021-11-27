@@ -67,7 +67,7 @@ set_color_profile_slot( 3, 4, 255, 255, 255 ); //White
 set_color_profile_slot( 3, 5, 90, 255, 123 ); //Dark White
 set_color_profile_slot( 3, 6, 0, 0, 0 ); //Eye
 
-// Current Colors
+// Unown (X/Y)
 set_color_profile_slot( 4, 0, 50, 50, 50 ); //Gray
 set_color_profile_slot( 4, 1, 26, 26, 26 ); //Dark Gray
 set_color_profile_slot( 4, 2, 0, 0, 0 ); //Darker Gray
