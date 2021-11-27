@@ -157,6 +157,13 @@ unown_airdodge_vfx = 66;
 
 unown_fastfall_vfx = hit_fx_create( asset_get("fx_fastfall_bg"), 12 );
 
+
+vfx_hiddenpower_spr = sprite_get("vfx_hiddenpower")
+hitfx_hiddenpower = hit_fx_create(vfx_hiddenpower_spr, 34);
+
+inward_hidden_power_timer = 0;
+inward_hidden_power_timer_max = 3 * 17;
+
 //================================================================
 // Balancing
 unown_d_speed = 8;

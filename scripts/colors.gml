@@ -18,6 +18,11 @@ set_color_profile_slot_range(1,  1,  1, 12);
 // 13:  0: 31 - 265:100: 12 - Main color
 set_color_profile_slot(0, 2,  13,   0,  31); //Eye
 set_color_profile_slot_range(2,  1,  1,  1);
+
+
+//HIDDEN POWER ORBS
+set_color_profile_slot( 0, 7, 128, 229, 80 );
+set_color_profile_slot_range( 7, 7, 48, 44 );
 //==============================================================
 
 set_num_palettes(9);

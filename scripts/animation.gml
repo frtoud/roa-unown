@@ -163,6 +163,11 @@ if (unown_y_water.timer > 0) && (state != PS_ATTACK_AIR || !hitpause)
     unown_y_water.index = floor(animframe);
 }
 
+//===============================================================
+//Hidden power effect
+init_shader();
+if (inward_hidden_power_timer > 0) inward_hidden_power_timer--;
+
 
 //=============================================================================
 #define ground_raytest(x, y)
