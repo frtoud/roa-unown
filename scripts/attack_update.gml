@@ -380,7 +380,14 @@ switch(attack)
         }
         has_hit_player = perfect_dodged;
     }break;
-	//===========================
+	//======================================================
+    case AT_TAUNT: //Hidden Power
+    {
+    	//consume word buffer
+    	//calculate damage boost
+    	//deploy hitbox
+    }break;
+	//======================================================
 	default: break;
 }
 

@@ -24,9 +24,26 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
     //else: ! has emptied the word buffer already
     
     //recalculate buff
-    results = longest_match(unown_dictionary, string_lower(unown_text_buffer));
+    var prev_best_word = unown_best_word_length;
+    var results = longest_match(unown_dictionary, string_lower(unown_text_buffer));
     unown_best_word_pos = results[0];
     unown_best_word_length = results[1] - results[0];
+    
+    if (prev_best_word != unown_best_word_length)
+    {
+        unown_needs_recalculated_buffs = true;
+        
+        if (unown_best_word_length < prev_best_word)
+        {
+            //lost buff
+            sound_play(sfx_unown_buff_down);
+        }
+        else
+        {
+            //gained buff
+            sound_play(sfx_unown_buff_up);
+        }
+    }
 }
 
 

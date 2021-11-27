@@ -92,6 +92,9 @@ if !(move_cooldown[attack] > 0)
     hurtbox_spr = unown_form_data[target_form].hurtbox;
     unown_current_form = target_form;
     unown_attack_is_fresh = true;
+    
+    var bonus = unown_word_length_bonus[min(array_length(unown_word_length_bonus) -1, unown_best_word_length)];
+    apply_word_bonus(attack, bonus);
 }
 
 lev_bypass = false; //failsafe
@@ -120,6 +123,11 @@ lev_bypass = false; //failsafe
     return result_array[final_dir - 1];
 }
 
+//=========================================================
+#define apply_word_bonus(cur_attack, cur_mult)
+{
+    spawn_hit_fx(x, y-32, hitfx_hiddenpower)
+}
 
 
 

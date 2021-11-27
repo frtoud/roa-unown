@@ -142,10 +142,12 @@ bubble_y = 8;
 
 AG_UNOWN_WINDOW_ACTIVE = 70; //set to TRUE to note an active window, first active window encountered will add the current letter to the buffer
 
-//window length bonuses
+//window bonuses
 
-//damage bonuses
-//kb bonuses
+//hitbox bonuses
+HG_UNOWN_DAMAGE_BONUS = 70;
+HG_UNOWN_KNOCKBACK_BONUS = 71;
+HG_UNOWN_SCALING_BONUS = 72;
 
 //================================================================
 // Animation
@@ -157,6 +159,8 @@ unown_airdodge_vfx = 66;
 
 unown_fastfall_vfx = hit_fx_create( asset_get("fx_fastfall_bg"), 12 );
 
+sfx_unown_buff_up = asset_get("sfx_ell_arc_taunt_start");
+sfx_unown_buff_down = asset_get("sfx_ell_arc_taunt_end");
 
 vfx_hiddenpower_spr = sprite_get("vfx_hiddenpower")
 hitfx_hiddenpower = hit_fx_create(vfx_hiddenpower_spr, 34);
@@ -244,6 +248,11 @@ unown_attack_is_fresh = false; //wether an attack is recent or not (if true, wil
 
 unown_best_word_pos = 0;
 unown_best_word_length = 0;
+
+//unown_word_length_bonus[3] = scale of bonus for a 3-letter word in the buffer
+unown_word_length_bonus = [0, 0, 0.25, 0.50, 0.75, 0.85, 1, 1.10, 1.25];
+unown_letter_exclamation_bonus = 0.15; //added bonus for using "!" for each additional letter not in a word
+unown_needs_recalculated_buffs = false; //set to true to let passive buffs recalculate
 
 unown_dictionary = {}; //misnomer: actually a trie
 with (oPlayer) if (self != other) && ("unown_dictionary" in self)

@@ -149,6 +149,11 @@ if (unown_attack_is_fresh)
     user_event(1);
 }
 
+if (unown_needs_recalculated_buffs)
+{
+    
+}
+
 
 //=============================================================================
 #define do_levitate(lev_min, lev_mid, lev_max)
