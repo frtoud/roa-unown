@@ -253,7 +253,7 @@ unown_best_word_length = 0;
 //unown_word_length_bonus[3] = scale of bonus for a 3-letter word in the buffer
 unown_word_length_bonus = [0, 0, 0.25, 0.50, 0.75, 0.85, 1, 1.10, 1.25];
 unown_letter_exclamation_bonus = 0.15; //added bonus for using "!" for each additional letter not in a word
-unown_needs_recalculated_buffs = false; //set to true to let passive buffs recalculate
+unown_recalculate_stats = true; //set to true to let passive buffs recalculate
 
 unown_dictionary = {}; //misnomer: actually a trie
 with (oPlayer) if (self != other) && ("unown_dictionary" in self)

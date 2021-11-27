@@ -20,7 +20,13 @@ switch (state)
         unown_turning_timer = unown_turning_time_per_frame + 1;
         
 //=============================================================================
-        if (attack == UNOWN_ATK.C) && !hitpause
+        if (attack == UNOWN_ATK.A) && !hitpause
+        && (window == 2 && window_timer == 0)
+        {
+            spawn_hit_fx( x, y-4, 141 );
+        }
+//=============================================================================
+        else if (attack == UNOWN_ATK.C) && !hitpause
              && (window == 2 && window_timer == 0)
         {
             spawn_hit_fx( x+24, y-4, 125 );

@@ -93,8 +93,8 @@ if !(move_cooldown[attack] > 0)
     unown_current_form = target_form;
     unown_attack_is_fresh = true;
     
-    var bonus = unown_word_length_bonus[min(array_length(unown_word_length_bonus) -1, unown_best_word_length)];
-    apply_word_bonus(attack, bonus);
+    adjust_unown_attack_grid();
+    unown_recalculate_stats = true;
 }
 
 lev_bypass = false; //failsafe
@@ -124,9 +124,30 @@ lev_bypass = false; //failsafe
 }
 
 //=========================================================
-#define apply_word_bonus(cur_attack, cur_mult)
+#define adjust_unown_attack_grid()
 {
-    spawn_hit_fx(x, y-32, hitfx_hiddenpower)
+    var bonus = unown_word_length_bonus[min(array_length(unown_word_length_bonus) -1, unown_best_word_length)];
+    
+    //apply buffs based on current word boost
+    for (var hb = 1; hb <= get_num_hitboxes(attack); hb++)
+    {
+        apply_word_bonus(bonus, attack, hb, HG_DAMAGE, HG_UNOWN_DAMAGE_BONUS);
+        apply_word_bonus(bonus, attack, hb, HG_BASE_KNOCKBACK, HG_UNOWN_KNOCKBACK_BONUS);
+        apply_word_bonus(bonus, attack, hb, HG_KNOCKBACK_SCALING, HG_UNOWN_SCALING_BONUS);
+    }
+}
+
+#define apply_word_bonus(cur_mult, atk, hnum, base_index, bonus_index)
+{
+    if (0 < get_hitbox_value(atk, hnum, bonus_index))
+    {
+        reset_hitbox_value(atk, hnum, base_index);
+        
+        // total = base + charge * bonus
+        var value = get_hitbox_value(atk, hnum, base_index)
+           + (cur_mult * get_hitbox_value(atk, hnum, bonus_index) );
+        set_hitbox_value(atk, hnum, base_index, value);
+    }
 }
 
 

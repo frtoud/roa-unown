@@ -149,9 +149,11 @@ if (unown_attack_is_fresh)
     user_event(1);
 }
 
-if (unown_needs_recalculated_buffs)
+if (unown_recalculate_stats)
 {
+    unown_recalculate_stats = false;
     
+    //Apply form's speed and weight
 }
 
 

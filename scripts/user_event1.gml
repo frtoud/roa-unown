@@ -31,7 +31,7 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
     
     if (prev_best_word != unown_best_word_length)
     {
-        unown_needs_recalculated_buffs = true;
+        unown_recalculate_stats = true;
         
         if (unown_best_word_length < prev_best_word)
         {
