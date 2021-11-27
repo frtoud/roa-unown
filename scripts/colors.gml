@@ -49,7 +49,7 @@ set_color_profile_slot( 1, 4, 235, 255, 248 ); //White
 set_color_profile_slot( 1, 5, 235, 255, 248 ); //Dark White
 set_color_profile_slot( 1, 6, 14, 0, 143 ); //Eye
 
-// Unown (G/S)
+// Unown (Crystal)
 set_color_profile_slot( 2, 0, 0, 0, 0 ); //Gray
 set_color_profile_slot( 2, 1, 0, 0, 0 ); //Dark Gray
 set_color_profile_slot( 2, 2, 0, 0, 0 ); //Darker Gray
@@ -58,7 +58,7 @@ set_color_profile_slot( 2, 4, 255, 255, 255 ); //White
 set_color_profile_slot( 2, 5, 120, 120, 128 ); //Dark White
 set_color_profile_slot( 2, 6, 0, 0, 0 ); //Eye
 
-// Unown (Crystal)
+// Unown (G/S)
 set_color_profile_slot( 3, 0, 0, 0, 0 ); //Gray
 set_color_profile_slot( 3, 1, 0, 0, 0 ); //Dark Gray
 set_color_profile_slot( 3, 2, 0, 0, 0 ); //Darker Gray
