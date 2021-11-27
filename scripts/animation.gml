@@ -142,7 +142,10 @@ switch (state)
     {
         sprite_index = cur_form_sprites.idle;
         image_index = 0;
-        draw_y = 8 - floor(sin(0.02*state_timer*(2*pi)) * 8)
+        draw_y = 8 - floor(sin(0.02*state_timer*(2*pi)) * 8);
+        
+        if (state_timer == (phone_practice? 1 : 90)) 
+           spawn_hit_fx(x, y - unown_eye_center_offset, 66);
     } break;
 }
 
