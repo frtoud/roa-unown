@@ -126,7 +126,7 @@ lev_bypass = false; //failsafe
 //=========================================================
 #define adjust_unown_attack_grid()
 {
-    var bonus = unown_word_length_bonus[min(array_length(unown_word_length_bonus) -1, unown_best_word_length)];
+    var bonus = unown_current_bonus;
     
     //apply buffs based on current word boost
     for (var hb = 1; hb <= get_num_hitboxes(attack); hb++)

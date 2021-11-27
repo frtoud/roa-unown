@@ -149,11 +149,19 @@ if (unown_attack_is_fresh)
     user_event(1);
 }
 
+//Form stats
 if (unown_recalculate_stats)
 {
     unown_recalculate_stats = false;
     
     //Apply form's speed and weight
+    var bonus = unown_current_bonus;
+    var form_accel = unown_form_data[unown_current_form].speed;
+    var form_weight = unown_form_data[unown_current_form].weight;
+    
+    knockback_adj = lerp(form_weight, form_weight+unown_kbadjust_bonus, bonus);
+    air_accel     = lerp(form_accel,  form_accel+unown_accel_bonus, bonus);
+    air_max_speed = lerp(unown_maxspeed_base, unown_maxspeed_base+unown_maxspeed_bonus, bonus);
 }
 
 

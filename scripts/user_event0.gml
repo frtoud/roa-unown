@@ -9,8 +9,23 @@
     atk: number
     right_sprites: { idle, turn, jump, hurt, bighurt, praftall }
     left_sprites: either noone (symmetrical) or a set like right_sprites
+    
+    speed: number // air_accel: range 0.2 - 0.4
+    weight: number // knockback_adj: range 0.9 - 1.2
 }
 */
+
+//stats
+#macro SPEED_SLOW    0.2
+#macro SPEED_MEDIUM  0.3
+#macro SPEED_FAST    0.35
+#macro SPEED_FASTER  0.4
+
+//higher weight = low KB mult
+#macro WEIGHT_LOW     1.1
+#macro WEIGHT_MEDIUM  1.0
+#macro WEIGHT_HIGH    0.9
+
 
 //shortcut from letters-to-numbers
 UNOWN_ATK = { A:1, B:2, C:3, D:4, E:5, F:6, G:7, H:8, I:9, J:10,K:11,L:12,M:13,N:14,
@@ -67,6 +82,9 @@ make_letter_data(28,"QM", { hurtbox:hurt_EM, typable:false, asymmetric: true });
     var typable = ("typable" in input_data) ? input_data.typable : true;
     var attack_index = ("attack_index" in input_data) ? input_data.attack_index : index;
     
+    var form_speed = ("speed" in input_data) ? input_data.speed : SPEED_MEDIUM;
+    var form_weight = ("weight" in input_data) ? input_data.weight : WEIGHT_MEDIUM;
+    
     var anim_list = [
     "idle", 
     "hurt",
@@ -81,6 +99,10 @@ make_letter_data(28,"QM", { hurtbox:hurt_EM, typable:false, asymmetric: true });
         left_hurtbox: left_hurtbox_spr,
         right_sprites: {},
         left_sprites: (asymmetric ? {} : noone),
+        
+        speed: form_speed,
+        weight: form_weight,
+        
         atk: attack_index
     }
 

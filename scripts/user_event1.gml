@@ -32,6 +32,8 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
     if (prev_best_word != unown_best_word_length)
     {
         unown_recalculate_stats = true;
+        unown_current_bonus = unown_word_length_bonus[
+            min(array_length(unown_word_length_bonus) -1, unown_best_word_length)];
         
         if (unown_best_word_length < prev_best_word)
         {

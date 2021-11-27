@@ -8,7 +8,7 @@
 char_height         = 64;       // cosmetic
 knockback_adj       = 1;		// 0.9  -  1.2
 
-// Ground movement
+// Ground movement (obsolete)
 walk_speed          = 3.25;		// 3    -  4.5
 walk_accel          = 0.2;		// 0.2  -  0.5
 walk_turn_time      = 6;		// 6
@@ -176,6 +176,13 @@ unown_d_accel = 0.5;
 unown_n_cooldown = 40;
 unown_n_invincibility = 50;
 
+
+unown_maxspeed_base = air_max_speed;
+//Word buffer stat bonuses
+unown_maxspeed_bonus = 1.0;
+unown_kbadjust_bonus = -0.1;
+unown_accel_bonus = 0.1;
+
 //================================================================
 // Forms
 unown_form_data = [];
@@ -186,6 +193,9 @@ unown_turning_timer = 0; //counts down
 unown_turning_time_per_frame = 6;
 
 prev_spr_dir = spr_dir;
+
+//initialize form
+hurtbox_spr = unown_form_data[unown_current_form].hurtbox;
 
 //================================================================
 // Levitation
@@ -249,11 +259,12 @@ unown_attack_is_fresh = false; //wether an attack is recent or not (if true, wil
 
 unown_best_word_pos = 0;
 unown_best_word_length = 0;
+unown_current_bonus = 0;
 
 //unown_word_length_bonus[3] = scale of bonus for a 3-letter word in the buffer
 unown_word_length_bonus = [0, 0, 0.25, 0.50, 0.75, 0.85, 1, 1.10, 1.25];
 unown_letter_exclamation_bonus = 0.15; //added bonus for using "!" for each additional letter not in a word
-unown_recalculate_stats = true; //set to true to let passive buffs recalculate
+unown_recalculate_stats = true; //set to true to let passive buffs recalculate (needed at the start to init the forms)
 
 unown_dictionary = {}; //misnomer: actually a trie
 with (oPlayer) if (self != other) && ("unown_dictionary" in self)
