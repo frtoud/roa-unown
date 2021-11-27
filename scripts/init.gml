@@ -166,7 +166,7 @@ vfx_hiddenpower_spr = sprite_get("vfx_hiddenpower")
 hitfx_hiddenpower = hit_fx_create(vfx_hiddenpower_spr, 34);
 
 inward_hidden_power_timer = 0;
-inward_hidden_power_timer_max = 3 * 17;
+inward_hidden_power_timer_max = 2 * 17;
 
 //================================================================
 // Balancing

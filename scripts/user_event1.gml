@@ -44,6 +44,7 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
         {
             //gained buff
             sound_play(sfx_unown_buff_up);
+            inward_hidden_power_timer = inward_hidden_power_timer_max;
         }
     }
 }
