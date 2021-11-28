@@ -200,8 +200,12 @@ prev_spr_dir = spr_dir;
 
 //initialize form
 var stage_id = get_stage_data(SD_ID);
-print(stage_id);
-print(is_string(stage_id));
+if (is_string(stage_id)) 
+{ 
+    stage_id = string_digits(stage_id);
+    stage_id = (string_length(stage_id) > 0 ? real(stage_id) : 0)
+}
+unown_current_form = 1 + random_func((player + stage_id) % 24, 28, true);
 
 hurtbox_spr = unown_form_data[unown_current_form].hurtbox;
 
