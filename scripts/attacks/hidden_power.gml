@@ -10,9 +10,11 @@ set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
 set_window_value(atk, 1, AG_WINDOW_SFX, sound_get("gsc_unown"));
 set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, get_window_value(atk, 1, AG_WINDOW_LENGTH) - 1);
 
-set_window_value(atk, 2, AG_WINDOW_LENGTH, 6);
+set_window_value(atk, 2, AG_WINDOW_LENGTH, 8);
 set_window_value(atk, 2, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(atk, 2, AG_WINDOW_ANIM_FRAME_START, 2);
+set_window_value(atk, 2, AG_WINDOW_VSPEED_TYPE, 1);
+set_window_value(atk, 2, AG_WINDOW_HSPEED_TYPE, 1);
 
 set_window_value(atk, 3, AG_WINDOW_LENGTH, 12);
 set_window_value(atk, 3, AG_WINDOW_ANIM_FRAMES, 2);
@@ -20,9 +22,70 @@ set_window_value(atk, 3, AG_WINDOW_ANIM_FRAME_START, 4);
 
 set_num_hitboxes(atk, 0);
 
+//range
+set_hitbox_value(atk, 1, HG_HITBOX_TYPE, 1);
+set_hitbox_value(atk, 1, HG_WINDOW, 2);
+set_hitbox_value(atk, 1, HG_LIFETIME, 8);
+set_hitbox_value(atk, 1, HG_HITBOX_Y, -unown_eye_center_offset);
+set_hitbox_value(atk, 1, HG_WIDTH, 64); //dynamic
+set_hitbox_value(atk, 1, HG_HEIGHT, 64); //dynamic
+set_hitbox_value(atk, 1, HG_PRIORITY, 2);
+set_hitbox_value(atk, 1, HG_DAMAGE, 4); //dynamic
+set_hitbox_value(atk, 1, HG_ANGLE, 90);
+set_hitbox_value(atk, 1, HG_BASE_KNOCKBACK, 10); //dynamic
+set_hitbox_value(atk, 1, HG_KNOCKBACK_SCALING, .25); //dynamic
+set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 6); //dynamic
+set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .25);
+set_hitbox_value(atk, 1, HG_VISUAL_EFFECT, 302);
+set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_abyss_explosion_big"));
+
+//sweetspot
+set_hitbox_value(atk, 2, HG_HITBOX_TYPE, 1);
+set_hitbox_value(atk, 2, HG_WINDOW, 2);
+set_hitbox_value(atk, 2, HG_LIFETIME, 8);
+set_hitbox_value(atk, 2, HG_HITBOX_Y, -unown_eye_center_offset);
+set_hitbox_value(atk, 2, HG_WIDTH, 64); //dynamic
+set_hitbox_value(atk, 2, HG_HEIGHT, 64); //dynamic
+set_hitbox_value(atk, 2, HG_PRIORITY, 3);
+set_hitbox_value(atk, 2, HG_DAMAGE, 4); //dynamic
+set_hitbox_value(atk, 2, HG_ANGLE, 90);
+set_hitbox_value(atk, 2, HG_BASE_KNOCKBACK, 10); //dynamic
+set_hitbox_value(atk, 2, HG_KNOCKBACK_SCALING, .25); //dynamic
+set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 6);  //dynamic
+set_hitbox_value(atk, 2, HG_HITPAUSE_SCALING, .65);
+set_hitbox_value(atk, 2, HG_VISUAL_EFFECT, 305);
+set_hitbox_value(atk, 2, HG_HIT_SFX, asset_get("sfx_abyss_hex_hit"));
+
 //================================================================
 //WORD DATA
 set_window_value(AT_TAUNT, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 //no words to fill in
 
+//==============================================================
+//hiding PHONE frame data here to have exactly 28 attack files
+set_attack_value(AT_PHONE, AG_SPRITE, sprite_get("phone_open_2"));
+set_attack_value(AT_PHONE, AG_NUM_WINDOWS, 3);
+set_attack_value(AT_PHONE, AG_HAS_LANDING_LAG, 3);
+set_attack_value(AT_PHONE, AG_CATEGORY, 2);
+set_attack_value(AT_PHONE, AG_OFF_LEDGE, 1);
+set_attack_value(AT_PHONE, AG_HURTBOX_SPRITE, hurtbox_spr);
+set_attack_value(AT_PHONE, AG_USES_CUSTOM_GRAVITY, 1);
+set_attack_value(AT_PHONE, AG_MUNO_ATTACK_EXCLUDE, 1);
 
+// NOTE: It is not recommended to change the values for anything except for
+// AG_WINDOW_ANIM_FRAMES and AG_WINDOW_ANIM_FRAME_START.
+
+//Opening window
+set_window_value(AT_PHONE, 1, AG_WINDOW_LENGTH, 12);
+set_window_value(AT_PHONE, 1, AG_WINDOW_ANIM_FRAMES, 3);
+
+//Looping window
+set_window_value(AT_PHONE, 2, AG_WINDOW_TYPE, 9);
+set_window_value(AT_PHONE, 2, AG_WINDOW_LENGTH, 100);
+set_window_value(AT_PHONE, 2, AG_WINDOW_ANIM_FRAMES, 1);
+set_window_value(AT_PHONE, 2, AG_WINDOW_ANIM_FRAME_START, 3);
+
+//Closing window
+set_window_value(AT_PHONE, 3, AG_WINDOW_LENGTH, 12);
+set_window_value(AT_PHONE, 3, AG_WINDOW_ANIM_FRAMES, -3);
+set_window_value(AT_PHONE, 3, AG_WINDOW_ANIM_FRAME_START, 3);

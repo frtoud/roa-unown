@@ -91,7 +91,7 @@ if !(move_cooldown[attack] > 0)
 {
     hurtbox_spr = unown_form_data[target_form].hurtbox;
     unown_current_form = target_form;
-    unown_attack_is_fresh = true;
+    unown_attack_is_fresh = (attack != AT_PHONE);
     
     adjust_unown_attack_grid();
     unown_recalculate_stats = true;

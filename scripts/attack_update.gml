@@ -383,13 +383,53 @@ switch(attack)
 	//======================================================
     case AT_TAUNT: //Hidden Power
     {
-    	if (window == 1 && window_timer == 1 && unown_best_word_length > 1)
+    	if (window == 1 && window_timer == 1)
     	{
-    		inward_hidden_power_timer = inward_hidden_power_timer_max;
-            inward_hidden_power_fast = true;
-            //consume word buffer
-            //calculate damage boost
-            //setup hitboxes
+    		if (unown_best_word_length > 1)
+    		{
+    			//vfx
+    			inward_hidden_power_timer = inward_hidden_power_timer_max;
+            	inward_hidden_power_fast = true;
+            	
+            	//calculate damage boost
+            	var bonus = unown_current_bonus
+            	   + (unown_letter_exclamation_bonus * (string_length(unown_text_buffer)
+            	       - min(unown_best_word_length, array_length(unown_word_length_bonus))));
+            	
+            	//setup hitboxes
+            	var hb_size = floor(min(200, bonus * 100 + 60));
+            	hidden_power_strength_vfx = (hb_size > 180 ? 3 : (hb_size > 100 ? 2 : 1));
+                set_hitbox_value(AT_TAUNT, 1, HG_WIDTH, hb_size);            	
+                set_hitbox_value(AT_TAUNT, 1, HG_HEIGHT, hb_size);    
+                set_hitbox_value(AT_TAUNT, 2, HG_WIDTH, max(hb_size - 80, 0));            	
+                set_hitbox_value(AT_TAUNT, 2, HG_HEIGHT, max(hb_size - 80, 0));            	        	
+    			set_num_hitboxes(attack, hb_size > 80 ? 2 : 1);
+    			
+    			var hb_damage = floor(bonus * 15);           	
+                set_hitbox_value(AT_TAUNT, 1, HG_DAMAGE, hb_damage);    
+                set_hitbox_value(AT_TAUNT, 2, HG_DAMAGE, hb_damage + 6); 
+                
+    			var hb_kb = bonus * 5 + 5;
+				set_hitbox_value(AT_TAUNT, 1, HG_BASE_KNOCKBACK, hb_kb);
+				set_hitbox_value(AT_TAUNT, 2, HG_BASE_KNOCKBACK, hb_kb + 3);
+				
+    			var hb_scaling = bonus * 0.8 + 0.4;
+				set_hitbox_value(AT_TAUNT, 1, HG_KNOCKBACK_SCALING, hb_scaling);
+				set_hitbox_value(AT_TAUNT, 2, HG_KNOCKBACK_SCALING, hb_scaling + 0.25);
+				
+    			var hb_hitpause = floor(bonus * 16); 
+				set_hitbox_value(AT_TAUNT, 1, HG_BASE_HITPAUSE, hb_hitpause);
+				set_hitbox_value(AT_TAUNT, 2, HG_BASE_HITPAUSE, hb_hitpause + 4);
+    		}
+    		else
+    		{
+    			reset_num_hitboxes(attack);
+    		}
+    	}
+    	else if (window == 1)
+    	{
+    		hsp *= 0.75;
+    		vsp *= (vsp > 0 ? 0.75 : 0.95);
     	}
     }break;
 	//======================================================

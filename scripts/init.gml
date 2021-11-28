@@ -163,11 +163,13 @@ sfx_unown_buff_up = asset_get("sfx_ell_arc_taunt_start");
 sfx_unown_buff_down = asset_get("sfx_ell_arc_taunt_end");
 
 vfx_hiddenpower_spr = sprite_get("vfx_hiddenpower")
-hitfx_hiddenpower = hit_fx_create(vfx_hiddenpower_spr, 34);
+hitfx_hiddenpower = hit_fx_create(vfx_hiddenpower_spr, 24);
 
 inward_hidden_power_timer = 0;
 inward_hidden_power_timer_max = 2 * 17;
 inward_hidden_power_fast = false; //use to set 2x speed of effect
+
+hidden_power_strength_vfx = 0; //1, 2, 3 to have a hitfx appear to communicate range of hidden power
 
 //================================================================
 // Balancing
@@ -263,8 +265,8 @@ unown_best_word_length = 0;
 unown_current_bonus = 0;
 
 //unown_word_length_bonus[3] = scale of bonus for a 3-letter word in the buffer
-unown_word_length_bonus = [0, 0, 0.25, 0.50, 0.75, 0.85, 1, 1.10, 1.25];
-unown_letter_exclamation_bonus = 0.15; //added bonus for using "!" for each additional letter not in a word
+unown_word_length_bonus = [0, 0, 0.20, 0.40, 0.60, 0.75, 0.90, 1.0, 1.05, 1.10, 1.15, 1.20, 1.25];
+unown_letter_exclamation_bonus = 0.05; //added bonus for using "!" for each additional letter not in a word
 unown_recalculate_stats = true; //set to true to let passive buffs recalculate (needed at the start to init the forms)
 
 unown_dictionary = {}; //misnomer: actually a trie
