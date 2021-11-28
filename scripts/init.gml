@@ -23,7 +23,7 @@ ground_friction     = 0.5;		// 0.3  -  1
 moonwalk_accel      = 1.3;		// 1.2  -  1.4
     
 // Air movement
-leave_ground_max    = 6;		// 4    -  8
+leave_ground_max    = 9;		// 4    -  8
 max_jump_hsp        = 6;		// 4    -  8
 air_max_speed       = 5;  		// 3    -  7
 jump_change         = 3;		// 3
@@ -50,11 +50,11 @@ prat_land_time      = 20;		// 3    -  24       zetterburn's is 3, but that's ONL
 parry_stun_extra_time = 40 - prat_land_time; //since Unown doesnt have conventional pratland
 
 // Shield-button actions
-wave_friction       = 0.12;		// 0    -  0.15
+wave_friction       = 0;		// 0    -  0.15
 roll_forward_max    = 9;		// 9    -  11
 roll_backward_max   = 9;		// 9    -  11       always the same as forward
 wave_land_time      = 8;		// 6    -  12
-wave_land_adj       = 1.3;		// 1.2  -  1.5      idk what zetterburn's is
+wave_land_adj       = 2;		// 1.2  -  1.5      idk what zetterburn's is
 air_dodge_speed     = 7.5;		// 7.5  -  8
 techroll_speed      = 6;		// 8    -  11
 
