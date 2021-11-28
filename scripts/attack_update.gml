@@ -7,6 +7,11 @@ can_fast_fall = true;
 switch(attack)
 {
 	//===========================
+    case 1: //A
+	{
+        can_fast_fall = !(window >= 2);
+	} break;
+	//===========================
 	case 2: //B
 	{
         can_wall_jump = (window == 3 || window == 6);
@@ -76,6 +81,7 @@ switch(attack)
 	//===========================
 	case 7: //G
 	{
+        can_fast_fall = false;
 		if (window <= 2)
 		{
 			if (vsp > 0) vsp *= 0.6;
@@ -399,21 +405,21 @@ switch(attack)
             	//setup hitboxes
             	var hb_size = floor(min(200, bonus * 100 + 60));
             	hidden_power_strength_vfx = (hb_size > 180 ? 3 : (hb_size > 100 ? 2 : 1));
-                set_hitbox_value(AT_TAUNT, 1, HG_WIDTH, hb_size);            	
-                set_hitbox_value(AT_TAUNT, 1, HG_HEIGHT, hb_size);    
-                set_hitbox_value(AT_TAUNT, 2, HG_WIDTH, max(hb_size - 80, 0));            	
-                set_hitbox_value(AT_TAUNT, 2, HG_HEIGHT, max(hb_size - 80, 0));            	        	
+                set_hitbox_value(AT_TAUNT, 1, HG_WIDTH, hb_size);
+                set_hitbox_value(AT_TAUNT, 1, HG_HEIGHT, hb_size);
+                set_hitbox_value(AT_TAUNT, 2, HG_WIDTH, max(hb_size - 80, 0));
+                set_hitbox_value(AT_TAUNT, 2, HG_HEIGHT, max(hb_size - 80, 0));
     			set_num_hitboxes(attack, hb_size > 80 ? 2 : 1);
     			
-    			var hb_damage = floor(bonus * 15);           	
-                set_hitbox_value(AT_TAUNT, 1, HG_DAMAGE, hb_damage);    
+    			var hb_damage = floor(bonus * 15);
+                set_hitbox_value(AT_TAUNT, 1, HG_DAMAGE, hb_damage);
                 set_hitbox_value(AT_TAUNT, 2, HG_DAMAGE, hb_damage + 6); 
                 
     			var hb_kb = bonus * 5 + 5;
 				set_hitbox_value(AT_TAUNT, 1, HG_BASE_KNOCKBACK, hb_kb);
 				set_hitbox_value(AT_TAUNT, 2, HG_BASE_KNOCKBACK, hb_kb + 3);
 				
-    			var hb_scaling = bonus * 0.8 + 0.4;
+    			var hb_scaling = bonus * 0.4 + 0.5;
 				set_hitbox_value(AT_TAUNT, 1, HG_KNOCKBACK_SCALING, hb_scaling);
 				set_hitbox_value(AT_TAUNT, 2, HG_KNOCKBACK_SCALING, hb_scaling + 0.25);
 				

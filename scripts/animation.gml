@@ -71,9 +71,15 @@ switch (state)
         }
 //=============================================================================
         else if (attack == UNOWN_ATK.N)
-        && (window == 4) && (window_timer == 0)
         {
-            image_index = 5;
+            if (window == 2)
+            {
+                image_index = get_window_value(attack, 2, AG_WINDOW_ANIM_FRAME_START) + (window_timer > 8);
+            }
+            if (window == 4) && (window_timer == 0)
+            {
+                image_index = 5;
+            }
         }
 //=============================================================================
         else if (attack == UNOWN_ATK.P) && !hitpause

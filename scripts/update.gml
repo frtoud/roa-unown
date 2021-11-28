@@ -73,7 +73,7 @@ else if !(fast_falling || state == PS_ATTACK_AIR)
 
 //rising fastfall check
 if (!fast_falling && down_hard_pressed && !lev_is_grounded && free) 
- && can_fast_fall & (vsp < 0)
+ && can_fast_fall && (vsp < 0)
 {
     spawn_hit_fx( x, y, unown_fastfall_vfx);
     vsp = fast_fall;
