@@ -209,6 +209,16 @@ else
     inward_hidden_power_fast = false;
 }
 
+//Shiny!
+if (get_player_color(player) == 1) 
+&& (get_gameplay_time() % (16 + random_func(4, 128, true)) == 0)
+{
+    var kx = x - 32 + random_func(5, 64, true);
+    var ky = y - unown_eye_center_offset - 32 + random_func(6, 64, true);
+    
+    var k = spawn_hit_fx(kx, ky, vfx_snow_twinkle);
+    k.depth = depth - 1;
+}
 
 //=============================================================================
 #define ground_raytest(x, y)

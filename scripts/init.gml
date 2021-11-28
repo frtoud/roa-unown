@@ -171,6 +171,8 @@ inward_hidden_power_fast = false; //use to set 2x speed of effect
 
 hidden_power_strength_vfx = 0; //1, 2, 3 to have a hitfx appear to communicate range of hidden power
 
+vfx_snow_twinkle = hit_fx_create(sprite_get("vfx_snow_twinkle"), 6); //if it aint broke...
+
 //================================================================
 // Balancing
 unown_d_speed = 8;
@@ -197,6 +199,10 @@ unown_turning_time_per_frame = 6;
 prev_spr_dir = spr_dir;
 
 //initialize form
+var stage_id = get_stage_data(SD_ID);
+print(stage_id);
+print(is_string(stage_id));
+
 hurtbox_spr = unown_form_data[unown_current_form].hurtbox;
 
 //================================================================
