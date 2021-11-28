@@ -285,6 +285,12 @@ with (oPlayer) if (self != other) && ("unown_dictionary" in self)
     other.unown_dictionary = unown_dictionary;
     break;
 }
+//================================================================
+// Compatibilities
+
+//Pokémon Stadium
+pkmn_stadium_front_img = sprite_get("cmp_stadium_front");
+pkmn_stadium_back_img = sprite_get("cmp_stadium_back");
 
 //================================================================
 // MunoPhone Touch code - don't touch
