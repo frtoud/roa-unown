@@ -170,6 +170,7 @@ if (unown_recalculate_stats)
 {
     lev_is_grounded = false;
     var lev_prev_state = lev_state;
+    if (!free) lev_prev_state = 3;
     
     //cases where levitate turns off
     if (state_cat == SC_HITSTUN) || (vsp < -4)
