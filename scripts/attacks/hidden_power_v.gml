@@ -38,6 +38,8 @@ set_hitbox_value(atk, 1, HG_ANGLE, 90);
 set_hitbox_value(atk, 1, HG_HITSTUN_MULTIPLIER, 0.35);
 set_hitbox_value(atk, 1, HG_BASE_KNOCKBACK, 10);
 set_hitbox_value(atk, 1, HG_KNOCKBACK_SCALING, .25);
+set_hitbox_value(atk, 1, HG_UNOWN_DAMAGE_BONUS, 4);
+set_hitbox_value(atk, 1, HG_UNOWN_KNOCKBACK_BONUS, 2);
 set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 6);
 set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .25);
 set_hitbox_value(atk, 1, HG_HIT_SFX, sound_get("sonic_bumper"));

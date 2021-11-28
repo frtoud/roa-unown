@@ -25,10 +25,4 @@ set_num_hitboxes(atk, 0);
 set_window_value(AT_TAUNT, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 //no words to fill in
 
-//todo: move these active windows definition to their respective files
-//set_window_value(UNOWN_ATK.G, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-//set_window_value(UNOWN_ATK.N, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-//set_window_value(UNOWN_ATK.R, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-//set_window_value(UNOWN_ATK.S, 2, AG_UNOWN_WINDOW_ACTIVE, true);
-//set_window_value(UNOWN_ATK.Y, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 

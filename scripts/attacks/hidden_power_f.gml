@@ -77,6 +77,9 @@ for (var i = 1; i <= 2; i++)
     set_hitbox_value(atk, i, HG_EFFECT, 1);
     set_hitbox_value(atk, i, HG_BASE_KNOCKBACK, 7);
     set_hitbox_value(atk, i, HG_KNOCKBACK_SCALING, .65);
+    set_hitbox_value(atk, i, HG_UNOWN_DAMAGE_BONUS, 4);
+    set_hitbox_value(atk, i, HG_UNOWN_KNOCKBACK_BONUS, 1);
+    set_hitbox_value(atk, i, HG_UNOWN_SCALING_BONUS, 0.10);
     set_hitbox_value(atk, i, HG_BASE_HITPAUSE, 8);
     set_hitbox_value(atk, i, HG_HITPAUSE_SCALING, .35);
     set_hitbox_value(atk, i, HG_HIT_LOCKOUT, 8);
@@ -99,6 +102,9 @@ for (var i = 1; i <= 2; i++)
     set_hitbox_value(atk, i+2, HG_EFFECT, 1);
     set_hitbox_value(atk, i+2, HG_BASE_KNOCKBACK, 6);
     set_hitbox_value(atk, i+2, HG_KNOCKBACK_SCALING, .10);
+    set_hitbox_value(atk, i+2, HG_UNOWN_DAMAGE_BONUS, 2);
+    set_hitbox_value(atk, i+2, HG_UNOWN_KNOCKBACK_BONUS, 1);
+    set_hitbox_value(atk, i+2, HG_UNOWN_SCALING_BONUS, 0.20);
     set_hitbox_value(atk, i+2, HG_BASE_HITPAUSE, 6);
     set_hitbox_value(atk, i+2, HG_HITSTUN_MULTIPLIER, .5);
     set_hitbox_value(atk, i+2, HG_HIT_SFX, asset_get("sfx_burnapplied"));

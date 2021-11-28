@@ -41,6 +41,9 @@ set_hitbox_value(atk, 1, HG_ANGLE, 90);
 set_hitbox_value(atk, 1, HG_BASE_KNOCKBACK, 8);
 set_hitbox_value(atk, 1, HG_FINAL_BASE_KNOCKBACK, 4);
 set_hitbox_value(atk, 1, HG_KNOCKBACK_SCALING, .55);
+set_hitbox_value(atk, 1, HG_UNOWN_DAMAGE_BONUS, 6);
+set_hitbox_value(atk, 1, HG_UNOWN_KNOCKBACK_BONUS, 4);
+set_hitbox_value(atk, 1, HG_UNOWN_SCALING_BONUS, 0.20);
 set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 5);
 set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(atk, 1, HG_VISUAL_EFFECT, 149);
@@ -54,11 +57,15 @@ set_hitbox_value(atk, 2, HG_HEIGHT, 24); //dynamic
 set_hitbox_value(atk, 2, HG_WIDTH, 24);
 set_hitbox_value(atk, 2, HG_PRIORITY, 2);
 set_hitbox_value(atk, 2, HG_SHAPE, 1);
-set_hitbox_value(atk, 2, HG_DAMAGE, 7);
+set_hitbox_value(atk, 2, HG_DAMAGE, 6);
 set_hitbox_value(atk, 2, HG_ANGLE, 45);
 set_hitbox_value(atk, 2, HG_ANGLE_FLIPPER, 8);
 set_hitbox_value(atk, 2, HG_BASE_KNOCKBACK, 8);
 set_hitbox_value(atk, 2, HG_KNOCKBACK_SCALING, .35);
+//not applied yet: need extra condition in set_attack.gml
+set_hitbox_value(atk, 2, HG_UNOWN_DAMAGE_BONUS, 4);
+set_hitbox_value(atk, 2, HG_UNOWN_KNOCKBACK_BONUS, 2);
+set_hitbox_value(atk, 2, HG_UNOWN_SCALING_BONUS, 0.15);
 set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 1);
 set_hitbox_value(atk, 2, HG_EXTRA_HITPAUSE, 7);
 set_hitbox_value(atk, 2, HG_VISUAL_EFFECT, 195);
