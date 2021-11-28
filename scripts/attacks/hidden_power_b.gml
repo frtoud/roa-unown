@@ -8,7 +8,7 @@ set_attack_value(atk, AG_NUM_WINDOWS, 6);
 set_window_value(atk, 1, AG_WINDOW_LENGTH, 8);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 1);
 set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_swipe_weak2"));
+set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_bigplant_lunge"));
 set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 7);
 
 //active (early)

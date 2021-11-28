@@ -48,11 +48,23 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
             //gained buff
             sound_play(sfx_unown_buff_up);
             inward_hidden_power_timer = inward_hidden_power_timer_max;
+            check_if_special_word(string_copy(unown_text_buffer, unown_best_word_pos+1, unown_best_word_length));
         }
     }
 }
 
-
+//====================================================================
+//special effects on spelling certain words
+#define check_if_special_word(word)
+{
+    word = string_upper(word);
+    switch (word)
+    {
+       case "UNOWN":
+            sound_play(sound_get("gsc_unown"));
+       break;
+    }
+}
 
 //====================================================================
 // Trie structure parser 

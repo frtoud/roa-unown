@@ -7,7 +7,7 @@ set_attack_value(atk, AG_NUM_WINDOWS, 7);
 set_window_value(atk, 1, AG_WINDOW_LENGTH, 12);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_swipe_heavy1"));
+set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_shovel_dig"));
 set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, get_window_value(atk, 1, AG_WINDOW_LENGTH) - 1);
 
 //active
@@ -92,7 +92,7 @@ set_hitbox_value(atk, 3, HG_BASE_HITPAUSE, 4);
 set_hitbox_value(atk, 3, HG_EXTRA_HITPAUSE, 8);
 set_hitbox_value(atk, 3, HG_HITPAUSE_SCALING, 0.8);
 set_hitbox_value(atk, 3, HG_VISUAL_EFFECT, 19);
-set_hitbox_value(atk, 3, HG_HIT_SFX, asset_get("sfx_blow_heavy2"));
+set_hitbox_value(atk, 3, HG_HIT_SFX, asset_get("sfx_shovel_hit_heavy2"));
 
 //special prong
 set_hitbox_value(atk, 4, HG_HITBOX_TYPE, 1);

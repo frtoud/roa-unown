@@ -8,7 +8,7 @@ set_attack_value(atk, AG_NUM_WINDOWS, 5);
 set_window_value(atk, 1, AG_WINDOW_LENGTH, 5);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 1);
 set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(atk, 1, AG_WINDOW_SFX, sound_get("rse_detect"));
+set_window_value(atk, 1, AG_WINDOW_SFX, sound_get("rse_metal"));
 set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, get_window_value(atk, 1, AG_WINDOW_LENGTH) - 1);
 
 //active
@@ -60,7 +60,7 @@ set_hitbox_value(atk, 1, HG_BASE_KNOCKBACK, 5); //dynamic
 set_hitbox_value(atk, 1, HG_KNOCKBACK_SCALING, .85); //dynamic
 set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .35);
-set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_blow_heavy2"));
+set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_shovel_hit_heavy1"));
 set_hitbox_value(atk, 1, HG_HITBOX_GROUP, -1);
 
 //shockwave (Manually spawned)

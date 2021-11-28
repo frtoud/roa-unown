@@ -7,7 +7,7 @@ set_attack_value(atk, AG_NUM_WINDOWS, 3);
 set_window_value(atk, 1, AG_WINDOW_LENGTH, 8);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 1);
 set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_swipe_medium2"));
+set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_bird_upspecial"));
 set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 7);
 
 set_window_value(atk, 2, AG_WINDOW_LENGTH, 10);
@@ -38,7 +38,7 @@ set_hitbox_value(atk, 1, HG_UNOWN_KNOCKBACK_BONUS, 1);
 set_hitbox_value(atk, 1, HG_UNOWN_SCALING_BONUS, 0.10);
 set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .35);
-set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_blow_medium3"));
 
 //================================================================
 //WORD DATA

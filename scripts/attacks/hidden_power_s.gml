@@ -35,6 +35,7 @@ set_hitbox_value(atk, 1, HG_ANGLE, 180);
 set_hitbox_value(atk, 1, HG_BASE_KNOCKBACK, 5);
 set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 3);
 set_hitbox_value(atk, 1, HG_EXTRA_HITPAUSE, -2);
+set_hitbox_value(atk, 1, HG_VISUAL_EFFECT, 26);
 set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_icehit_medium2"));
 set_hitbox_value(atk, 1, HG_HITBOX_GROUP, 1);
 //Hit 1-2 (backsequence)
@@ -51,6 +52,7 @@ set_hitbox_value(atk, 2, HG_ANGLE, 75);
 set_hitbox_value(atk, 2, HG_BASE_KNOCKBACK, 8);
 set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 3);
 set_hitbox_value(atk, 2, HG_EXTRA_HITPAUSE, -2);
+set_hitbox_value(atk, 2, HG_VISUAL_EFFECT, 26);
 set_hitbox_value(atk, 2, HG_HIT_SFX, asset_get("sfx_icehit_medium2"));
 set_hitbox_value(atk, 2, HG_HITBOX_GROUP, 1);
 
@@ -69,6 +71,7 @@ set_hitbox_value(atk, 3, HG_ANGLE, 115);
 set_hitbox_value(atk, 3, HG_BASE_KNOCKBACK, 8);
 set_hitbox_value(atk, 3, HG_BASE_HITPAUSE, 3);
 set_hitbox_value(atk, 3, HG_EXTRA_HITPAUSE, -2);
+set_hitbox_value(atk, 3, HG_VISUAL_EFFECT, 26);
 set_hitbox_value(atk, 3, HG_HIT_SFX, asset_get("sfx_icehit_medium2"));
 set_hitbox_value(atk, 3, HG_HITBOX_GROUP, 2);
 //Hit 2-2
@@ -86,6 +89,7 @@ set_hitbox_value(atk, 4, HG_ANGLE, 0);
 set_hitbox_value(atk, 4, HG_BASE_KNOCKBACK, 5);
 set_hitbox_value(atk, 4, HG_BASE_HITPAUSE, 3);
 set_hitbox_value(atk, 4, HG_EXTRA_HITPAUSE, -2);
+set_hitbox_value(atk, 4, HG_VISUAL_EFFECT, 26);
 set_hitbox_value(atk, 4, HG_HIT_SFX, asset_get("sfx_icehit_medium2"));
 set_hitbox_value(atk, 4, HG_HITBOX_GROUP, 2);
 
@@ -108,6 +112,7 @@ set_hitbox_value(atk, 5, HG_UNOWN_KNOCKBACK_BONUS, 1);
 set_hitbox_value(atk, 5, HG_UNOWN_SCALING_BONUS, 0.10);
 set_hitbox_value(atk, 5, HG_BASE_HITPAUSE, 6);
 set_hitbox_value(atk, 5, HG_HITPAUSE_SCALING, 0.45);
+set_hitbox_value(atk, 5, HG_VISUAL_EFFECT, 199);
 set_hitbox_value(atk, 5, HG_HIT_SFX, asset_get("sfx_icehit_heavy1"));
 set_hitbox_value(atk, 5, HG_HITBOX_GROUP, 3);
 //Hit 3-2
@@ -129,6 +134,7 @@ set_hitbox_value(atk, 6, HG_UNOWN_KNOCKBACK_BONUS, 1);
 set_hitbox_value(atk, 6, HG_UNOWN_SCALING_BONUS, 0.10);
 set_hitbox_value(atk, 6, HG_BASE_HITPAUSE, 6);
 set_hitbox_value(atk, 6, HG_HITPAUSE_SCALING, 0.45);
+set_hitbox_value(atk, 6, HG_VISUAL_EFFECT, 199);
 set_hitbox_value(atk, 6, HG_HIT_SFX, asset_get("sfx_icehit_heavy1"));
 set_hitbox_value(atk, 6, HG_HITBOX_GROUP, 3);
 

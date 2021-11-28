@@ -116,6 +116,7 @@ for (var i = 1; i <= 2; i++)
     set_hitbox_value(atk, i+2, HG_PROJECTILE_HSPEED, 7);
     set_hitbox_value(atk, i+2, HG_PROJECTILE_AIR_FRICTION, 0);
     set_hitbox_value(atk, i+2, HG_PROJECTILE_GROUND_FRICTION, 0);
+    set_hitbox_value(atk, i+2, HG_PROJECTILE_DESTROY_EFFECT, 3);
 }
 
 //================================================================

@@ -7,8 +7,8 @@ set_attack_value(atk, AG_NUM_WINDOWS, 4);
 
 set_window_value(atk, 1, AG_WINDOW_LENGTH, 6);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 1);
-set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
 set_window_value(atk, 1, AG_WINDOW_CUSTOM_GRAVITY, gravity_speed);
+set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
 set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_absa_cloud_place"));
 set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, get_window_value(atk, 1, AG_WINDOW_LENGTH) - 1);
 
@@ -28,6 +28,9 @@ set_window_value(atk, 4, AG_WINDOW_LENGTH, 24);
 set_window_value(atk, 4, AG_WINDOW_ANIM_FRAMES, 6);
 set_window_value(atk, 4, AG_WINDOW_ANIM_FRAME_START, 12);
 set_window_value(atk, 4, AG_WINDOW_CUSTOM_GRAVITY, 1.5 * gravity_speed);
+set_window_value(atk, 4, AG_WINDOW_HAS_SFX, 1);
+set_window_value(atk, 4, AG_WINDOW_SFX, asset_get("mfx_unstar"));
+set_window_value(atk, 4, AG_WINDOW_SFX_FRAME, 0);
 
 set_num_hitboxes(atk, 0);
 

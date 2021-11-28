@@ -38,7 +38,8 @@ set_hitbox_value(atk, 1, HG_UNOWN_KNOCKBACK_BONUS, 1);
 set_hitbox_value(atk, 1, HG_UNOWN_SCALING_BONUS, 0.10);
 set_hitbox_value(atk, 1, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(atk, 1, HG_HITPAUSE_SCALING, .35);
-set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+set_hitbox_value(atk, 1, HG_VISUAL_EFFECT, 149);
+set_hitbox_value(atk, 1, HG_HIT_SFX, asset_get("sfx_waterhit_medium"));
 
 set_hitbox_value(atk, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(atk, 2, HG_WINDOW, 2);
@@ -57,7 +58,8 @@ set_hitbox_value(atk, 2, HG_BASE_KNOCKBACK, 6);
 set_hitbox_value(atk, 2, HG_KNOCKBACK_SCALING, .15);
 set_hitbox_value(atk, 2, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(atk, 2, HG_HITPAUSE_SCALING, .35);
-set_hitbox_value(atk, 2, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+set_hitbox_value(atk, 2, HG_VISUAL_EFFECT, 150);
+set_hitbox_value(atk, 2, HG_HIT_SFX, asset_get("sfx_waterhit_medium"));
 
 //================================================================
 //WORD DATA

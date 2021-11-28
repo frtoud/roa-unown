@@ -39,7 +39,7 @@ set_window_value(atk, 5, AG_WINDOW_ANIM_FRAME_START, 5);
 set_window_value(atk, 5, AG_WINDOW_GOTO, 7);
 
 //bounced
-set_window_value(atk, 6, AG_WINDOW_LENGTH, 8);
+set_window_value(atk, 6, AG_WINDOW_LENGTH, 12);
 set_window_value(atk, 6, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(atk, 6, AG_WINDOW_ANIM_FRAME_START, 6);
 set_window_value(atk, 6, AG_WINDOW_HAS_SFX, 1);
