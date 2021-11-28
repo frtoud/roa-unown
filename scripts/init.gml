@@ -167,6 +167,7 @@ hitfx_hiddenpower = hit_fx_create(vfx_hiddenpower_spr, 34);
 
 inward_hidden_power_timer = 0;
 inward_hidden_power_timer_max = 2 * 17;
+inward_hidden_power_fast = false; //use to set 2x speed of effect
 
 //================================================================
 // Balancing

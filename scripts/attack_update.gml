@@ -383,9 +383,14 @@ switch(attack)
 	//======================================================
     case AT_TAUNT: //Hidden Power
     {
-    	//consume word buffer
-    	//calculate damage boost
-    	//deploy hitbox
+    	if (window == 1 && window_timer == 1 && unown_best_word_length > 1)
+    	{
+    		inward_hidden_power_timer = inward_hidden_power_timer_max;
+            inward_hidden_power_fast = true;
+            //consume word buffer
+            //calculate damage boost
+            //setup hitboxes
+    	}
     }break;
 	//======================================================
 	default: break;

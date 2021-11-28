@@ -181,7 +181,14 @@ if (unown_y_water.timer > 0) && (state != PS_ATTACK_AIR || !hitpause)
 //===============================================================
 //Hidden power effect
 init_shader();
-if (inward_hidden_power_timer > 0) inward_hidden_power_timer--;
+if (inward_hidden_power_timer > 0)
+{
+    inward_hidden_power_timer -= (inward_hidden_power_fast ? 2 : 1);
+}
+else 
+{ 
+    inward_hidden_power_fast = false;
+}
 
 
 //=============================================================================
