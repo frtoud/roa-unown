@@ -281,10 +281,12 @@ unown_letter_exclamation_bonus = 0.015; //added bonus for using "!" for each add
 unown_recalculate_stats = true; //set to true to let passive buffs recalculate (needed at the start to init the forms)
 
 unown_dictionary = {}; //misnomer: actually a trie
+unown_collect_dictionary_entries = true;
 with (oPlayer) if (self != other) && ("unown_dictionary" in self)
 { 
-    with (other) print("taken from " + string(other.id));
+    with (other) print("dictionary copied from P" + string(other.player));
     other.unown_dictionary = unown_dictionary;
+    other.unown_collect_dictionary_entries = false;
     break;
 }
 

@@ -144,11 +144,18 @@ prev_spr_dir = spr_dir;
 
 //=============================================================================
 //Word typing
+if (unown_collect_dictionary_entries)
+{
+    get_extra_dictionary_entries();
+    unown_collect_dictionary_entries = false;
+}
+
 if (unown_attack_is_fresh)
 {
     user_event(1);
 }
 
+//=============================================================================
 //Form stats
 if (unown_recalculate_stats)
 {
@@ -252,4 +259,73 @@ if (check_plat && !val)
 }
 
 return val;
- 
+
+//=============================================================================
+// Collect extra entries from other mods
+#define get_extra_dictionary_entries()
+{
+    var list = [];
+    with (oPlayer) if (self != other)
+    {
+        var char_name = get_char_info(player, INFO_STR_NAME);
+        var char_author = get_char_info(player, INFO_STR_AUTHOR); //broken?
+        with (other)
+        {
+            list = string_split(char_name);
+            for (var i = 0; i < array_length(list); i++)
+                insert_in_trie(unown_dictionary, list[i]);
+
+            list = string_split(char_author);
+            for (var i = 0; i < array_length(list); i++)
+                insert_in_trie(unown_dictionary, list[i]);
+        }
+    }
+    
+    //list = string_split(get_stage_data(SD_???));
+    //for (var i = 0; i < array_length(list); i++)
+    //    insert_in_trie(unown_dictionary, list[i]);
+}
+//=============================================================================
+#define string_split(str)
+{
+    var output = []; 
+    var o = 0;
+    var length = string_length(str);
+    var stop = false;
+    var i = 1;
+    while (i < length)
+    {
+        var n = 1;
+        while (" " != string_char_at(str, i + n) && ((i + n) <= length)) n++;
+        output[o] = string_copy(str, i, n); o++;
+        i += n + 1;
+    }
+    
+    return output;
+}
+
+#macro TERMINATOR  "_"
+//=============================================================================
+#define insert_in_trie(top_trie, word)
+{
+    word = string_letters(string_lower(word));
+    var word_length = string_length(word);
+    if (word_length < 2) return;
+    var cur_trie = top_trie;
+    for (var cur_index = 1; cur_index <= word_length; cur_index++)
+    {
+        var letter = string_char_at(word, cur_index);
+        if (letter in cur_trie)
+        {
+            cur_trie = variable_instance_get(cur_trie, letter);
+        }
+        else
+        {
+            variable_instance_set(cur_trie, letter, {});
+            cur_trie = variable_instance_get(cur_trie, letter);
+        }
+    }
+    
+    //mark path as valid
+    variable_instance_set(cur_trie, TERMINATOR, true);
+}
