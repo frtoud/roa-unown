@@ -52,7 +52,7 @@ make_letter_data( 6, "F", { hurtbox:hurt_F, asymmetric: true, left_hurtbox:hurt_
 make_letter_data( 7, "G", { hurtbox:hurt_A, asymmetric: true });
 make_letter_data( 8, "H", { hurtbox:hurt_O, asymmetric: true });
 make_letter_data( 9, "I", { hurtbox:hurt_I });
-make_letter_data(10, "J", { hurtbox:hurt_A, asymmetric: true });
+make_letter_data(10, "J", { hurtbox:hurt_A, asymmetric: true, attack_index:AT_DSPECIAL_2 }); //DAN WHY
 make_letter_data(11, "K", { hurtbox:hurt_I, asymmetric: true });
 make_letter_data(12, "L", { hurtbox:hurt_A, asymmetric: true });
 make_letter_data(13, "M", { hurtbox:hurt_O });

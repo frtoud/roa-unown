@@ -1,4 +1,4 @@
-var atk = 10; // J
+var atk = AT_DSPECIAL_2; // J (not 10. because of dan.)
 set_attack_value(atk, AG_CATEGORY, 2);
 set_attack_value(atk, AG_SPRITE, sprite_get("attack_J"));
 set_attack_value(atk, AG_HURTBOX_SPRITE, sprite_get("attack_J_hurt"));
@@ -93,7 +93,7 @@ set_hitbox_value(atk, 2, HG_HITBOX_GROUP, 1);
 
 //================================================================
 //WORD DATA
-set_window_value(UNOWN_ATK.J, 2, AG_UNOWN_WINDOW_ACTIVE, true);
+set_window_value(atk, 2, AG_UNOWN_WINDOW_ACTIVE, true);
 if ("j" not in unown_dictionary) unown_dictionary.j = make_trie_J();
 //NOTE: C is too big for its file. subgroup "CO" handled here
 //(Assumes files are loaded alphabetically. probably not ideal)

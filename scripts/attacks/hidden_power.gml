@@ -100,7 +100,7 @@ set_attack_value(UNOWN_ATK.F, AG_MUNO_ATTACK_NAME, "F");
 set_attack_value(UNOWN_ATK.G, AG_MUNO_ATTACK_NAME, "G");
 set_attack_value(UNOWN_ATK.H, AG_MUNO_ATTACK_NAME, "H");
 set_attack_value(UNOWN_ATK.I, AG_MUNO_ATTACK_NAME, "I");
-set_attack_value(UNOWN_ATK.J, AG_MUNO_ATTACK_NAME, "J");
+set_attack_value(AT_DSPECIAL_2, AG_MUNO_ATTACK_NAME, "J");
 set_attack_value(UNOWN_ATK.K, AG_MUNO_ATTACK_NAME, "K");
 set_attack_value(UNOWN_ATK.L, AG_MUNO_ATTACK_NAME, "L");
 set_attack_value(UNOWN_ATK.M, AG_MUNO_ATTACK_NAME, "M");

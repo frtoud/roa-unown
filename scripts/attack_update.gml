@@ -162,7 +162,7 @@ switch(attack)
 		}
 	} break;
 	//===========================
-	case 10: //J
+	case AT_DSPECIAL_2: //J (not 10, all because of DAN)
 	{
 		if (window == 1)
 		{
