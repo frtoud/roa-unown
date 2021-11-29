@@ -3956,7 +3956,6 @@ clipping
 clippings
 clips
 clique
-clitoris
 cloak
 clobbered
 clock
@@ -4486,9 +4485,7 @@ conditioning
 conditions
 condo
 condolences
-condom
 condominium
-condoms
 condone
 condoned
 condoning
@@ -6192,11 +6189,9 @@ dibs
 dice
 diced
 dicey
-dick
 dickens
 dickie
 dicking
-dicks
 dicky
 dictate
 dictated
@@ -8320,7 +8315,6 @@ fella
 fellah
 fellahs
 fellas
-fellatio
 feller
 fellers
 felling
@@ -15350,11 +15344,6 @@ organized
 organizer
 organizing
 organs
-orgasm
-orgasmic
-orgasms
-orgies
-orgy
 oriental
 orientation
 oriented
@@ -16048,8 +16037,6 @@ penguin
 penguins
 penicillin
 peninsula
-penis
-penises
 penitentiary
 pennant
 penne
@@ -16609,6 +16596,7 @@ poet
 poetic
 poetry
 poets
+pog
 poi
 poignant
 point
@@ -16731,12 +16719,6 @@ pores
 poring
 pork
 porky
-porn
-porno
-pornographers
-pornographic
-pornography
-pornos
 porridge
 port
 portable
@@ -17298,9 +17280,6 @@ prosper
 prosperity
 prostate
 prosthetic
-prostitute
-prostitutes
-prostitution
 protect
 protected
 protecting
@@ -17528,7 +17507,6 @@ pushover
 pushy
 puss
 pussies
-pussy
 pussycat
 put
 putrid
@@ -22875,7 +22853,6 @@ tiring
 tis
 tissue
 tissues
-tit
 titan
 titanic
 titanium
@@ -24045,8 +24022,6 @@ vacuum
 vacuumed
 vacuuming
 vagabond
-vagina
-vaginas
 vague
 vaguely
 vaguest
