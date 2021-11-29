@@ -25288,7 +25288,7 @@ dacus
 hitbox
 hurtbox
 dlc
-aetheral
+aethereal
 abyss
 troupple
 pokemon
