@@ -5549,6 +5549,7 @@ dangle
 dangled
 dangling
 danish
+dank
 daphne
 dapper
 dare
