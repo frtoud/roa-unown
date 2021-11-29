@@ -98,6 +98,7 @@ if !(move_cooldown[attack] > 0)
 }
 
 lev_bypass = false; //failsafe
+unown_diagonal_leniency = unown_diagonal_leniency_max; // see attack_update.gml
 
 
 //=========================================================
@@ -111,14 +112,11 @@ lev_bypass = false; //failsafe
     // 7 8 9
     // just to make the arrays above more readable
     
-    var final_dir = 0;
+    // the supersonic epiphany
+    // numpad_notaion = 5 + (up_down-down_down)*3 + (right_down-left_down)
+    
     var dp = dir_pressed;
-    if (dp.down)
-    { final_dir = dp.left ? 7 : (!dp.right ? 8 : 9); }
-    else if (dp.up)
-    { final_dir = dp.left ? 1 : (!dp.right ? 2 : 3); }
-    else
-    { final_dir = dp.left ? 4 : (!dp.right ? 5 : 6); }
+    var final_dir =  5 + (dp.down - dp.up)*3 + (dp.right - dp.left);
     
     return result_array[final_dir - 1];
 }

@@ -268,6 +268,8 @@ unown_y_water_dying_time = 10;
 unown_text_buffer = "";
 unown_text_maxlength = 16; //max number of characters on the buffer
 unown_attack_is_fresh = false; //wether an attack is recent or not (if true, will add a letter when it reaches an active window)
+unown_diagonal_leniency = 0; //if above zero, allows switching to diagonals when using cardinal attacks
+unown_diagonal_leniency_max = 2;
 
 unown_best_word_pos = 0;
 unown_best_word_length = 0;
@@ -285,6 +287,7 @@ with (oPlayer) if (self != other) && ("unown_dictionary" in self)
     other.unown_dictionary = unown_dictionary;
     break;
 }
+
 //================================================================
 // Compatibilities
 

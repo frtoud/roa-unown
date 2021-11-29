@@ -1,4 +1,11 @@
 
+//special diagonal input leniency
+if (unown_diagonal_leniency)
+{
+	unown_diagonal_leniency--;
+	do_diagonal_leniency();
+}
+
 //reset flag: set to TRUE explicitly in the attack
 lev_bypass = false;
 can_fast_fall = true;
@@ -453,5 +460,169 @@ fall_through = (down_down) && (!lev_bypass);
     if (vsp >= max_fall && vsp < fast_fall)
     {
         vsp += gravity_speed;
+    }
+}
+//=====================================================================
+#define do_diagonal_leniency()
+{
+	//keep in sync with set_attack.gml... 
+	//to optimize later...
+	var dir_pressed = {up:false, down:false, left:false, right:false};
+	var new_form = noone;
+	
+	switch (attack)
+	{
+		//STANDARDS
+		//==============================================
+		case 4: //D
+		case 8: //H
+		case 13: //M
+		case 21: //U
+		{
+		    dir_pressed.up = is_attack_pressed(DIR_UP);
+		    dir_pressed.down = is_attack_pressed(DIR_DOWN);
+		    dir_pressed.left = is_attack_pressed(DIR_LEFT);
+		    dir_pressed.right = is_attack_pressed(DIR_RIGHT);
+			
+			if (attack == UNOWN_ATK.M && !dir_pressed.down) 
+			&& (0 != (dir_pressed.right - dir_pressed.left))
+			{
+				new_form = 0 > (dir_pressed.right - dir_pressed.left) ? UNOWN_ATK.C : UNOWN_ATK.V;
+			}
+			else if (attack == UNOWN_ATK.H && !dir_pressed.right)
+			&& (0 != (dir_pressed.up - dir_pressed.down))
+			{
+				new_form = 0 > (dir_pressed.up - dir_pressed.down) ? UNOWN_ATK.J : UNOWN_ATK.C;
+			}
+			else if (attack == UNOWN_ATK.D && !dir_pressed.left)
+			&& (0 != (dir_pressed.up - dir_pressed.down))
+			{
+				new_form = 0 > (dir_pressed.up - dir_pressed.down) ? UNOWN_ATK.S : UNOWN_ATK.V;
+			}
+			else if (attack == UNOWN_ATK.U && !dir_pressed.up)
+			&& (0 != (dir_pressed.right - dir_pressed.left))
+			{
+				new_form = 0 > (dir_pressed.right - dir_pressed.left) ? UNOWN_ATK.J : UNOWN_ATK.S;
+			}
+			
+		} break;
+		//STRONGS
+		//==============================================
+		case 1: //A
+		case 5: //E
+		case 23: //W
+		case 24: //X
+		{
+		    if (is_strong_pressed(DIR_ANY))
+		    {
+		        dir_pressed.up = is_strong_pressed(DIR_UP);
+		        dir_pressed.down = is_strong_pressed(DIR_DOWN);
+		        dir_pressed.left = is_strong_pressed(DIR_LEFT);
+		        dir_pressed.right = is_strong_pressed(DIR_RIGHT);
+		    }
+		    else if (strong_down)
+		    {
+		        dir_pressed.up = up_down;
+		        dir_pressed.down = down_down;
+		        dir_pressed.left = left_down;
+		        dir_pressed.right = right_down;
+		    }
+		    
+			if (attack == UNOWN_ATK.W && !dir_pressed.down) 
+			&& (0 != (dir_pressed.right - dir_pressed.left))
+			{
+				new_form = 0 > (dir_pressed.right - dir_pressed.left) ? UNOWN_ATK.Z : UNOWN_ATK.K;
+			}
+			else if (attack == UNOWN_ATK.X && !dir_pressed.right)
+			&& (0 != (dir_pressed.up - dir_pressed.down))
+			{
+				new_form = 0 > (dir_pressed.up - dir_pressed.down) ? UNOWN_ATK.P : UNOWN_ATK.Z;
+			}
+			else if (attack == UNOWN_ATK.E && !dir_pressed.left)
+			&& (0 != (dir_pressed.up - dir_pressed.down))
+			{
+				new_form = 0 > (dir_pressed.up - dir_pressed.down) ? UNOWN_ATK.Q : UNOWN_ATK.K;
+			}
+			else if (attack == UNOWN_ATK.A && !dir_pressed.up)
+			&& (0 != (dir_pressed.right - dir_pressed.left))
+			{
+				new_form = 0 > (dir_pressed.right - dir_pressed.left) ? UNOWN_ATK.P : UNOWN_ATK.Q;
+			}
+			
+		} break;
+		//SPECIALS
+		//==============================================
+		case 2: //B
+		case 6: //F
+		case 14: //N
+		case 25: //Y
+		{
+		    dir_pressed.up = is_special_pressed(DIR_UP);
+		    dir_pressed.down = is_special_pressed(DIR_DOWN);
+		    dir_pressed.left = is_special_pressed(DIR_LEFT);
+		    dir_pressed.right = is_special_pressed(DIR_RIGHT);
+		    
+			if (attack == UNOWN_ATK.Y && !dir_pressed.down) 
+			&& (0 != (dir_pressed.right - dir_pressed.left))
+			{
+				new_form = 0 > (dir_pressed.right - dir_pressed.left) ? UNOWN_ATK.G : UNOWN_ATK.T;
+			}
+			else if (attack == UNOWN_ATK.N && !dir_pressed.right)
+			&& (0 != (dir_pressed.up - dir_pressed.down))
+			{
+				new_form = 0 > (dir_pressed.up - dir_pressed.down) ? UNOWN_ATK.R : UNOWN_ATK.G;
+			}
+			else if (attack == UNOWN_ATK.F && !dir_pressed.left)
+			&& (0 != (dir_pressed.up - dir_pressed.down))
+			{
+				new_form = 0 > (dir_pressed.up - dir_pressed.down) ? UNOWN_ATK.L : UNOWN_ATK.T;
+			}
+			else if (attack == UNOWN_ATK.B && !dir_pressed.up)
+			&& (0 != (dir_pressed.right - dir_pressed.left))
+			{
+				new_form = 0 > (dir_pressed.right - dir_pressed.left) ? UNOWN_ATK.R : UNOWN_ATK.L;
+			}
+		} break;
+		default: break; //already diagonal. or is neutral. do nothing
+	}
+	
+	if (new_form == UNOWN_ATK.C && unown_c_used) { new_form = noone; }
+	
+	if (new_form != noone && move_cooldown[unown_form_data[new_form].atk] < 1)
+	{
+		attack = unown_form_data[new_form].atk;
+	    hurtbox_spr = unown_form_data[new_form].hurtbox;
+	    unown_current_form = new_form;
+	    unown_attack_is_fresh = (attack != AT_PHONE);
+	    
+	    adjust_unown_attack_grid();
+	    unown_recalculate_stats = true;
+	}
+}
+
+//=========================================================
+#define adjust_unown_attack_grid()
+{
+    var bonus = unown_current_bonus;
+    
+    //apply buffs based on current word boost
+    for (var hb = 1; hb <= get_num_hitboxes(attack); hb++)
+    {
+        apply_word_bonus(bonus, attack, hb, HG_DAMAGE, HG_UNOWN_DAMAGE_BONUS);
+        apply_word_bonus(bonus, attack, hb, HG_BASE_KNOCKBACK, HG_UNOWN_KNOCKBACK_BONUS);
+        apply_word_bonus(bonus, attack, hb, HG_KNOCKBACK_SCALING, HG_UNOWN_SCALING_BONUS);
+    }
+}
+
+#define apply_word_bonus(cur_mult, atk, hnum, base_index, bonus_index)
+{
+    if (0 < get_hitbox_value(atk, hnum, bonus_index))
+    {
+        reset_hitbox_value(atk, hnum, base_index);
+        
+        // total = base + charge * bonus
+        var value = get_hitbox_value(atk, hnum, base_index)
+           + (cur_mult * get_hitbox_value(atk, hnum, bonus_index) );
+        set_hitbox_value(atk, hnum, base_index, value);
     }
 }
