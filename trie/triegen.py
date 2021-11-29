@@ -8,7 +8,7 @@ def make_trie(words):
     words = [word for word in words]
     trie = dict()
     for word in tqdm(words):
-        if len(word) < 16:
+        if len(word) <= 16:
             trie_for_word = _make_trie_from_word(word)
             trie = _deep_update(trie, trie_for_word)
     return trie

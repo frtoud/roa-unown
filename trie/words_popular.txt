@@ -1,4 +1,3 @@
-aa
 aardvark
 aargh
 aback
@@ -171,6 +170,7 @@ achieving
 aching
 achingly
 acid
+acidic
 acids
 acing
 acknowledge
@@ -3424,6 +3424,7 @@ certified
 certify
 cerulean
 cervical
+cervix
 cessation
 cesspool
 chad
@@ -4069,8 +4070,6 @@ cockney
 cockpit
 cockroach
 cockroaches
-cocksucker
-cocksuckers
 cocktail
 cocktails
 cocky
@@ -4116,7 +4115,6 @@ coincidences
 coincidental
 coincidentally
 coins
-coitus
 coke
 cokes
 col
@@ -5208,6 +5206,7 @@ cripes
 cripple
 crippled
 cripples
+crippling
 cris
 crises
 crisis
@@ -5773,6 +5772,8 @@ defendants
 defended
 defender
 defending
+defenestrate
+defenestrated
 defense
 defenseless
 defenses
@@ -6520,6 +6521,7 @@ dispute
 disputes
 disputing
 disqualified
+disqualification
 disqualify
 disregard
 disregarded
@@ -7625,7 +7627,7 @@ erases
 erasing
 ere
 erect
-erection
+erecting
 ergo
 erica
 erode
@@ -14163,7 +14165,6 @@ mixes
 mixing
 mixture
 mixup
-mm
 mo
 moan
 moaning
@@ -15143,6 +15144,8 @@ od
 odd
 oddball
 oddest
+oddity
+oddities
 oddly
 odds
 ode
@@ -17507,7 +17510,6 @@ pushing
 pushover
 pushy
 puss
-pussies
 pussycat
 put
 putrid
@@ -20715,7 +20717,6 @@ soda
 sodas
 sodding
 sodium
-sodomy
 sofa
 sofas
 soft
@@ -25253,6 +25254,7 @@ zones
 zoning
 zonked
 zoo
+zoology
 zoom
 zooming
 exw
