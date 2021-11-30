@@ -252,7 +252,10 @@ lev_target_accel = (2.0 * lev_target_vsp) / lev_cycle_time;
 //================================================================
 //attack flags
 
-unown_c_used = false; //once per airtime
+//once per airtime
+unown_c_used = false; 
+unown_g_used = false; 
+unown_t_used = false; 
 
 unown_i_angle = 90; //straight up
 unown_i_prongs_spr = sprite_get("attack_I_prong");

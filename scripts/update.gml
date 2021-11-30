@@ -120,6 +120,8 @@ if (lev_parry_cooldown > 0)
 if (lev_is_grounded || !free || state == PS_WALL_JUMP || state == PS_WALL_TECH)
 {
     unown_c_used = false;
+    unown_g_used = false;
+    unown_t_used = false;
 }
 
 //=============================================================

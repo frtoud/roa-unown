@@ -99,19 +99,28 @@ switch(attack)
 		if (window <= 2)
 		{
 			if (vsp > 0) vsp *= 0.6;
+            set_window_value(attack, 4, AG_WINDOW_TYPE, 0); //no pratfall
+            set_window_value(attack, 4, AG_WINDOW_HAS_SFX, 0); //no sfx
 		}
         if (window == 3)
         {
+            unown_g_used = true;
         	if (y < -40)
         	{
-        		vsp = 0;
-        	   var sd_hitbox = create_hitbox(attack, 2, x, y - 32);
-        	   sd_hitbox.can_hit_self = true;
+        	    vsp = 0;
+        	    var sd_hitbox = create_hitbox(attack, 2, x, y - 32);
+        	    sd_hitbox.can_hit_self = true;
         	}
         	else if (special_down)
         	{
         		window_timer = 0;
+                reset_window_value(attack, 4, AG_WINDOW_TYPE); //pratfall
+                reset_window_value(attack, 4, AG_WINDOW_HAS_SFX); //sfx
         	}
+        }
+        if (window == 4)
+        {
+        	if (y < -40) && (vsp < 0) vsp *= 0.5;
         }
 	} break;
 	//===========================
@@ -313,19 +322,25 @@ switch(attack)
         if (window == 1 && window_timer <= 1)
         {
             unown_t_times_through = 0;
+            set_window_value(attack, 4, AG_WINDOW_TYPE, 0); //no pratfall
         }
 
-        if (window == 3) && (special_down)
+        if (window == 3)
         {
-            //VSP boost
-            vsp -= (up_down && vsp > -4) ? 0.8 : ((vsp > 0) ? 0.5 : 0.2);
-
-            if (unown_t_times_max > unown_t_times_through)
-            && (window_timer == get_window_value( attack, window, AG_WINDOW_LENGTH ))
+            unown_t_used = true;
+            if (special_down)
             {
-                window_timer = 0;
-                unown_t_times_through++;
-                attack_end();
+                //VSP boost
+                vsp -= (up_down && vsp > -4) ? 0.8 : ((vsp > 0) ? 0.5 : 0.2);
+
+                if (unown_t_times_max > unown_t_times_through)
+                && (window_timer == get_window_value( attack, window, AG_WINDOW_LENGTH ))
+                {
+                    window_timer = 0;
+                    unown_t_times_through++;
+                    attack_end();
+                    reset_window_value(attack, 4, AG_WINDOW_TYPE); //pratfall
+                }
             }
         }
     }break;
@@ -599,7 +614,10 @@ fall_through = (down_down) && (!lev_bypass);
 		default: break; //already diagonal. or is neutral. do nothing
 	}
 	
-	if (new_form == UNOWN_ATK.C && unown_c_used) { new_form = noone; }
+	if (new_form == UNOWN_ATK.C && unown_c_used)
+    || (new_form == UNOWN_ATK.G && unown_g_used)
+    || (new_form == UNOWN_ATK.T && unown_t_used)
+    { new_form = noone; }
 	
 	if (new_form != noone && move_cooldown[unown_form_data[new_form].atk] < 1)
 	{
