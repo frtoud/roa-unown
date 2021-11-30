@@ -73,6 +73,7 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
        case "MISSINGNO":
             sound_play(unsafe_sfx);
             unsafe_corrupt_timer = unsafe_corrupt_timer_max;
+       break;
 
        case "HONK":
             sound_play(sound_get("honk"));
