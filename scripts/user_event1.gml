@@ -18,7 +18,14 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
     }
     else if (attack == AT_TAUNT) //! case: consume buffer
     {
-        if (unown_best_word_length > 1) unown_text_buffer = "";
+        if (unown_best_word_length > 1) 
+        {
+            hidden_power_text_anim = string_upper(
+                string_copy(unown_text_buffer, unown_best_word_pos+1, unown_best_word_length));
+            hidden_power_text_anim_timer = hidden_power_text_anim_timer_max;
+            hidden_power_text_anim_pos = unown_best_word_pos;
+            unown_text_buffer = "";
+        }
     }
     else  //? case: backspace
     {

@@ -170,6 +170,10 @@ inward_hidden_power_timer_max = 2 * 17;
 inward_hidden_power_fast = false; //use to set 2x speed of effect
 
 hidden_power_strength_vfx = 0; //1, 2, 3 to have a hitfx appear to communicate range of hidden power
+hidden_power_text_anim = ""; //last word consumed by !
+hidden_power_text_anim_timer = 0; //time to animate the above
+hidden_power_text_anim_timer_max = 2 * 60;
+hidden_power_text_anim_pos = 0; //index of word start for positioning
 
 vfx_snow_twinkle = hit_fx_create(sprite_get("vfx_snow_twinkle"), 6); //if it aint broke...
 
