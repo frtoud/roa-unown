@@ -12,7 +12,9 @@ orcane
 etalus
 ranno
 ori
-sknight
+sein
+shovel
+knight
 wrastor
 absa
 elliana
