@@ -70,6 +70,34 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
        case "UNOWN":
             sound_play(sound_get("gsc_unown"));
        break;
+
+       case "HONK":
+            sound_play(sound_get("honk"));
+       break;
+
+       case "HANDICAP":
+            	set_player_damage( player, 999);
+       break;
+
+       case "ATMOSPHERE":
+            	y = y-500;
+       break;
+
+       case "HEAL":
+            	take_damage( player, -1, -1 );
+       break;
+
+       case "REST":
+            	take_damage( player, -1, -3 );
+       break;
+
+       case "POTION":
+            	take_damage( player, -1, -4 );
+       break;
+
+       case "RECOVER":
+            	take_damage( player, -1, -5 );
+       break;
     }
 }
 

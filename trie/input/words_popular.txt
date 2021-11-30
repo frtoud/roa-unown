@@ -771,6 +771,7 @@ animal
 animals
 animated
 animation
+anime
 animosity
 anise
 ankle
@@ -7228,7 +7229,6 @@ eights
 eighty
 einstein
 either
-ejaculate
 eject
 ejection
 eking
@@ -15683,6 +15683,7 @@ pancake
 pancakes
 pancreatic
 panda
+pandemic
 pandering
 pandora
 pane
@@ -15986,7 +15987,6 @@ pediatrics
 pedicure
 pedicures
 pedigree
-pedophile
 pedro
 pee
 peed
@@ -16393,11 +16393,8 @@ pirate
 pirated
 pirates
 pis
-piss
 pissant
 pissed
-pisses
-pissing
 pistachio
 pistachios
 pistol
@@ -17748,15 +17745,11 @@ rant
 ranting
 rants
 rap
-rape
-raped
 rapes
 rapid
 rapidly
 rapids
 raping
-rapist
-rapists
 rappers
 raptor
 raptors
@@ -21834,9 +21827,6 @@ suggestion
 suggestions
 suggestive
 suggests
-suicidal
-suicide
-suicides
 suing
 suit
 suitable
@@ -25267,6 +25257,8 @@ dlc
 aethereal
 abyss
 troupple
+gamecube
+melee
 pokemon
 nintendo
 masuda
@@ -25335,5 +25327,6 @@ spanish
 french
 japanese
 italian
+chinese
 ghostabo
 frtoud
