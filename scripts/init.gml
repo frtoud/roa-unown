@@ -177,6 +177,12 @@ hidden_power_text_anim_pos = 0; //index of word start for positioning
 
 vfx_snow_twinkle = hit_fx_create(sprite_get("vfx_snow_twinkle"), 6); //if it aint broke...
 
+unsafe_corrupt_timer = 0;
+unsafe_corrupt_timer_max = 40;
+unsafe_spr = sprite_get("vfx_corrupt");
+unsafe_sfx = asset_get("sfx_genesis_tv_static");
+unsafe_frame = 0;
+
 //================================================================
 // Balancing
 unown_b_fastfall_cooldown = 32;
