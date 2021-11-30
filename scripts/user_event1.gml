@@ -78,29 +78,35 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
        case "HONK":
             sound_play(sound_get("honk"));
        break;
+       case "UNKNOWN":
+            sound_play(asset_get("mfx_tut_fail"));
+       break;
+       case "FORNACE":
+            sound_play(asset_get("mfx_logo_shing"));
+       break;
 
        case "HANDICAP":
             set_player_damage( player, 999);
        break;
 
        case "ATMOSPHERE":
+            sound_play(asset_get("mfx_forward"));
             spawn_hit_fx(x, y - unown_eye_center_offset, 66);
             y = y-500;
        break;
 
        case "HEAL":
-            	take_damage( player, -1, -1 );
-       break;
-
+       case "ORAN":
+       case "BERRY":
        case "REST":
+            sound_play(sound_get("rse_potion"));
             	take_damage( player, -1, -3 );
        break;
 
+       case "SITRUS":
        case "POTION":
-            	take_damage( player, -1, -4 );
-       break;
-
        case "RECOVER":
+            sound_play(sound_get("rse_potion"));
             	take_damage( player, -1, -5 );
        break;
     }
