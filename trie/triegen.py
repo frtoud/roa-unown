@@ -8,9 +8,8 @@ def make_trie(words):
     words = [word for word in words]
     trie = dict()
     for word in tqdm(words):
-        if len(word) <= 16:
-            trie_for_word = _make_trie_from_word(word)
-            trie = _deep_update(trie, trie_for_word)
+        trie_for_word = _make_trie_from_word(word)
+        trie = _deep_update(trie, trie_for_word)
     return trie
 
 
@@ -69,10 +68,15 @@ if __name__ == "__main__":
     inputs = os.scandir(Path("input"))
     for source in inputs:
         text = Path(source).read_text(errors="ignore")
-        words += text.split("\n")
+        text_lower = text.lower()
+        words += text_lower.split("\n")
     
     words = list(dict.fromkeys(words))
     words.sort()
+    
+    for word in list(words):
+        if (len(word) < 2) or (len(word) > 16):
+            words.remove(word)
     
     with open("output/result_full.txt", "w") as file:
         for word in words:
