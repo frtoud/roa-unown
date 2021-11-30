@@ -6,10 +6,18 @@ MAIN URL: 2667789407
 
 TODO:
 - keyboard mode
-- allow diagonal moves to start a few frames into their cardinal counterparts (ie. allow B to go into L or R for a couple of frames)
-
-sfx_ell_arc_taunt_end
-sfx_boss_vortex_end
+- Runes?
+- more word effects- pokedex munophone ("Unown report")
+- pseudocrouch/pseudodash
+- extra portraits
+- Attack reworks (VFX, refined animations, more typings)
+- more animations (Tumble, bighurt, idle animations)
+- optimized animation storage (less files the better)
+- Word list upgrade
+    //check if loading trie ingame is possible
+    // not optimal. file loads fast, trie takes 2 minutes to build
+    //allow loading across multiple frames?
+    lets multilingual support kick in >:]
 
 
 STEAM DESCRIPTION
@@ -37,8 +45,6 @@ Special Thanks
 Special Unthanks
 - Unown's Attack stat
 
-//check if loading trie ingame is possible
-// not optimal. file loads fast, trie takes 2 minutes to build
 
 
 Unown v1.1 (& vJ.1)
@@ -52,3 +58,24 @@ Gameplay Changes:
 
 Bug Fixes:
 * Fixed J (attack index 10, AT_DATTACK) stumbling into some odd Dan-esque behavior that reset HSP to zero on use
+
+Unown v1.2 (& vJAM.2)
+Gameplay Changes:
+* B & L now have a 32-frame fastfalling cooldown on bounce to prevent instant ladder combos
+* G & T can be used without pratfall if SPECIAL is not held (still only once per airtime)
+* Text buffer resets on death
+* Word List:
+. - Made sure all words in pokemon moves and abilities are valid
+. - Added berry names as valid words
+. - Added Special word effects:
+. . - UNOWN, HONK: sound effect
+. . - HEAL, REST, POTION, RECOVER: self healing
+. . - HANDICAP: set own damage to 999%
+. . - ATMOSPHERE: teleport upwards
+
+Bug Fixes:
+* Fixed diagonal moves (CGJKLPQRSTVZ) sometimes not having their proper hurtboxes
+
+Misc:
+* Touch up of C and G's animations to feel more dynamic
+* Words just used by ! now pop up in red on the HUD
