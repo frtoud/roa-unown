@@ -1,8 +1,54 @@
-maximum size that still fits in an attack script seems to be between 53Kb and 60Kb
+﻿maximum size that still fits in an attack script seems to be between 53Kb and 60Kb
 
-BETA URL: 2661638499
+BETA/JAM URL: 2661638499
+MAIN URL: 2667789407
 
 
 TODO:
 - keyboard mode
 - allow diagonal moves to start a few frames into their cardinal counterparts (ie. allow B to go into L or R for a couple of frames)
+
+sfx_ell_arc_taunt_end
+sfx_boss_vortex_end
+
+
+STEAM DESCRIPTION
+
+E S C A P E
+
+[summary] https://ibb.co/VJ3SR6q
+
+Shaped like ancient text characters, it is a mystery as to which came first, the ancient writings or the various Unown.
+
+Unown's special ability is LEVITATE! Unowns rarely, if ever, touch the ground. Use this strange mobility to your advantage!
+
+Unown's signature move is HIDDEN POWER, a unique attack that varies in type and intensity depending on the individual Pokémon. Try out each letter's special variation!
+
+A lone Unown alone is weak, but an odd power emerges when there are many. Chain moves in a specific order to create words, and boost the power of your attacks!
+
+
+If you need help on how to use Unown's moveset, please check out the [enclosed instruction book].
+
+Special Thanks
+- Qazzquimbly, for implementing the word parser system
+- Garebear, TJackKnife, JPEG Warrior, Dregun for playtester feedback
+- GameFreak, for the original Pokémon design
+
+Special Unthanks
+- Unown's Attack stat
+
+//check if loading trie ingame is possible
+// not optimal. file loads fast, trie takes 2 minutes to build
+
+
+Unown v1.1 (& vJ.1)
+Gameplay Changes:
+* Added 2-frame "diagonal leniency": a move in a cardinal direction can transition into its diagonal neighbors during this time
+* Word List:
+. - Removed a handful of words to lower ESRB rating
+. - Added a handful of words related to Rivals and the Workshop
+. - Added a handful of Pokémon-related terms
+. - Unown now collects the name of other characters into its dictionary on match start
+
+Bug Fixes:
+* Fixed J (attack index 10, AT_DATTACK) stumbling into some odd Dan-esque behavior that reset HSP to zero on use

@@ -29,6 +29,16 @@ def _deep_update(original, new):
             original[key] = value
     return original
 
+
+def _test_trie_size(trie):
+    val = 0
+    with open("trie_gen_temp_file.txt", "w") as temp_file:
+        json.dump(trie, temp_file)
+        temp_file.seek(0, os.SEEK_END)
+        val = file.tell()
+        
+    os.remove("trie_gen_temp_file.txt")
+    return val
     
 def _output_subfiles(letter, letter_trie, file):
 
@@ -36,7 +46,7 @@ def _output_subfiles(letter, letter_trie, file):
 
     for subletter in "oaeiu":
         with open("output/result_"+letter+subletter+".json", "w") as subfile:
-            json.dump(trie[letter][subletter], subfile)
+            json.dump(letter_trie[subletter], subfile)
         
         letter_trie.pop(subletter, {})
         file.truncate(0)
@@ -51,18 +61,27 @@ def _output_subfiles(letter, letter_trie, file):
 
 if __name__ == "__main__":
 
+    import json
+    import os
+    
     words = []
 
-    for source in ["words_popular", "pokemon_names"]:
-        text = Path(source+".txt").read_text(errors="ignore")
+    inputs = os.scandir(Path("input"))
+    for source in inputs:
+        text = Path(source).read_text(errors="ignore")
         words += text.split("\n")
+    
+    words = list(dict.fromkeys(words))
+    words.sort()
+    
+    with open("output/result_full.txt", "w") as file:
+        for word in words:
+            file.write(word + "\n")
        
     trie = make_trie(words)
 
-    import json
-    import os
 
-    with open("result_full.json", "w") as file:
+    with open("output/result_full.json", "w") as file:
         json.dump(trie, file)
     
     max_size = (50 * 1028) #Bytes

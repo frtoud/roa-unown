@@ -1,0 +1,9 @@
+portuguese
+spanish
+french
+japanese
+italian
+greek
+russian
+english
+mandarin
