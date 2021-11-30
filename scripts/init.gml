@@ -179,6 +179,9 @@ vfx_snow_twinkle = hit_fx_create(sprite_get("vfx_snow_twinkle"), 6); //if it ain
 
 //================================================================
 // Balancing
+unown_b_fastfall_cooldown = 32;
+unown_l_fastfall_cooldown = 32;
+
 unown_d_speed = 8;
 unown_d_accel = 0.5;
 
@@ -255,6 +258,9 @@ unown_t_times_through = 0; //number of loops made
 unown_t_times_max = 3;
 
 unown_u_bounced = false;
+
+//used by B and L to not be able to combo-fast fall into itself at ludicrous speeds
+fast_fall_prevention_timer = 0;
 
 //position of water spout (timer counts down)
 unown_y_waterhitbox = noone;

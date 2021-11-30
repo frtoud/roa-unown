@@ -22,13 +22,14 @@ switch(attack)
 	case 2: //B
 	{
         can_wall_jump = (window == 3 || window == 6);
-		can_fast_fall =  !(window == 4 || window == 5);
+		can_fast_fall =  !(window == 4 || window == 5) && !(fast_fall_prevention_timer > 0);
 
 		lev_bypass = window < 6;
 		if (!free && window < 4)
 		{
 			window = 4;
 			window_timer = 0;
+			fast_fall_prevention_timer = unown_b_fastfall_cooldown;
 			attack_end();
 		}
 		else if (window == 3)
@@ -36,6 +37,12 @@ switch(attack)
 			if (special_down && !was_parried) window_timer = 0;
             do_faster_falling();
 		}
+		else if (window == 1)
+		{
+			fast_fall_prevention_timer = 0;
+		}
+		
+		if (fast_fall_prevention_timer > 0 && !hitpause) fast_fall_prevention_timer--;
 		
 		//hold special to continue attack from window 5
 		set_window_value(attack, 5, AG_WINDOW_GOTO, (special_down && !was_parried) ? 3 : 0);
@@ -197,7 +204,7 @@ switch(attack)
         can_wall_jump = (window == 3 || window == 7);
 
 		lev_bypass = !(window == 5 || window == 7);
-		can_fast_fall = !(window == 6);
+		can_fast_fall = !(window == 6) && !(fast_fall_prevention_timer > 0);
 		if (window < 4)
 		{
             if (!free)
@@ -212,6 +219,7 @@ switch(attack)
             {
                 window = 6;
                 window_timer = 0;
+				fast_fall_prevention_timer = unown_l_fastfall_cooldown;
                 attack_end();
                 destroy_hitboxes();
                 has_hit_player = false;
@@ -222,7 +230,12 @@ switch(attack)
                 if (special_down && !was_parried) window_timer = 0;
                 do_faster_falling();
             }
+			else if (window == 1)
+			{
+				fast_fall_prevention_timer = 0;
+			}
 		}
+		if (fast_fall_prevention_timer > 0 && !hitpause) fast_fall_prevention_timer--;
 		
 		//hold special to continue attack from window 6
 		set_window_value(attack, 6, AG_WINDOW_GOTO, (special_down && !was_parried) ? 3 : 0);
@@ -597,6 +610,9 @@ fall_through = (down_down) && (!lev_bypass);
 	    
 	    adjust_unown_attack_grid();
 	    unown_recalculate_stats = true;
+	    
+	    //dan why is this necessary
+    	hurtboxID.sprite_index = get_attack_value(attack, AG_HURTBOX_SPRITE);
 	}
 }
 
