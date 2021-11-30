@@ -80,11 +80,12 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
        break;
 
        case "HANDICAP":
-            	set_player_damage( player, 999);
+            set_player_damage( player, 999);
        break;
 
        case "ATMOSPHERE":
-            	y = y-500;
+            spawn_hit_fx(x, y - unown_eye_center_offset, 66);
+            y = y-500;
        break;
 
        case "HEAL":
