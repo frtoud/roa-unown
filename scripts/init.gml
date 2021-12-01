@@ -296,6 +296,8 @@ unown_best_word_pos = 0;
 unown_best_word_length = 0;
 unown_current_bonus = 0;
 
+unown_last_special_word = "";
+
 //unown_word_length_bonus[3] = scale of bonus for a 3-letter word in the buffer
 unown_word_length_bonus = [0, 0, 0.20, 0.40, 0.60, 0.75, 0.90, 1.0, 1.05, 1.10, 1.15, 1.20, 1.25];
 unown_letter_exclamation_bonus = 0.015; //added bonus for using "!" for each additional letter not in a word

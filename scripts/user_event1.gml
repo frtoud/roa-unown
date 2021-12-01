@@ -65,6 +65,8 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
 #define check_if_special_word(word)
 {
     word = string_upper(word);
+    if (word == unown_last_special_word) return;
+
     switch (word)
     {
        case "UNOWN":
@@ -100,7 +102,7 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
        case "BERRY":
        case "REST":
             sound_play(sound_get("rse_potion"));
-            	take_damage( player, -1, -3 );
+            	take_damage( player, -1, -2 );
        break;
 
        case "SITRUS":
@@ -114,7 +116,12 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
             sound_play(sound_get("rse_shiny"));
             vfx_shiny_override = true;
        break;
+       default:
+            return; //skips saving this word: not special
+       break;
     }
+
+    unown_last_special_word = word;
 }
 
 //====================================================================
