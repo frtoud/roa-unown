@@ -97,6 +97,27 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
             y = y-500;
        break;
 
+
+       case "NINTENDO":
+            sound_play(sound_get("gb"));
+       break;
+
+	case "PAUSE":
+		vsp = 0;
+		hsp = 0;
+	break;
+
+     	case "FORFEIT":
+		x = - 5000;
+		y = 5000;
+		set_player_stocks( player, 1);
+
+
+       case "ITEM":
+       case "LEVEL":
+            sound_play(sound_get("level"));
+       break;
+
        case "HEAL":
        case "ORAN":
        case "BERRY":
