@@ -337,7 +337,8 @@ Dancer
 Battery
 Fluffy
 Dazzling
-Soul-Heart
+Soul
+Heart
 Tangling
 Hair
 Receiver
@@ -417,7 +418,7 @@ Fist
 Curious
 Medicine
 Transistor
-Dragon’s
+Dragon
 Maw
 Chilling
 Neigh
@@ -490,7 +491,8 @@ Shadow
 Dash
 Sprint
 Disgust
-High-rise
+High
+rise
 Climber
 Flame
 Boost
