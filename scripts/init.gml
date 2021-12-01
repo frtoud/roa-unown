@@ -175,6 +175,7 @@ hidden_power_text_anim_timer = 0; //time to animate the above
 hidden_power_text_anim_timer_max = 2 * 60;
 hidden_power_text_anim_pos = 0; //index of word start for positioning
 
+vfx_shiny_override = false; //see below in forms
 vfx_snow_twinkle = hit_fx_create(sprite_get("vfx_snow_twinkle"), 6); //if it aint broke...
 
 unsafe_corrupt_timer = 0;
@@ -219,6 +220,7 @@ if (is_string(stage_id))
     stage_id = (string_length(stage_id) > 0 ? real(stage_id) : 0)
 }
 unown_current_form = 1 + random_func((player + stage_id) % 24, 28, true);
+vfx_shiny_override = (0 == random_func((player + stage_id) % 24, 8192, true));
 
 hurtbox_spr = unown_form_data[unown_current_form].hurtbox;
 

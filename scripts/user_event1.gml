@@ -109,6 +109,11 @@ if (window_timer <= 1 && get_window_value(attack, window, AG_UNOWN_WINDOW_ACTIVE
             sound_play(sound_get("rse_potion"));
             	take_damage( player, -1, -5 );
        break;
+
+       case "MASUDA":
+            sound_play(sound_get("rse_shiny"));
+            vfx_shiny_override = true;
+       break;
     }
 }
 

@@ -219,7 +219,7 @@ if (hidden_power_text_anim_timer > 0) hidden_power_text_anim_timer--;
 
 
 //Shiny!
-if (get_player_color(player) == 1) 
+if (get_player_color(player) == 1 || vfx_shiny_override)
 && (get_gameplay_time() % (16 + random_func(4, 128, true)) == 0)
 {
     var kx = x - 32 + random_func(5, 64, true);
