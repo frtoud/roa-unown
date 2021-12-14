@@ -79,3 +79,37 @@ Bug Fixes:
 Misc:
 * Touch up of C and G's animations to feel more dynamic
 * Words just used by ! now pop up in red on the HUD
+
+
+//========================================================================================
+feedback
+
+LOSER is a combo
+BOOKKEEPER+X is OP
+ - running away and spelling words is too easy
+
+ - vertical stalling needs to be toned down. massively. (G/doublejumps)
+ - levitate needs to be toned down. too hard toc ombo/get comboed
+
+ - check tapjump protection
+ - 
+
+//fix:
+ - lock movement when in pratland
+ - A needs stalling prevention
+ - E needs higher angle
+ - G needs a nerf. pratfall no matter what? goes too high too quickly. speed cap? and ceiling bonk
+ - J needs a buff. too easy to get the smooth melee grab sfx and not grab. armor? disjoint?
+ - N needs a nerf. add cap to counter kb? reduce multiplier? shorter duration
+ - X needs a nerf. turn into horzflipper-E ? kinda too fast rn too. could be made light.
+ - Y needs... something. a bit too lakluster given G and T. fastfall at the end?
+
+ //bonus:
+ - C could get downwards-angled variant
+ - V needs a use.
+ - Y could get upwards-shooting variant
+ - add unown radio noise to victory music
+
+
+
+
