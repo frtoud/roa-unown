@@ -81,6 +81,27 @@ Misc:
 * Words just used by ! now pop up in red on the HUD
 
 
+
+Unown v1.3
+Gameplay Changes:
+* "Double" jump speed decreased (8 -> 7.2)
+* Max fall speed increased (6 -> 8)
+* A
+. - Multiple uses per airtime have lesser VSP boost (first use sets to -6, second sets to 0)
+* E
+. - Damage (9 -> 8), Angle (30 -> 50), KB (5 -> 6), Scaling (1.15 -> 1.0)
+* G
+. - Now has a speed limit when rising
+. - Stops when bonking on ceilings
+* N
+. - Active duration shortened (32 -> 20)
+. - Counter boost reduced (Damage x2.0 -> x1.5, KB & Scaling x1.35 -> x1.2)
+* X
+. - Active duration shortened (10 -> 8), Endlag increased (12 -> 15)
+. - Damage (7 -> 6), Angle (45 Flipper 8 -> 55 Flipper 3), KB (8 -> 7), Scaling (0.85 -> 0.7)
+* Y can fastfall at the end of the move
+* ! no longer consumes the entire buffer, only the longest word detected
+
 //========================================================================================
 feedback
 
@@ -93,16 +114,18 @@ BOOKKEEPER+X is OP
 
  - check tapjump protection
  - 
+//fixed:
+ - A needs stalling prevention
+ - E needs higher angle
+ - G needs a nerf. goes too high too quickly. speed cap? and ceiling bonk
+ - N needs a nerf. add cap to counter kb? reduce multiplier? shorter duration
+ - X needs a nerf. turn into horzflipper-E ? kinda too fast rn too. could be made light.
+ - Y fastfall at the end
 
 //fix:
  - lock movement when in pratland
- - A needs stalling prevention
- - E needs higher angle
- - G needs a nerf. pratfall no matter what? goes too high too quickly. speed cap? and ceiling bonk
  - J needs a buff. too easy to get the smooth melee grab sfx and not grab. armor? disjoint?
- - N needs a nerf. add cap to counter kb? reduce multiplier? shorter duration
- - X needs a nerf. turn into horzflipper-E ? kinda too fast rn too. could be made light.
- - Y needs... something. a bit too lakluster given G and T. fastfall at the end?
+ - Y needs... something. a bit too lackluster given G and T. 
 
  //bonus:
  - C could get downwards-angled variant

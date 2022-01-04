@@ -3664,8 +3664,6 @@ chimpanzee
 chimps
 chin
 china
-chink
-chinks
 chino
 chins
 chip
@@ -4061,9 +4059,7 @@ cobweb
 cobwebs
 coca
 cocaine
-cock
 cockamamie
-cocked
 cockles
 cockney
 cockpit
@@ -4826,7 +4822,6 @@ cooling
 coolly
 coolness
 cools
-coon
 coop
 cooped
 cooper
@@ -6192,7 +6187,6 @@ diced
 dicey
 dickens
 dickie
-dicking
 dicky
 dictate
 dictated
@@ -6249,7 +6243,6 @@ digs
 dike
 dilated
 dilation
-dildo
 dilemma
 dilettante
 diligence
@@ -7068,8 +7061,6 @@ dyed
 dyeing
 dyer
 dying
-dyke
-dykes
 dynamic
 dynamics
 dynamite
@@ -9653,9 +9644,6 @@ goblin
 goblins
 gobs
 god
-goddam
-goddamn
-goddamned
 goddaughter
 goddess
 goddesses
@@ -9905,7 +9893,6 @@ grinder
 grinding
 grinds
 grindstone
-gringo
 grinning
 grins
 grip
@@ -10073,8 +10060,6 @@ gym
 gyms
 gynecologist
 gypped
-gypsies
-gypsy
 ha
 haberdashery
 habit
@@ -10546,7 +10531,7 @@ hesitates
 hesitating
 hesitation
 hessian
-hetero
+heterogenous
 heterosexual
 hex
 hexes
@@ -10751,15 +10736,13 @@ homicide
 homicides
 homily
 homing
-homo
+homogenous
 homophobia
 homophobic
-homos
 homosexual
 homosexuality
 homosexuals
 hon
-honda
 honed
 honest
 honestly
@@ -11220,6 +11203,9 @@ imbecile
 imbeciles
 imbecilic
 imbedded
+imbibe
+imbibed
+imbibing
 imbued
 imitate
 imitating
@@ -17505,7 +17491,6 @@ pushing
 pushover
 pushy
 puss
-pussycat
 put
 putrid
 puts
@@ -18031,7 +18016,6 @@ redo
 redone
 redress
 reds
-redskins
 reduce
 reduced
 reduces
@@ -18574,7 +18558,6 @@ retaliate
 retaliated
 retaliating
 retaliatory
-retard
 retarded
 retest
 rethink
@@ -19853,7 +19836,6 @@ sharper
 sharpest
 sharply
 sharpshooters
-shat
 shatter
 shattered
 shattering
@@ -20981,7 +20963,6 @@ spew
 spewing
 sphere
 sphinx
-spic
 spice
 spices
 spicy
@@ -23440,7 +23421,6 @@ tuxedos
 tuxes
 twain
 twas
-twat
 tweak
 tweaked
 tweaking
@@ -24970,8 +24950,6 @@ wool
 woolly
 woops
 woozy
-wop
-wops
 word
 worded
 wording
