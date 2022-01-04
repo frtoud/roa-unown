@@ -86,6 +86,7 @@ Unown v1.3
 Gameplay Changes:
 * "Double" jump speed decreased (8 -> 7.2)
 * Max fall speed increased (6 -> 8)
+* Prat"land" now has increased friction
 * A
 . - Multiple uses per airtime have lesser VSP boost (first use sets to -6, second sets to 0)
 * E
