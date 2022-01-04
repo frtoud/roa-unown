@@ -40,7 +40,11 @@ if (lev_is_grounded)
     switch (state)
     {
         case PS_PRATFALL: 
-            if (lev_pratland_timer > 0) lev_pratland_timer--;
+            if (lev_pratland_timer > 0) 
+            {
+                lev_pratland_timer--;
+                hsp *= 0.9;
+            }
             else 
             {
                 lev_pratland_timer = 0;
