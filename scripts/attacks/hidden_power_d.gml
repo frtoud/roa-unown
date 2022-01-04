@@ -8,7 +8,7 @@ set_window_value(atk, 1, AG_WINDOW_LENGTH, 9);
 set_window_value(atk, 1, AG_WINDOW_ANIM_FRAMES, 1);
 set_window_value(atk, 1, AG_WINDOW_HAS_SFX, 1);
 set_window_value(atk, 1, AG_WINDOW_SFX, asset_get("sfx_abyss_hazard_start"));
-set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 0);
+set_window_value(atk, 1, AG_WINDOW_SFX_FRAME, 2);
 
 set_window_value(atk, 2, AG_WINDOW_LENGTH, 24);
 set_window_value(atk, 2, AG_WINDOW_HSPEED, 2);
