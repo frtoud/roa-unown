@@ -194,6 +194,8 @@ unown_d_accel = 0.5;
 
 unown_n_cooldown = 40;
 unown_n_invincibility = 50;
+unown_n_damage_mult = 1.5;
+unown_n_kb_mult = 1.2;
 
 unown_maxspeed_base = air_max_speed;
 //Word buffer stat bonuses
