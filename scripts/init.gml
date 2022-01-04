@@ -257,6 +257,7 @@ lev_target_accel = (2.0 * lev_target_vsp) / lev_cycle_time;
 //attack flags
 
 //once per airtime
+unown_a_used = false;
 unown_c_used = false; 
 unown_g_used = false; 
 unown_t_used = false; 

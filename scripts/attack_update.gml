@@ -17,6 +17,25 @@ switch(attack)
     case 1: //A
 	{
         can_fast_fall = !(window >= 2);
+
+        if (window == 1 && window_timer == 1)
+		{
+            if (unown_a_used)
+            {
+                set_window_value(attack, 2, AG_WINDOW_VSPEED, 0);
+                set_window_value(attack, 2, AG_WINDOW_VSPEED_TYPE, 0);
+            }
+            else 
+            {
+                reset_window_value(attack, 2, AG_WINDOW_VSPEED);
+                reset_window_value(attack, 2, AG_WINDOW_VSPEED_TYPE);
+            }
+		}
+		else if (window == 2 && window_timer == 1 && !hitpause) 
+        {
+            if (vsp > 0) vsp = 0;
+            unown_a_used = true;
+        }
 	} break;
 	//===========================
 	case 2: //B
