@@ -3829,8 +3829,6 @@ china
 chinchou
 chinese
 chingling
-chink
-chinks
 chino
 chins
 chip
@@ -4245,9 +4243,7 @@ cobweb
 cobwebs
 coca
 cocaine
-cock
 cockamamie
-cocked
 cockles
 cockney
 cockpit
@@ -5018,7 +5014,6 @@ cooling
 coolly
 coolness
 cools
-coon
 coop
 cooped
 cooper
@@ -6439,7 +6434,6 @@ diced
 dicey
 dickens
 dickie
-dicking
 dicky
 dictate
 dictated
@@ -6498,7 +6492,6 @@ digs
 dike
 dilated
 dilation
-dildo
 dilemma
 dilettante
 diligence
@@ -7098,7 +7091,6 @@ dragonair
 dragonfly
 dragonite
 dragons
-dragon’s
 dragoons
 drags
 drain
@@ -7358,8 +7350,6 @@ dyed
 dyeing
 dyer
 dying
-dyke
-dykes
 dynamax
 dynamic
 dynamics
@@ -10060,9 +10050,6 @@ goblin
 goblins
 gobs
 god
-goddam
-goddamn
-goddamned
 goddaughter
 goddess
 goddesses
@@ -10337,7 +10324,6 @@ grinder
 grinding
 grinds
 grindstone
-gringo
 grinning
 grins
 grip
@@ -10521,8 +10507,6 @@ gym
 gyms
 gynecologist
 gypped
-gypsies
-gypsy
 gyro
 ha
 haban
@@ -11016,7 +11000,7 @@ hesitates
 hesitating
 hesitation
 hessian
-hetero
+heterogenous
 heterosexual
 hex
 hexes
@@ -11046,7 +11030,6 @@ hiding
 hierarchy
 hieroglyphs
 high
-high-rise
 highball
 higher
 highest
@@ -11230,16 +11213,14 @@ homicide
 homicides
 homily
 homing
-homo
+homogenous
 homophobia
 homophobic
-homos
 homosexual
 homosexuality
 homosexuals
 hon
 honchkrow
-honda
 hondew
 hone
 honed
@@ -11719,6 +11700,9 @@ imbecile
 imbeciles
 imbecilic
 imbedded
+imbibe
+imbibed
+imbibing
 imbued
 imitate
 imitating
@@ -12726,6 +12710,8 @@ journey
 journeyed
 journeys
 joust
+jovial
+jovian
 joy
 joyful
 joyous
@@ -18352,7 +18338,6 @@ pushing
 pushover
 pushy
 puss
-pussycat
 put
 putrid
 puts
@@ -18901,7 +18886,6 @@ redo
 redone
 redress
 reds
-redskins
 reduce
 reduced
 reduces
@@ -19456,7 +19440,6 @@ retaliate
 retaliated
 retaliating
 retaliatory
-retard
 retarded
 retest
 rethink
@@ -20803,7 +20786,6 @@ sharper
 sharpest
 sharply
 sharpshooters
-shat
 shatter
 shattered
 shattering
@@ -21830,7 +21812,6 @@ sot
 souffle
 sought
 soul
-soul-heart
 soulblaze
 soulful
 soulless
@@ -22005,7 +21986,6 @@ spewpa
 spheal
 sphere
 sphinx
-spic
 spice
 spices
 spicy
@@ -24583,7 +24563,6 @@ tuxedos
 tuxes
 twain
 twas
-twat
 tweak
 tweaked
 tweaking
@@ -26185,8 +26164,6 @@ wooloo
 wooper
 woops
 woozy
-wop
-wops
 word
 worded
 wording
