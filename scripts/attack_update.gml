@@ -375,7 +375,7 @@ switch(attack)
 	//===========================
     case 25: //Y
     {
-        can_fast_fall = false;
+        can_fast_fall = (window == 3);
         hsp *= 0.75; 
         if (window == 1)
         {
