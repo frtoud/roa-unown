@@ -428,14 +428,13 @@ switch(attack)
     	{
     		if (unown_best_word_length > 1)
     		{
+				move_cooldown[AT_TAUNT] = 60;
     			//vfx
     			inward_hidden_power_timer = inward_hidden_power_timer_max;
             	inward_hidden_power_fast = true;
             	
             	//calculate damage boost
-            	var bonus = unown_current_bonus
-            	   + (unown_letter_exclamation_bonus * (string_length(unown_text_buffer)
-            	       - min(unown_best_word_length, array_length(unown_word_length_bonus))));
+            	var bonus = unown_current_bonus;
             	
             	//setup hitboxes
             	var hb_size = floor(min(200, bonus * 100 + 60));

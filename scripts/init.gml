@@ -302,7 +302,7 @@ unown_last_special_word = "";
 
 //unown_word_length_bonus[3] = scale of bonus for a 3-letter word in the buffer
 unown_word_length_bonus = [0, 0, 0.20, 0.40, 0.60, 0.75, 0.90, 1.0, 1.05, 1.10, 1.15, 1.20, 1.25];
-unown_letter_exclamation_bonus = 0.015; //added bonus for using "!" for each additional letter not in a word
+unown_letter_exclamation_bonus = 0.015; //added bonus for using "!" for each additional letter not in a word (obsolteted)
 unown_recalculate_stats = true; //set to true to let passive buffs recalculate (needed at the start to init the forms)
 
 unown_dictionary = {}; //misnomer: actually a trie
