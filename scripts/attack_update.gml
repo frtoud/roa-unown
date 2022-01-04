@@ -123,6 +123,8 @@ switch(attack)
 		}
         if (window == 3)
         {
+            vsp = clamp(vsp, -max_fall, max_fall);
+            can_wall_jump = true;
             unown_g_used = true;
         	if (y < -40)
         	{
@@ -135,10 +137,19 @@ switch(attack)
         		window_timer = 0;
                 reset_window_value(attack, 4, AG_WINDOW_TYPE); //pratfall
                 reset_window_value(attack, 4, AG_WINDOW_HAS_SFX); //sfx
+
+                if (instance_place(x, y - 2, asset_get("par_block")))
+                {
+                    //bonked on ceiling
+                    sound_play(asset_get("sfx_land_light"))
+                    window = 4;
+                    window_timer = 1; //avoids sfx
+                }
         	}
         }
         if (window == 4)
         {
+            can_wall_jump = true;
         	if (y < -40) && (vsp < 0) vsp *= 0.5;
         }
 	} break;
