@@ -321,5 +321,5 @@ pkmn_stadium_back_img = sprite_get("cmp_stadium_back");
 // MunoPhone Touch code - don't touch
 // should be at BOTTOM of file, but above any #define lines
 
-muno_event_type = 0;
-user_event(14);
+//muno_event_type = 0;
+//user_event(14);
