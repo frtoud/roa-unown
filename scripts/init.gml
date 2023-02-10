@@ -215,14 +215,8 @@ unown_turning_time_per_frame = 6;
 prev_spr_dir = spr_dir;
 
 //initialize form
-var stage_id = get_stage_data(SD_ID);
-if (is_string(stage_id)) 
-{ 
-    stage_id = string_digits(stage_id);
-    stage_id = (string_length(stage_id) > 0 ? real(stage_id) : 0)
-}
-unown_current_form = 1 + random_func((player + stage_id) % 24, 28, true);
-vfx_shiny_override = (0 == random_func((player + stage_id) % 24, 8192, true));
+unown_current_form = 1 + random_func((player) % 24, 28, true);
+vfx_shiny_override = (0 == random_func((player) % 24, 8192, true));
 
 hurtbox_spr = unown_form_data[unown_current_form].hurtbox;
 
