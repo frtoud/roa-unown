@@ -318,6 +318,13 @@ with (oPlayer) if (self != other) && ("unown_dictionary" in self)
 pkmn_stadium_front_img = sprite_get("cmp_stadium_front");
 pkmn_stadium_back_img = sprite_get("cmp_stadium_back");
 
+//Po & Gumbo
+pot_compat_variable = sprite_get("cmp_gumbo");
+pot_compat_text = "Alphabet Soup";
+
+
+
+
 //================================================================
 // MunoPhone Touch code - don't touch
 // should be at BOTTOM of file, but above any #define lines
